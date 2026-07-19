@@ -15,7 +15,7 @@
       content="We turn social presence into brand gravity — strategy, content direction, and campaigns for brands that want premium positioning."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/hero-person.png" />
+    <meta property="og:image" content="assets/hero-original.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,88 +25,97 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="intro-active">
     <div class="page-shell"></div>
-
-    <header class="site-header" id="top">
-      <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Maison Adriano home">
-          <span class="brand-mark">M</span>
-          <span class="brand-copy">
-            <strong>Maison Adriano</strong>
-            <small>Boutique Social Marketing</small>
-          </span>
-        </a>
-
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span></span><span></span>
-          <span class="sr-only">Toggle navigation</span>
-        </button>
-
-        <nav class="site-nav" id="site-nav">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#work">Results</a>
-          <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
-          <a class="nav-cta" href="#contact">Book a call</a>
-        </nav>
+    <div class="brand-intro" id="brand-intro" aria-hidden="true">
+      <div class="intro-light" aria-hidden="true"></div>
+      <div class="intro-lockup">
+        <div class="intro-monogram" aria-hidden="true">
+          <span>M</span>
+        </div>
+        <div class="intro-name">
+          <span class="intro-maison">Maison</span>
+          <strong>Adriano</strong>
+          <span class="intro-agency"><i></i>Agency<i></i></span>
+        </div>
       </div>
-    </header>
+    </div>
+
 
     <main>
-      <section class="hero-v2" aria-labelledby="hero-title">
-        <div class="hero-stage">
-          <div class="hero-photo-panel reveal">
-            <img
-              src="assets/hero-person-v2.webp"
-              alt="Founder of Maison Adriano"
-              loading="eager"
-              fetchpriority="high"
-            />
-            <div class="photo-caption">
-              <span>Founder-led</span>
-              <span>Prague · Europe</span>
-            </div>
+      <section class="ma-hero" id="top" aria-labelledby="hero-title">
+        <div class="ma-hero-visual">
+          <picture class="ma-hero-picture" aria-hidden="true">
+            <source srcset="assets/hero-original.webp" type="image/webp" />
+            <img src="assets/hero-original.jpg" alt="" loading="eager" fetchpriority="high" />
+          </picture>
+
+          <div class="ma-hero-shade" aria-hidden="true"></div>
+
+          <header class="ma-hero-header">
+            <a class="ma-mobile-brand" href="#top" aria-label="Maison Adriano home">
+              <span>M</span>
+            </a>
+
+            <nav class="ma-hero-nav" id="ma-hero-nav" aria-label="Primary navigation">
+              <a class="active" href="#top">Home</a>
+              <a href="#about">About</a>
+              <a href="#services">Services</a>
+              <a href="#work">Work</a>
+              <a href="#contact">Contact</a>
+            </nav>
+
+            <button class="ma-menu-toggle" type="button" aria-expanded="false" aria-controls="ma-hero-nav">
+              <span class="ma-menu-label">Menu</span>
+              <span class="ma-menu-lines" aria-hidden="true"><i></i><i></i></span>
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+          </header>
+
+          <div class="ma-hero-copy">
+            <h1 id="hero-title">
+              We don’t do<br />
+              ordinary.<br />
+              We build <em>iconic</em><br />
+              brands.
+            </h1>
+            <span class="ma-hero-rule" aria-hidden="true"></span>
+            <p>
+              A luxury boutique social marketing<br />
+              agency for brands that aim higher.
+            </p>
+            <a class="ma-hero-cta" href="#contact">
+              <span>Work with us</span>
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
 
-          <div class="hero-copy-panel reveal delay-1">
-            <div class="hero-copy-inner">
-              <p class="eyebrow">Boutique social marketing agency</p>
-              <h1 id="hero-title">
-                We don’t do ordinary.<br />
-                We build <em>iconic</em> brands.
-              </h1>
-              <div class="hero-rule"></div>
-              <p class="hero-lead">
-                Strategy, social media and content direction for brands that want a premium presence, sharper positioning and attention that turns into business.
-              </p>
-              <div class="hero-actions">
-                <a class="btn btn-primary" href="#contact">Work with us <span aria-hidden="true">→</span></a>
-                <a class="text-link" href="#services">View services</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-brand-panel reveal delay-2" aria-label="Maison Adriano Agency">
-            <div class="brand-emblem" aria-hidden="true">
-              <span>M</span><span>A</span>
-            </div>
-            <div class="brand-lockup">
-              <p>Maison</p>
-              <h2>Adriano</h2>
-              <div class="brand-divider"><span></span><b>Agency</b><span></span></div>
-            </div>
-            <p class="brand-subline">Social strategy · Content direction · Growth</p>
-          </div>
+          <aside class="ma-hero-brand" aria-label="Maison Adriano Agency">
+            <div class="ma-brand-monogram" aria-hidden="true">M</div>
+            <span class="ma-brand-maison">Maison</span>
+            <strong>Adriano</strong>
+            <span class="ma-brand-agency"><i></i>Agency<i></i></span>
+          </aside>
         </div>
 
-        <div class="trust-bar">
-          <div class="container trust-items">
-            <div><span>◇</span> Strategy that sells</div>
-            <div><span>♕</span> Exclusive approach</div>
-            <div><span>✦</span> Results that last</div>
-            <div><span>◎</span> Global perspective</div>
+        <div class="ma-trust-bar" aria-label="Agency values">
+          <div class="ma-trust-inner">
+            <div class="ma-trust-item">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 17h32L24 40 8 17Zm0 0 8-9h16l8 9M16 8l8 32M32 8l-8 32M8 17h32" /></svg>
+              <span>Strategy that sells</span>
+            </div>
+            <div class="ma-trust-item">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="m8 36 3-22 10 9 4-15 5 15 9-9 2 22H8Zm2-6h30" /></svg>
+              <span>Exclusive approach</span>
+            </div>
+            <div class="ma-trust-item">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4v40M4 24h40M10 10l28 28M38 10 10 38M24 12l4 8 8 4-8 4-4 8-4-8-8-4 8-4 4-8Z" /></svg>
+              <span>Results that last</span>
+            </div>
+            <div class="ma-trust-item">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c6 5 9 10 9 17s-3 12-9 17c-6-5-9-10-9-17s3-12 9-17Z" /></svg>
+              <span>Global perspective</span>
+            </div>
           </div>
         </div>
       </section>
