@@ -1056,3 +1056,203 @@ h2 { font-size: clamp(2.4rem, 4vw, 4.15rem); line-height: 0.95; margin: 0 0 18px
     clip-path: none !important;
   }
 }
+
+/* ========================================================================== */
+/* V5 fixes: persistent intro state, useful positioning, premium mobile menu  */
+/* ========================================================================== */
+
+html.skip-intro .brand-intro { display: none !important; }
+html.skip-intro body { overflow: auto !important; }
+body.menu-open { overflow: hidden; }
+
+/* Positioning is now a compact, useful manifesto instead of an empty runway. */
+.chapter--positioning {
+  padding: clamp(76px, 8vw, 118px) 0;
+  min-height: 0;
+}
+.positioning-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(360px, .82fr);
+  gap: clamp(44px, 7vw, 100px);
+  align-items: end;
+}
+.positioning-heading .display-title {
+  max-width: 860px;
+  color: var(--text);
+}
+.positioning-points {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(21,21,21,.16);
+}
+.positioning-point {
+  display: grid;
+  grid-template-columns: 48px 112px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(21,21,21,.12);
+}
+.positioning-point span {
+  color: var(--gold);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.positioning-point h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem;
+  line-height: 1;
+  font-weight: 600;
+}
+.positioning-point p {
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+/* Override the older reveal clipping that could leave the title invisible. */
+.positioning-heading.reveal {
+  opacity: 1;
+  transform: none;
+}
+.positioning-heading .display-title {
+  clip-path: none !important;
+  transform: none !important;
+}
+
+@media (max-width: 900px) {
+  .positioning-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  /* Full-screen mobile navigation: no giant white card floating over the hero. */
+  .ma-hero-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    padding: 108px clamp(30px, 8vw, 64px) 54px;
+    border: 0;
+    border-radius: 0;
+    background:
+      radial-gradient(circle at 86% 12%, rgba(196,199,204,.13), transparent 32%),
+      radial-gradient(circle at 10% 88%, rgba(184,154,91,.11), transparent 34%),
+      rgba(7,7,7,.985);
+    box-shadow: none;
+    backdrop-filter: blur(18px);
+    transform: translateY(-3%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .34s ease, transform .44s cubic-bezier(.2,.7,.1,1), visibility .34s ease;
+  }
+  .ma-hero-nav::before {
+    content: "MAISON ADRIANO AGENCY";
+    position: absolute;
+    top: 36px;
+    left: clamp(30px, 8vw, 64px);
+    right: 90px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,.13);
+    color: rgba(255,255,255,.72);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .24em;
+  }
+  .ma-hero-nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .ma-hero-nav > a {
+    width: auto;
+    padding: 4px 0;
+    border-radius: 0;
+    color: rgba(255,255,255,.93);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(2.7rem, 11vw, 4.4rem);
+    font-weight: 500;
+    line-height: .98;
+    letter-spacing: -.02em;
+    text-transform: none;
+    transition: color .2s ease, transform .25s ease;
+  }
+  .ma-hero-nav > a.active,
+  .ma-hero-nav > a:hover {
+    color: var(--gold-soft);
+    transform: translateX(8px);
+    background: transparent;
+  }
+  .ma-menu-toggle {
+    position: absolute;
+    z-index: 130;
+    right: 0;
+    top: 18px;
+  }
+  .ma-menu-lines i {
+    background: linear-gradient(90deg, var(--silver), var(--gold-soft));
+    transition: transform .28s ease, opacity .2s ease;
+  }
+  .ma-menu-toggle.is-open .ma-menu-lines i:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+  .ma-menu-toggle.is-open .ma-menu-lines i:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+  .ma-nav-languages {
+    position: absolute;
+    left: clamp(30px, 8vw, 64px);
+    right: clamp(30px, 8vw, 64px);
+    bottom: 42px;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 22px 0 0;
+    border-top: 1px solid rgba(255,255,255,.13);
+  }
+  .ma-nav-languages a {
+    min-width: 48px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,.13);
+    background: rgba(255,255,255,.055);
+    color: rgba(255,255,255,.62);
+  }
+  .ma-nav-languages a.active {
+    color: #0d0d0d;
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--silver), var(--gold-soft));
+  }
+}
+
+@media (max-width: 640px) {
+  .chapter--positioning {
+    padding: 72px 0;
+  }
+  .positioning-point {
+    grid-template-columns: 36px 1fr;
+    gap: 10px 14px;
+  }
+  .positioning-point h3 { font-size: 1.55rem; }
+  .positioning-point p {
+    grid-column: 2;
+    font-size: .88rem;
+  }
+  .ma-hero-nav {
+    padding-top: 100px;
+    padding-bottom: 118px;
+  }
+  .ma-hero-nav > a {
+    font-size: clamp(2.45rem, 12vw, 3.55rem);
+  }
+  .ma-nav-languages { bottom: 30px; }
+}

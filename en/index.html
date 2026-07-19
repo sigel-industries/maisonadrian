@@ -19,6 +19,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      if (sessionStorage.getItem('ma-intro-seen') === '1') {
+        document.documentElement.classList.add('skip-intro');
+      }
+    } catch (_) {}
+  </script>
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="intro-active" data-locale="en">
@@ -91,9 +98,16 @@ brands.</h1>
 
     <section class="section intro-strip chapter chapter--positioning" data-chapter="01">
       <div class="chapter-orb chapter-orb--silver" data-parallax="0.035"></div>
-      <div class="container intro-grid">
-        <p class="section-kicker reveal">Positioning</p>
-        <div><h2 class="display-title reveal">Social marketing for brands that want to look elevated, feel credible and convert without sounding generic.</h2></div>
+      <div class="container positioning-layout">
+        <div class="positioning-heading reveal">
+          <p class="section-kicker">Our approach</p>
+          <h2 class="display-title">Social marketing for brands that want to look elevated, feel credible and convert without sounding generic.</h2>
+        </div>
+        <div class="positioning-points" aria-label="Brand principles">
+          <article class="positioning-point reveal" style="--stagger:100ms"><span>01</span><h3>Clarity</h3><p>A brand has to be understood before it can persuade.</p></article>
+          <article class="positioning-point reveal" style="--stagger:190ms"><span>02</span><h3>Taste</h3><p>A premium impression comes from restraint, not clutter.</p></article>
+          <article class="positioning-point reveal" style="--stagger:280ms"><span>03</span><h3>Impact</h3><p>Content and image must support a real commercial goal.</p></article>
+        </div>
       </div>
     </section>
 

@@ -55,3 +55,9 @@ Nahraď ho reálnym Formspree endpointom.
 6. Folder: `/ (root)`.
 
 Súbor `.nojekyll` už je súčasťou projektu.
+
+
+## V5 fixes
+- Intro sa prehrá iba pri prvom otvorení v rámci karty prehliadača; prepnutie jazyka ho už nespustí znova.
+- Positioning sekcia bola nahradená kompaktnou a obsahovou sekciou Naše smerovanie / Our approach.
+- Mobilné menu je nový celoobrazovkový tmavý overlay s lepším kontrastom a bez prekrývania hero textu.

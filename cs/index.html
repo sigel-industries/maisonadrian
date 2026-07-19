@@ -19,6 +19,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      if (sessionStorage.getItem('ma-intro-seen') === '1') {
+        document.documentElement.classList.add('skip-intro');
+      }
+    } catch (_) {}
+  </script>
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body class="intro-active" data-locale="cs">
@@ -91,9 +98,16 @@ značky.</h1>
 
     <section class="section intro-strip chapter chapter--positioning" data-chapter="01">
       <div class="chapter-orb chapter-orb--silver" data-parallax="0.035"></div>
-      <div class="container intro-grid">
-        <p class="section-kicker reveal">Positioning</p>
-        <div><h2 class="display-title reveal">Social media marketing pro značky, které chtějí působit hodnotně, důvěryhodně a prodávat bez generických frází.</h2></div>
+      <div class="container positioning-layout">
+        <div class="positioning-heading reveal">
+          <p class="section-kicker">Naše směřování</p>
+          <h2 class="display-title">Social media marketing pro značky, které chtějí působit hodnotně, důvěryhodně a prodávat bez generických frází.</h2>
+        </div>
+        <div class="positioning-points" aria-label="Principy značky">
+          <article class="positioning-point reveal" style="--stagger:100ms"><span>01</span><h3>Jasnost</h3><p>Značka musí být pochopena dříve, než začne přesvědčovat.</p></article>
+          <article class="positioning-point reveal" style="--stagger:190ms"><span>02</span><h3>Vkus</h3><p>Prémiový dojem vzniká z disciplíny, ne z přeplněnosti.</p></article>
+          <article class="positioning-point reveal" style="--stagger:280ms"><span>03</span><h3>Výsledek</h3><p>Obsah a image musí podporovat skutečný obchodní cíl.</p></article>
+        </div>
       </div>
     </section>
 
