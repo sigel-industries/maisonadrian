@@ -34,34 +34,161 @@ if (reducedMotion || !intro || introSeen) {
   window.setTimeout(() => finishIntro(), introDuration);
 }
 
+const main = document.querySelector('main');
+const footer = document.querySelector('.site-footer');
 const menuToggle = document.querySelector('.ma-menu-toggle');
-const heroNav = document.querySelector('.ma-hero-nav');
+const mobileMenu = document.querySelector('#ma-mobile-menu');
+const menuClose = mobileMenu?.querySelector('[data-menu-close]');
+const contactModal = document.querySelector('#contact-modal');
+const contactCloseButtons = [...document.querySelectorAll('[data-contact-close]')];
+let lastMenuFocus = null;
+let lastModalFocus = null;
 
-function setMenuState(isOpen) {
-  if (!menuToggle || !heroNav) return;
-  heroNav.classList.toggle('is-open', isOpen);
-  menuToggle.classList.toggle('is-open', isOpen);
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  document.body.classList.toggle('menu-open', isOpen);
+if (mobileMenu && 'inert' in HTMLElement.prototype) mobileMenu.inert = true;
+if (contactModal && 'inert' in HTMLElement.prototype) contactModal.inert = true;
+
+function getFocusable(container) {
+  if (!container) return [];
+  return [...container.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  )].filter((element) => !element.hasAttribute('hidden') && element.offsetParent !== null);
 }
 
-if (menuToggle && heroNav) {
-  menuToggle.addEventListener('click', () => {
-    setMenuState(!heroNav.classList.contains('is-open'));
-  });
-
-  heroNav.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', () => setMenuState(false));
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setMenuState(false);
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) setMenuState(false);
-  });
+function updatePageInert() {
+  const overlayOpen = mobileMenu?.classList.contains('is-open') || contactModal?.classList.contains('is-open');
+  if ('inert' in HTMLElement.prototype) {
+    if (main) main.inert = Boolean(overlayOpen);
+    if (footer) footer.inert = Boolean(overlayOpen);
+  }
 }
+
+function updateScrollLock() {
+  const menuOpen = Boolean(mobileMenu?.classList.contains('is-open'));
+  const modalOpen = Boolean(contactModal?.classList.contains('is-open'));
+  document.body.classList.toggle('menu-open', menuOpen);
+  document.body.classList.toggle('modal-open', modalOpen);
+  updatePageInert();
+}
+
+function openMenu() {
+  if (!mobileMenu || !menuToggle) return;
+  closeContactModal({ restoreFocus: false });
+  lastMenuFocus = document.activeElement;
+  if ('inert' in HTMLElement.prototype) mobileMenu.inert = false;
+  mobileMenu.classList.add('is-open');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+  menuToggle.setAttribute('aria-expanded', 'true');
+  updateScrollLock();
+  window.requestAnimationFrame(() => (menuClose || getFocusable(mobileMenu)[0])?.focus());
+}
+
+function closeMenu({ restoreFocus = true } = {}) {
+  if (!mobileMenu || !menuToggle) return;
+  const wasOpen = mobileMenu.classList.contains('is-open');
+  mobileMenu.classList.remove('is-open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  if ('inert' in HTMLElement.prototype) mobileMenu.inert = true;
+  menuToggle.setAttribute('aria-expanded', 'false');
+  updateScrollLock();
+  if (restoreFocus && wasOpen) {
+    (lastMenuFocus instanceof HTMLElement ? lastMenuFocus : menuToggle).focus();
+  }
+}
+
+function openContactModal(trigger = null) {
+  if (!contactModal) return;
+  const menuWasOpen = Boolean(mobileMenu?.classList.contains('is-open'));
+  closeMenu({ restoreFocus: false });
+  lastModalFocus = trigger || document.activeElement;
+  if ('inert' in HTMLElement.prototype) contactModal.inert = false;
+  contactModal.classList.add('is-open');
+  contactModal.setAttribute('aria-hidden', 'false');
+  updateScrollLock();
+  window.setTimeout(() => {
+    const preferred = contactModal.querySelector('input[name="name"]');
+    (preferred || getFocusable(contactModal)[0])?.focus({ preventScroll: true });
+  }, menuWasOpen ? 320 : 40);
+}
+
+function closeContactModal({ restoreFocus = true } = {}) {
+  if (!contactModal) return;
+  const wasOpen = contactModal.classList.contains('is-open');
+  contactModal.classList.remove('is-open');
+  contactModal.setAttribute('aria-hidden', 'true');
+  if ('inert' in HTMLElement.prototype) contactModal.inert = true;
+  updateScrollLock();
+  if (restoreFocus && wasOpen && lastModalFocus instanceof HTMLElement) {
+    lastModalFocus.focus();
+  }
+}
+
+menuToggle?.addEventListener('click', () => {
+  if (mobileMenu?.classList.contains('is-open')) closeMenu();
+  else openMenu();
+});
+
+menuClose?.addEventListener('click', () => closeMenu());
+
+mobileMenu?.querySelectorAll('[data-menu-link]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (link.hasAttribute('data-contact-open')) {
+      event.preventDefault();
+      openContactModal(link);
+      return;
+    }
+    closeMenu({ restoreFocus: false });
+  });
+});
+
+document.querySelectorAll('[data-contact-open]').forEach((trigger) => {
+  if (mobileMenu?.contains(trigger)) return;
+  trigger.addEventListener('click', (event) => {
+    event.preventDefault();
+    openContactModal(trigger);
+  });
+});
+
+contactCloseButtons.forEach((button) => {
+  button.addEventListener('click', () => closeContactModal());
+});
+
+function trapFocus(event, container) {
+  if (event.key !== 'Tab') return;
+  const focusable = getFocusable(container);
+  if (!focusable.length) {
+    event.preventDefault();
+    return;
+  }
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    if (contactModal?.classList.contains('is-open')) {
+      closeContactModal();
+      return;
+    }
+    if (mobileMenu?.classList.contains('is-open')) closeMenu();
+  }
+
+  if (contactModal?.classList.contains('is-open')) {
+    trapFocus(event, contactModal);
+  } else if (mobileMenu?.classList.contains('is-open')) {
+    trapFocus(event, mobileMenu);
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 900) closeMenu({ restoreFocus: false });
+});
 
 // Store explicit language selection and suppress the intro on the destination page.
 document.querySelectorAll('[data-language]').forEach((link) => {
@@ -143,10 +270,12 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   });
 }
 
-const navLinks = [...document.querySelectorAll('.ma-hero-nav a[href^="#"]')];
-const observedSections = navLinks
-  .map((link) => document.querySelector(link.getAttribute('href')))
-  .filter(Boolean);
+const navLinks = [...document.querySelectorAll('[data-nav-link][href^="#"]')];
+const observedSections = [...new Set(
+  navLinks
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean)
+)];
 
 if (observedSections.length) {
   const activeNavObserver = new IntersectionObserver(

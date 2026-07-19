@@ -1,63 +1,68 @@
-# Maison Adriano Agency — multilingual GitHub Pages build
+# Maison Adriano Agency — multilingual V6
 
-Hotový statický web s tromi jazykmi:
+Projekt pripravený na priame nasadenie na GitHub Pages.
 
-- `/cs/` — čeština
-- `/sk/` — slovenčina
-- `/en/` — English
+## Hotové
 
-Root `index.html` automaticky zistí jazyk prehliadača:
+- zachovaný Netflix-style úvod
+- zachované hero a existujúce sekcie
+- automatická detekcia jazyka:
+  - český prehliadač → `/cs/`
+  - slovenský prehliadač → `/sk/`
+  - ostatné jazyky → `/en/`
+- prepínanie CZ / SK / EN bez opätovného prehrania intro animácie
+- nové samostatné mobilné menu:
+  - plná nepriehľadná obrazovka
+  - nepresvitá obsah webu
+  - funguje otvorenie, zatvorenie, Escape aj focus trap
+  - responzívne aj pri nižších displejoch
+- kontaktný formulár presunutý do modalu
+- modal sa otvorí z:
+  - hlavného CTA v hero
+  - položky Kontakt v desktop menu
+  - položky Kontakt v mobilnom menu
+  - spodného kontaktného CTA
+  - odkazu Kontakt vo footeri
+- formulár je lokalizovaný osobitne pre CZ, SK a EN
+- formulár a menu blokujú scrollovanie pozadia a sú prístupné klávesnicou
 
-- `cs-*` → česká verzia
-- `sk-*` → slovenská verzia
-- všetko ostatné → anglická verzia
+## Štruktúra
 
-Ručný výber jazyka sa uloží do `localStorage`, takže pri ďalšej návšteve sa otvorí zvolená verzia.
-
-## Zachované prvky
-
-- Netflix-style intro
-- pôvodné hero
-- pôvodná hero fotografia
-- nové strieborné logo
-- desktopová navigácia
-- mobilné menu
-
-## Doplnené
-
-- CZ / SK / EN mutácie
-- automatická detekcia jazyka
-- jazykový prepínač
-- scroll progress
-- animované odhaľovanie sekcií
-- stagger animácie kariet
-- jemný parallax dekorácií
-- výraznejšie vizuálne oddelenie sekcií
-- responzívna implementácia
+```text
+index.html
+404.html
+styles.css
+script.js
+assets/
+cs/index.html
+sk/index.html
+en/index.html
+.nojekyll
+```
 
 ## Formulár
 
-Vo všetkých troch jazykových stránkach je zatiaľ placeholder:
+Formulár má zatiaľ testovací Formspree placeholder:
 
 ```html
-action="https://formspree.io/f/your-form-id"
+https://formspree.io/f/your-form-id
 ```
 
-Nahraď ho reálnym Formspree endpointom.
+Po vytvorení Formspree formulára nahraď `your-form-id` vo všetkých troch jazykových súboroch:
+
+- `cs/index.html`
+- `sk/index.html`
+- `en/index.html`
 
 ## Nasadenie na GitHub Pages
 
-1. Rozbaľ ZIP.
-2. Nahraj **obsah ZIPu** do rootu repozitára.
-3. GitHub → Settings → Pages.
-4. Source: `Deploy from a branch`.
-5. Branch: `main`.
-6. Folder: `/ (root)`.
+1. Rozbaľ ZIP s označením `root`.
+2. Nahraj všetok obsah priamo do rootu GitHub repozitára.
+3. Otvor **Settings → Pages**.
+4. Nastav:
+   - Source: `Deploy from a branch`
+   - Branch: `main`
+   - Folder: `/ (root)`
+5. Ulož nastavenie.
 
-Súbor `.nojekyll` už je súčasťou projektu.
-
-
-## V5 fixes
-- Intro sa prehrá iba pri prvom otvorení v rámci karty prehliadača; prepnutie jazyka ho už nespustí znova.
-- Positioning sekcia bola nahradená kompaktnou a obsahovou sekciou Naše smerovanie / Our approach.
-- Mobilné menu je nový celoobrazovkový tmavý overlay s lepším kontrastom a bez prekrývania hero textu.
+Pri aktualizácii existujúceho repozitára prepíš pôvodné súbory novými.
