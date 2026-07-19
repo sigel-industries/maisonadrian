@@ -1,62 +1,57 @@
-# Maison Adriano Agency — ready-to-deploy website
+# Maison Adriano Agency — multilingual GitHub Pages build
 
-Statický web pripravený na GitHub Pages.
+Hotový statický web s tromi jazykmi:
 
-## Čo je hotové
-- Netflix-style intro s novým logom
-- Hero sekcia s pôvodnou fotkou + novým strieborným logom
-- Desktop navigácia bez zbytočného samostatného menu buttonu
-- Mobilné burger menu
-- Sekcie: Services, About, How we work, Clients & case studies, Testimonials, Contact
-- Responzívne rozloženie
+- `/cs/` — čeština
+- `/sk/` — slovenčina
+- `/en/` — English
 
-## Dôležité súbory
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/hero-original.jpg`
-- `assets/hero-original.webp`
-- `assets/brand-logo.png`
-- `assets/brand-logo.webp`
-- `assets/brand-logo-source.jpg`
-- `assets/favicon.png`
-- `.nojekyll`
+Root `index.html` automaticky zistí jazyk prehliadača:
 
-## Čo ešte môžeš neskôr meniť
-### 1. Formulár
-V `index.html` je placeholder Formspree endpoint:
+- `cs-*` → česká verzia
+- `sk-*` → slovenská verzia
+- všetko ostatné → anglická verzia
+
+Ručný výber jazyka sa uloží do `localStorage`, takže pri ďalšej návšteve sa otvorí zvolená verzia.
+
+## Zachované prvky
+
+- Netflix-style intro
+- pôvodné hero
+- pôvodná hero fotografia
+- nové strieborné logo
+- desktopová navigácia
+- mobilné menu
+
+## Doplnené
+
+- CZ / SK / EN mutácie
+- automatická detekcia jazyka
+- jazykový prepínač
+- scroll progress
+- animované odhaľovanie sekcií
+- stagger animácie kariet
+- jemný parallax dekorácií
+- výraznejšie vizuálne oddelenie sekcií
+- responzívna implementácia
+
+## Formulár
+
+Vo všetkých troch jazykových stránkach je zatiaľ placeholder:
 
 ```html
-<form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+action="https://formspree.io/f/your-form-id"
 ```
 
-Nahraď `your-form-id` reálnym endpointom.
+Nahraď ho reálnym Formspree endpointom.
 
-### 2. Dĺžka intro animácie
-V `script.js`:
+## Nasadenie na GitHub Pages
 
-```js
-const introDuration = 4200;
-```
+1. Rozbaľ ZIP.
+2. Nahraj **obsah ZIPu** do rootu repozitára.
+3. GitHub → Settings → Pages.
+4. Source: `Deploy from a branch`.
+5. Branch: `main`.
+6. Folder: `/ (root)`.
 
-Hodnota je v milisekundách.
-
-### 3. Texty a reálne case studies
-Sú tam zatiaľ pripravené premium placeholder texty. Môžu sa kedykoľvek prepísať.
-
-## GitHub Pages deploy
-### Najjednoduchšie
-1. Rozbaľ `maison-adriano-agency-final-root.zip`
-2. Vytvor GitHub repo
-3. Nahraj všetky súbory do rootu repozitára
-4. GitHub → **Settings** → **Pages**
-5. Nastav:
-   - Source = `Deploy from a branch`
-   - Branch = `main`
-   - Folder = `/ (root)`
-6. Ulož
-
-Potom GitHub vygeneruje URL.
-
-## Poznámka
-Logo je spracované z dodaného obrázka do transparentného PNG/WebP, aby dobre fungovalo v intro a hero sekcii.
+Súbor `.nojekyll` už je súčasťou projektu.
