@@ -1,36 +1,34 @@
-# Maison Adriano Agency — V7 VIP Sections
+# Maison Adriano Agency — V8 Editorial House
 
-Hotový statický viacjazyčný web pripravený na GitHub Pages.
+Kompletne prepracovaná viacjazyčná statická verzia pripravená na GitHub Pages.
 
-## Zachované bez prekopania
+## Zachované
 
 - Netflix-style brand intro
-- hero sekcia
-- originálna hero fotografia
-- logo a jazykový systém
+- pôvodná hero sekcia a hero fotografia
+- logo, farby a základný Gucci-inspired luxury smer
 - automatická detekcia CZ / SK / EN
+- prepínanie jazyka bez opakovania intra
 - mobilné full-screen menu
 - responzívny kontaktný modal
 
-## Prepracované sekcie pod hero
+## Nový web pod hero
 
-- Brand manifesto s animovaným pásom služieb
-- Services v tmavom editorial / luxury layoute
-- About s výrazným rozdelením plochy a watermarkom loga
-- Process s animovanou časovou osou
-- Clients & case studies s vizuálnymi editorial panelmi
-- Testimonials v samostatnej tmavej kapitole
-- Contact ako výrazná finálna CTA kapitola, formulár zostáva v modale
+- veľký editorial manifest značky
+- tmavá sticky storytelling sekcia služieb
+- butiková About kapitola s vlastným vizuálnym systémom
+- champagne process kapitola s postupným scrollovaním
+- tri kreatívne direction previews bez vymyslených klientov a referencií
+- výrazná „Our standard“ kapitola
+- samostatná finálna kontaktná CTA
+- desktop, tablet a mobil navrhnuté samostatne
 
-## Animácie
+## Interakcie
 
-- staggerované reveal animácie
-- metalické floating orbs
-- animovaný marquee pás
-- kreslená process línia
-- svetelný hover a glint na kartách služieb
-- rotujúce abstraktné case-study vizuály
-- jemný parallax
+- reveal animácie pri scrollovaní
+- sticky služby s aktívnym číslom
+- jemný parallax a svetelné reakcie na kurzor
+- animované orbitálne prvky, marquee a pečiatka
 - rešpektovanie `prefers-reduced-motion`
 
 ## Štruktúra
@@ -49,11 +47,7 @@ script.js
 
 ## Nasadenie na GitHub Pages
 
-1. Rozbaľ `maison-adriano-v7-vip-sections-root.zip`.
-2. Nahraj celý obsah priamo do rootu GitHub repozitára.
-3. GitHub → Settings → Pages.
-4. Source: `Deploy from a branch`.
-5. Branch: `main`, folder: `/ (root)`.
+Rozbaľ root ZIP a nahraj jeho obsah priamo do rootu repozitára. GitHub Pages potom používa branch `main` a folder `/ (root)`.
 
 ## Kontaktný formulár
 
@@ -63,8 +57,4 @@ Formulár stále obsahuje Formspree placeholder:
 https://formspree.io/f/your-form-id
 ```
 
-Po vytvorení formulára nahraď endpoint v:
-
-- `cs/index.html`
-- `sk/index.html`
-- `en/index.html`
+Endpoint treba neskôr nahradiť v `cs/index.html`, `sk/index.html` a `en/index.html`.

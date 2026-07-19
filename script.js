@@ -304,3 +304,32 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     });
   });
 }
+
+// V8 editorial interactions for post-hero sections.
+const editorialServicePanels = [...document.querySelectorAll('.mae-service-panel')];
+const editorialServiceCurrent = document.querySelector('[data-service-current]');
+
+if (editorialServicePanels.length) {
+  const editorialServiceObserver = new IntersectionObserver(
+    (entries) => {
+      const active = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!active) return;
+      editorialServicePanels.forEach((panel) => panel.classList.toggle('is-active', panel === active.target));
+      if (editorialServiceCurrent) editorialServiceCurrent.textContent = active.target.dataset.service || '01';
+    },
+    { threshold: [0.22, 0.42, 0.62], rootMargin: '-18% 0px -24% 0px' }
+  );
+  editorialServicePanels.forEach((panel) => editorialServiceObserver.observe(panel));
+}
+
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.mae-service-panel, .mae-work-card').forEach((panel) => {
+    panel.addEventListener('pointermove', (event) => {
+      const rect = panel.getBoundingClientRect();
+      panel.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+      panel.style.setProperty('--my', `${event.clientY - rect.top}px`);
+    });
+  });
+}
