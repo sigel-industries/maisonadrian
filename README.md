@@ -1,68 +1,70 @@
-# Maison Adriano Agency — multilingual V6
+# Maison Adriano Agency — V7 VIP Sections
 
-Projekt pripravený na priame nasadenie na GitHub Pages.
+Hotový statický viacjazyčný web pripravený na GitHub Pages.
 
-## Hotové
+## Zachované bez prekopania
 
-- zachovaný Netflix-style úvod
-- zachované hero a existujúce sekcie
-- automatická detekcia jazyka:
-  - český prehliadač → `/cs/`
-  - slovenský prehliadač → `/sk/`
-  - ostatné jazyky → `/en/`
-- prepínanie CZ / SK / EN bez opätovného prehrania intro animácie
-- nové samostatné mobilné menu:
-  - plná nepriehľadná obrazovka
-  - nepresvitá obsah webu
-  - funguje otvorenie, zatvorenie, Escape aj focus trap
-  - responzívne aj pri nižších displejoch
-- kontaktný formulár presunutý do modalu
-- modal sa otvorí z:
-  - hlavného CTA v hero
-  - položky Kontakt v desktop menu
-  - položky Kontakt v mobilnom menu
-  - spodného kontaktného CTA
-  - odkazu Kontakt vo footeri
-- formulár je lokalizovaný osobitne pre CZ, SK a EN
-- formulár a menu blokujú scrollovanie pozadia a sú prístupné klávesnicou
+- Netflix-style brand intro
+- hero sekcia
+- originálna hero fotografia
+- logo a jazykový systém
+- automatická detekcia CZ / SK / EN
+- mobilné full-screen menu
+- responzívny kontaktný modal
+
+## Prepracované sekcie pod hero
+
+- Brand manifesto s animovaným pásom služieb
+- Services v tmavom editorial / luxury layoute
+- About s výrazným rozdelením plochy a watermarkom loga
+- Process s animovanou časovou osou
+- Clients & case studies s vizuálnymi editorial panelmi
+- Testimonials v samostatnej tmavej kapitole
+- Contact ako výrazná finálna CTA kapitola, formulár zostáva v modale
+
+## Animácie
+
+- staggerované reveal animácie
+- metalické floating orbs
+- animovaný marquee pás
+- kreslená process línia
+- svetelný hover a glint na kartách služieb
+- rotujúce abstraktné case-study vizuály
+- jemný parallax
+- rešpektovanie `prefers-reduced-motion`
 
 ## Štruktúra
 
 ```text
-index.html
-404.html
+index.html          automatický jazykový redirect
+/cs/index.html      česká verzia
+/sk/index.html      slovenská verzia
+/en/index.html      anglická verzia
+assets/
 styles.css
 script.js
-assets/
-cs/index.html
-sk/index.html
-en/index.html
+404.html
 .nojekyll
 ```
 
-## Formulár
+## Nasadenie na GitHub Pages
 
-Formulár má zatiaľ testovací Formspree placeholder:
+1. Rozbaľ `maison-adriano-v7-vip-sections-root.zip`.
+2. Nahraj celý obsah priamo do rootu GitHub repozitára.
+3. GitHub → Settings → Pages.
+4. Source: `Deploy from a branch`.
+5. Branch: `main`, folder: `/ (root)`.
+
+## Kontaktný formulár
+
+Formulár stále obsahuje Formspree placeholder:
 
 ```html
 https://formspree.io/f/your-form-id
 ```
 
-Po vytvorení Formspree formulára nahraď `your-form-id` vo všetkých troch jazykových súboroch:
+Po vytvorení formulára nahraď endpoint v:
 
 - `cs/index.html`
 - `sk/index.html`
 - `en/index.html`
-
-## Nasadenie na GitHub Pages
-
-1. Rozbaľ ZIP s označením `root`.
-2. Nahraj všetok obsah priamo do rootu GitHub repozitára.
-3. Otvor **Settings → Pages**.
-4. Nastav:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/ (root)`
-5. Ulož nastavenie.
-
-Pri aktualizácii existujúceho repozitára prepíš pôvodné súbory novými.

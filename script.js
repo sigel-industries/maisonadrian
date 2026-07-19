@@ -293,3 +293,14 @@ if (observedSections.length) {
   );
   observedSections.forEach((section) => activeNavObserver.observe(section));
 }
+
+// V7 interactive lighting for the redesigned post-hero sections.
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.vip-service, .vip-case').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+      card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+    });
+  });
+}
