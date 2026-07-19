@@ -3,44 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maison Adriano — Boutique Social Marketing Agency</title>
+    <title>Maison Adriano Agency — Boutique Social Marketing</title>
     <meta
       name="description"
-      content="Boutique social marketing agency for premium brands. Strategy, social media, content direction, paid campaigns, and brand positioning."
+      content="Maison Adriano Agency is a boutique social marketing studio blending strategy, social media, influencer collaborations, public relations, web design and web audits for premium brands."
     />
     <meta name="theme-color" content="#0b0b0b" />
-    <meta property="og:title" content="Maison Adriano — Boutique Social Marketing Agency" />
+    <meta property="og:title" content="Maison Adriano Agency — Boutique Social Marketing" />
     <meta
       property="og:description"
-      content="We turn social presence into brand gravity — strategy, content direction, and campaigns for brands that want premium positioning."
+      content="Luxury-led social marketing and brand growth for premium businesses that want a stronger presence and better positioning."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/hero-original.jpg" />
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="intro-active">
-    <div class="page-shell"></div>
+    <div class="page-shell" aria-hidden="true"></div>
+
     <div class="brand-intro" id="brand-intro" aria-hidden="true">
-      <div class="intro-light" aria-hidden="true"></div>
-      <div class="intro-lockup">
-        <div class="intro-monogram" aria-hidden="true">
-          <span>M</span>
-        </div>
-        <div class="intro-name">
-          <span class="intro-maison">Maison</span>
-          <strong>Adriano</strong>
-          <span class="intro-agency"><i></i>Agency<i></i></span>
-        </div>
+      <div class="brand-intro__grain"></div>
+      <div class="brand-intro__glow"></div>
+      <div class="brand-intro__shine"></div>
+      <div class="brand-intro__inner">
+        <img src="assets/brand-logo.webp" alt="" class="brand-intro__logo" />
+        <p class="brand-intro__caption">Boutique Social Marketing Agency</p>
       </div>
     </div>
-
 
     <main>
       <section class="ma-hero" id="top" aria-labelledby="hero-title">
@@ -50,11 +46,13 @@
             <img src="assets/hero-original.jpg" alt="" loading="eager" fetchpriority="high" />
           </picture>
 
-          <div class="ma-hero-shade" aria-hidden="true"></div>
+          <div class="ma-hero-wash" aria-hidden="true"></div>
+          <div class="ma-hero-light ma-hero-light--one" aria-hidden="true"></div>
+          <div class="ma-hero-light ma-hero-light--two" aria-hidden="true"></div>
 
           <header class="ma-hero-header">
-            <a class="ma-mobile-brand" href="#top" aria-label="Maison Adriano home">
-              <span>M</span>
+            <a class="ma-mobile-brand" href="#top" aria-label="Maison Adriano Agency home">
+              <span>Maison Adriano</span>
             </a>
 
             <nav class="ma-hero-nav" id="ma-hero-nav" aria-label="Primary navigation">
@@ -66,36 +64,42 @@
             </nav>
 
             <button class="ma-menu-toggle" type="button" aria-expanded="false" aria-controls="ma-hero-nav">
-              <span class="ma-menu-label">Menu</span>
-              <span class="ma-menu-lines" aria-hidden="true"><i></i><i></i></span>
               <span class="sr-only">Toggle navigation</span>
+              <span class="ma-menu-lines" aria-hidden="true"><i></i><i></i></span>
             </button>
           </header>
 
-          <div class="ma-hero-copy">
-            <h1 id="hero-title">
-              We don’t do<br />
-              ordinary.<br />
-              We build <em>iconic</em><br />
-              brands.
-            </h1>
-            <span class="ma-hero-rule" aria-hidden="true"></span>
-            <p>
-              A luxury boutique social marketing<br />
-              agency for brands that aim higher.
-            </p>
-            <a class="ma-hero-cta" href="#contact">
-              <span>Work with us</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
+          <div class="ma-hero-grid">
+            <div class="ma-hero-spacer" aria-hidden="true"></div>
 
-          <aside class="ma-hero-brand" aria-label="Maison Adriano Agency">
-            <div class="ma-brand-monogram" aria-hidden="true">M</div>
-            <span class="ma-brand-maison">Maison</span>
-            <strong>Adriano</strong>
-            <span class="ma-brand-agency"><i></i>Agency<i></i></span>
-          </aside>
+            <div class="ma-hero-copy">
+              <p class="ma-eyebrow">Luxury-led social marketing</p>
+              <h1 id="hero-title">
+                We don’t do<br />
+                ordinary.<br />
+                We build <em>iconic</em><br />
+                brands.
+              </h1>
+              <span class="ma-hero-rule" aria-hidden="true"></span>
+              <p class="ma-hero-subtitle">
+                A boutique agency for brands that want a polished presence,
+                stronger positioning and social marketing that actually moves the business.
+              </p>
+              <div class="ma-hero-actions">
+                <a class="ma-hero-cta" href="#contact">
+                  <span>Work with us</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a class="ma-hero-link" href="#services">Explore services</a>
+              </div>
+            </div>
+
+            <aside class="ma-hero-brand" aria-label="Maison Adriano Agency logo">
+              <div class="ma-logo-card">
+                <img src="assets/brand-logo.webp" alt="Maison Adriano Agency" class="ma-logo-card__image" />
+              </div>
+            </aside>
+          </div>
         </div>
 
         <div class="ma-trust-bar" aria-label="Agency values">
@@ -122,44 +126,12 @@
 
       <section class="section intro-strip reveal">
         <div class="container intro-grid">
-          <p class="section-kicker">Selected positioning</p>
+          <p class="section-kicker">Positioning</p>
           <div>
             <h2 class="display-title">
-              Social marketing for brands that want to look expensive,
-              feel credible, and convert without sounding desperate.
+              Social marketing for brands that want to look elevated,
+              feel credible and convert without sounding generic.
             </h2>
-          </div>
-        </div>
-      </section>
-
-      <section class="section about" id="about">
-        <div class="container about-grid">
-          <div class="reveal">
-            <p class="section-kicker">About</p>
-            <h2>Not a content factory. A boutique growth partner.</h2>
-          </div>
-          <div class="reveal delay-1">
-            <p>
-              Maison Adriano helps ambitious brands show up with clarity, taste and consistency.
-              The focus is simple: build a premium visual presence, refine the message, and make social media support real business goals.
-            </p>
-            <p>
-              Best fit: founders, personal brands, beauty, hospitality, real estate, design-led businesses and premium service providers.
-            </p>
-            <div class="about-points">
-              <article>
-                <span>Luxury sensibility</span>
-                <p>Elegant visual direction without cheesy “VIP” clichés.</p>
-              </article>
-              <article>
-                <span>Conversion logic</span>
-                <p>Beautiful is nice. Useful, memorable and sellable is better.</p>
-              </article>
-              <article>
-                <span>Boutique collaboration</span>
-                <p>Hands-on partnership instead of another agency conveyor belt.</p>
-              </article>
-            </div>
           </div>
         </div>
       </section>
@@ -168,138 +140,104 @@
         <div class="container">
           <div class="section-heading reveal">
             <p class="section-kicker">Services</p>
-            <h2>Signature offers</h2>
+            <h2>Signature services</h2>
             <p>
-              Built for brands that need strategy, polish and consistency — not random posting with motivational captions stapled on top.
+              Strategy, visibility and brand presence shaped for premium businesses that want a stronger public image and better quality inbound interest.
             </p>
           </div>
 
-          <div class="service-list">
+          <div class="service-list service-list--three">
             <article class="service-card reveal">
               <div class="service-no">01</div>
               <div>
-                <h3>Social Media Strategy</h3>
-                <p>
-                  Positioning, audience logic, messaging pillars, content themes, channel priorities and growth direction.
-                </p>
-                <ul>
-                  <li>Brand positioning map</li>
-                  <li>Content architecture</li>
-                  <li>Channel recommendations</li>
-                </ul>
+                <h3>Marketing Strategy</h3>
+                <p>Brand direction, positioning logic, messaging and campaign thinking designed to support long-term growth.</p>
               </div>
             </article>
 
             <article class="service-card reveal delay-1">
               <div class="service-no">02</div>
               <div>
-                <h3>Content Direction & Planning</h3>
-                <p>
-                  Editorial content plans, campaign concepts, post hooks, visual direction and rollout calendars that actually make sense.
-                </p>
-                <ul>
-                  <li>Monthly content plan</li>
-                  <li>Creative direction</li>
-                  <li>Launch / campaign concepts</li>
-                </ul>
+                <h3>Social Media Management &amp; Production</h3>
+                <p>Content planning, creative direction, production support and channel management that keeps the brand consistent.</p>
               </div>
             </article>
 
             <article class="service-card reveal delay-2">
               <div class="service-no">03</div>
               <div>
-                <h3>Brand Presence Refresh</h3>
-                <p>
-                  Audit and refine your social bio, profile presence, visual system, website messaging and overall first impression.
-                </p>
-                <ul>
-                  <li>Instagram / LinkedIn audit</li>
-                  <li>Visual consistency cleanup</li>
-                  <li>Messaging refinement</li>
-                </ul>
+                <h3>Influencer Collaborations</h3>
+                <p>Partnership concepts, creator selection and collaboration structure aligned with the right brand image.</p>
               </div>
             </article>
 
-            <article class="service-card reveal delay-3">
+            <article class="service-card reveal">
               <div class="service-no">04</div>
               <div>
-                <h3>Paid Social Campaign Support</h3>
-                <p>
-                  Creative input, landing-page angle, offer framing and campaign thinking for ads that feel on-brand.
-                </p>
-                <ul>
-                  <li>Offer framing</li>
-                  <li>Creative briefing</li>
-                  <li>Funnel alignment</li>
-                </ul>
+                <h3>Public Relations</h3>
+                <p>Visibility support, narrative framing and brand communication that helps the business feel more established.</p>
+              </div>
+            </article>
+
+            <article class="service-card reveal delay-1">
+              <div class="service-no">05</div>
+              <div>
+                <h3>Web Design</h3>
+                <p>Clean high-converting websites created in collaboration with a specialist web partner to match the brand’s premium positioning.</p>
+              </div>
+            </article>
+
+            <article class="service-card reveal delay-2">
+              <div class="service-no">06</div>
+              <div>
+                <h3>Web Audit</h3>
+                <p>Strategic review of messaging, clarity, UX and web performance — also delivered through specialist collaboration.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section metrics" id="work">
-        <div class="container metrics-grid">
-          <div class="metrics-copy reveal">
-            <p class="section-kicker">Results focus</p>
-            <h2>Presence is only useful when it moves the business.</h2>
-            <p>
-              Good social marketing should improve perceived value, message clarity and the quality of incoming inquiries.
-              That means cleaner positioning, stronger content systems and campaigns designed around outcomes — not vanity metrics theatre.
-            </p>
+      <section class="section about" id="about">
+        <div class="container about-grid">
+          <div class="reveal">
+            <p class="section-kicker">About</p>
+            <h2>A boutique agency with a polished eye and commercial intent.</h2>
           </div>
-          <div class="metrics-cards reveal delay-1">
-            <article>
-              <strong>+42%</strong>
-              <span>More qualified inbound inquiries after a positioning and content refresh.</span>
-            </article>
-            <article>
-              <strong>3x</strong>
-              <span>Stronger campaign consistency from brand message to content to landing page.</span>
-            </article>
-            <article>
-              <strong>Premium</strong>
-              <span>Sharper perceived value that supports higher pricing and better-fit clients.</span>
-            </article>
+          <div class="reveal delay-1">
+            <p>
+              Maison Adriano Agency helps brands show up with more clarity, elegance and consistency across social channels and brand touchpoints.
+              The focus is not volume for the sake of volume, but a presence that feels refined, memorable and commercially useful.
+            </p>
+            <p>
+              Best fit: personal brands, premium services, lifestyle concepts, beauty, hospitality, real estate and businesses that rely on image as much as trust.
+            </p>
+            <div class="about-points">
+              <article>
+                <span>Premium positioning</span>
+                <p>Visual identity and content direction designed to lift perceived value.</p>
+              </article>
+              <article>
+                <span>Strategic thinking</span>
+                <p>Each channel and message should support a bigger commercial goal.</p>
+              </article>
+              <article>
+                <span>Hands-on collaboration</span>
+                <p>Boutique service, selective projects and closer creative involvement.</p>
+              </article>
+            </div>
           </div>
-        </div>
-
-        <div class="container featured-work">
-          <article class="work-card reveal">
-            <div>
-              <p class="work-type">Hospitality brand refresh</p>
-              <h3>Elevated social presence for a premium venue concept.</h3>
-            </div>
-            <p>
-              Refined positioning, visual direction and launch content structure to make the brand feel more premium and conversion-ready.
-            </p>
-          </article>
-          <article class="work-card reveal delay-1">
-            <div>
-              <p class="work-type">Founder-led personal brand</p>
-              <h3>Clearer thought leadership without sounding like a LinkedIn parody.</h3>
-            </div>
-            <p>
-              Rebuilt message pillars, profile structure and content topics to improve authority, relevance and lead quality.
-            </p>
-          </article>
-          <article class="work-card reveal delay-2">
-            <div>
-              <p class="work-type">Luxury service provider</p>
-              <h3>More coherent content and a stronger premium impression.</h3>
-            </div>
-            <p>
-              Tightened visuals, offer communication and conversion pathways across social touchpoints and website messaging.
-            </p>
-          </article>
         </div>
       </section>
 
       <section class="section process alt-surface" id="process">
         <div class="container">
           <div class="section-heading reveal">
-            <p class="section-kicker">Process</p>
-            <h2>How collaboration works</h2>
+            <p class="section-kicker">How we work</p>
+            <h2>From first impression to brand system</h2>
+            <p>
+              A simple process built to remove chaos, sharpen communication and turn presence into a more serious business asset.
+            </p>
           </div>
 
           <div class="timeline">
@@ -307,87 +245,87 @@
               <span>01</span>
               <div>
                 <h3>Discovery</h3>
-                <p>We align on the brand, audience, offer, goals and where the current presence falls flat.</p>
+                <p>We define the brand, audience, goals and what currently feels inconsistent or underpowered.</p>
               </div>
             </article>
             <article class="timeline-item reveal delay-1">
               <span>02</span>
               <div>
-                <h3>Strategy & direction</h3>
-                <p>You get a clear plan covering messaging, content logic, visual direction and channel focus.</p>
+                <h3>Strategy</h3>
+                <p>You get a clear direction for positioning, content, visibility and the role each channel should play.</p>
               </div>
             </article>
             <article class="timeline-item reveal delay-2">
               <span>03</span>
               <div>
-                <h3>Rollout</h3>
-                <p>We shape assets, content structure, campaigns or refreshes depending on the selected scope.</p>
+                <h3>Execution</h3>
+                <p>We shape campaigns, content, collaborations and brand assets based on the selected scope of work.</p>
               </div>
             </article>
             <article class="timeline-item reveal delay-3">
               <span>04</span>
               <div>
                 <h3>Refinement</h3>
-                <p>We review what performs, tighten weak spots, and keep the brand presentation coherent.</p>
+                <p>We review what works, improve what doesn’t and keep the brand looking coherent over time.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section testimonials">
-        <div class="container testimonials-grid">
-          <div class="reveal">
-            <p class="section-kicker">Client feedback</p>
-            <h2>What clients want to feel</h2>
+      <section class="section work" id="work">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-kicker">Clients & case studies</p>
+            <h2>Selected directions and potential outcomes</h2>
+            <p>
+              Replace these placeholders with real client names, categories or case studies once approved.
+            </p>
           </div>
-          <div class="quote-stack reveal delay-1">
-            <blockquote>
-              “Finally, our social presence matched the quality of the service itself. It looked sharper, felt more premium, and inquiries became more relevant.”
-            </blockquote>
-            <cite>— Premium service founder</cite>
-          </div>
-          <div class="quote-stack reveal delay-2">
-            <blockquote>
-              “The strategy gave us structure. No more random posting, no more guesswork — just content that actually supported the business.”
-            </blockquote>
-            <cite>— Lifestyle brand owner</cite>
+
+          <div class="featured-work">
+            <article class="work-card reveal">
+              <div>
+                <p class="work-type">Hospitality</p>
+                <h3>Elevating the image of a premium venue concept.</h3>
+              </div>
+              <p>Brand direction, social consistency and more aligned communication to support a higher-end market position.</p>
+            </article>
+            <article class="work-card reveal delay-1">
+              <div>
+                <p class="work-type">Personal brand</p>
+                <h3>Sharper social storytelling for a founder-led business.</h3>
+              </div>
+              <p>Clearer messaging pillars, stronger authority signals and a more premium digital first impression.</p>
+            </article>
+            <article class="work-card reveal delay-2">
+              <div>
+                <p class="work-type">Luxury services</p>
+                <h3>More credibility through cleaner communication and brand presence.</h3>
+              </div>
+              <p>Improved perceived value through refined content direction, collaboration strategy and website support.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section faq alt-surface">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="section-kicker">FAQ</p>
-            <h2>Short answers, because nobody enjoys vague agency waffle</h2>
+      <section class="section testimonials alt-surface">
+        <div class="container testimonials-grid">
+          <div class="reveal">
+            <p class="section-kicker">Testimonials</p>
+            <h2>Space for proof, not fluff.</h2>
           </div>
-
-          <div class="faq-list">
-            <details class="faq-item reveal">
-              <summary>Who is this best for?</summary>
-              <p>
-                Founders, personal brands and premium businesses that care about image, clarity and conversion — especially if the current presence feels inconsistent or underpowered.
-              </p>
-            </details>
-            <details class="faq-item reveal delay-1">
-              <summary>Do you create content too?</summary>
-              <p>
-                The core focus is strategy and direction, but the scope can include planning, creative guidance and content structure. You can plug in your own team or external production.
-              </p>
-            </details>
-            <details class="faq-item reveal delay-2">
-              <summary>Can this work for a personal brand?</summary>
-              <p>
-                Yes. Especially if the goal is premium positioning, stronger authority, better content pillars and a more coherent public image.
-              </p>
-            </details>
-            <details class="faq-item reveal delay-3">
-              <summary>What if I only need a strategy, not ongoing work?</summary>
-              <p>
-                That is completely fine. Strategy-only engagements are a clean way to get clarity before building or scaling execution.
-              </p>
-            </details>
+          <div class="quote-stack reveal delay-1">
+            <blockquote>
+              “The brand immediately felt more premium, more coherent and much easier to trust. It finally looked like the level we wanted to sell at.”
+            </blockquote>
+            <cite>— Placeholder client testimonial</cite>
+          </div>
+          <div class="quote-stack reveal delay-2">
+            <blockquote>
+              “We stopped posting randomly and started communicating like a real brand with intent. The difference was obvious.”
+            </blockquote>
+            <cite>— Placeholder client testimonial</cite>
           </div>
         </div>
       </section>
@@ -396,10 +334,9 @@
         <div class="container cta-grid reveal">
           <div>
             <p class="section-kicker">Contact</p>
-            <h2>Ready to make the brand look as good as the ambition behind it?</h2>
+            <h2>Ready to turn attention into stronger positioning?</h2>
             <p>
-              Use the form or swap in direct contact details. Since this runs on GitHub Pages,
-              the form is wired for Formspree by default — just replace the endpoint.
+              Use the form below or replace it with direct contact details. The form is set up for a Formspree endpoint placeholder.
             </p>
           </div>
 
@@ -429,13 +366,14 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div>
-          <strong>Maison Adriano</strong>
+          <strong>Maison Adriano Agency</strong>
           <p>Boutique social marketing for premium brands.</p>
         </div>
         <div class="footer-links">
+          <a href="#top">Home</a>
           <a href="#about">About</a>
           <a href="#services">Services</a>
-          <a href="#work">Results</a>
+          <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </div>
       </div>

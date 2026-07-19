@@ -1,10 +1,12 @@
 const intro = document.querySelector('#brand-intro');
-const introDuration = 4350;
+const introDuration = 4200;
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function finishIntro() {
   document.body.classList.remove('intro-active');
-  if (intro) intro.remove();
+  if (!intro) return;
+  intro.classList.add('is-finished');
+  window.setTimeout(() => intro.remove(), 900);
 }
 
 if (reducedMotion || !intro) {
@@ -27,6 +29,13 @@ if (menuToggle && heroNav) {
       heroNav.classList.remove('is-open');
       menuToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!heroNav.contains(event.target) && !menuToggle.contains(event.target)) {
+      heroNav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 
   document.addEventListener('keydown', (event) => {

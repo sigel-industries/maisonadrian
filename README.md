@@ -1,52 +1,62 @@
-# Maison Adriano — Hero + cinematic intro V3
+# Maison Adriano Agency — ready-to-deploy website
 
-Statický one-page web pripravený na GitHub Pages. Táto verzia zachováva pôvodné sekcie projektu, ale mení úvod webu a hero:
+Statický web pripravený na GitHub Pages.
 
-- čierny filmový intro screen,
-- zlatý monogram `M`,
-- postupné zobrazenie `Maison Adriano Agency`,
-- rozdelenie čiernej obrazovky a odhalenie webu,
-- full-width hero s originálnou fotografiou,
-- responzívny desktop / tablet / mobil,
-- mobilné menu,
-- spodný čierny value bar.
+## Čo je hotové
+- Netflix-style intro s novým logom
+- Hero sekcia s pôvodnou fotkou + novým strieborným logom
+- Desktop navigácia bez zbytočného samostatného menu buttonu
+- Mobilné burger menu
+- Sekcie: Services, About, How we work, Clients & case studies, Testimonials, Contact
+- Responzívne rozloženie
 
-## Hero fotografia
+## Dôležité súbory
+- `index.html`
+- `styles.css`
+- `script.js`
+- `assets/hero-original.jpg`
+- `assets/hero-original.webp`
+- `assets/brand-logo.png`
+- `assets/brand-logo.webp`
+- `assets/brand-logo-source.jpg`
+- `assets/favicon.png`
+- `.nojekyll`
 
-Súčasť ZIPu sú oba súbory:
-
-- `assets/hero-original.jpg` — presný originál dodaný používateľom,
-- `assets/hero-original.webp` — optimalizovaná verzia používaná webom.
-
-## Úprava intro animácie
-
-Dĺžku intro sekvencie riadi:
-
-```js
-const introDuration = 4350;
-```
-
-v `script.js`. Časy jednotlivých krokov sú v poslednom bloku `styles.css` pri selektoroch `.brand-intro` a `.intro-*`.
-
-Používateľom s nastavením `prefers-reduced-motion` sa intro preskočí automaticky.
-
-## Kontaktný formulár
-
-Formulár stále obsahuje placeholder Formspree endpoint:
+## Čo ešte môžeš neskôr meniť
+### 1. Formulár
+V `index.html` je placeholder Formspree endpoint:
 
 ```html
-https://formspree.io/f/your-form-id
+<form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
 ```
 
-Pred ostrým spustením ho treba nahradiť reálnym endpointom.
+Nahraď `your-form-id` reálnym endpointom.
 
-## GitHub Pages
+### 2. Dĺžka intro animácie
+V `script.js`:
 
-1. Vytvor nový GitHub repository.
-2. Nahraj obsah tohto priečinka priamo do rootu repozitára.
-3. Otvor `Settings` → `Pages`.
-4. Nastav `Deploy from a branch`.
-5. Vyber branch `main` a folder `/ (root)`.
-6. Ulož.
+```js
+const introDuration = 4200;
+```
 
-Súbor `.nojekyll` už je priložený.
+Hodnota je v milisekundách.
+
+### 3. Texty a reálne case studies
+Sú tam zatiaľ pripravené premium placeholder texty. Môžu sa kedykoľvek prepísať.
+
+## GitHub Pages deploy
+### Najjednoduchšie
+1. Rozbaľ `maison-adriano-agency-final-root.zip`
+2. Vytvor GitHub repo
+3. Nahraj všetky súbory do rootu repozitára
+4. GitHub → **Settings** → **Pages**
+5. Nastav:
+   - Source = `Deploy from a branch`
+   - Branch = `main`
+   - Folder = `/ (root)`
+6. Ulož
+
+Potom GitHub vygeneruje URL.
+
+## Poznámka
+Logo je spracované z dodaného obrázka do transparentného PNG/WebP, aby dobre fungovalo v intro a hero sekcii.
