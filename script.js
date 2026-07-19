@@ -14,12 +14,28 @@ if(serviceScenario){
   const next=serviceScenario.querySelector('[data-service-next]');
   let activeIndex=0;
   const isMobile=()=>window.matchMedia('(max-width: 760px)').matches;
+  const viewport=serviceScenario.querySelector('.scenario-services__viewport');
+  function syncViewportHeight(){
+    if(!viewport)return;
+    const activeScene=scenes[activeIndex];
+    if(!activeScene)return;
+    if(isMobile()){
+      window.requestAnimationFrame(()=>{
+        viewport.style.height=`${activeScene.offsetHeight}px`;
+        viewport.style.minHeight=`${activeScene.offsetHeight}px`;
+      });
+    }else{
+      viewport.style.removeProperty('height');
+      viewport.style.removeProperty('min-height');
+    }
+  }
   function setScene(index,{scroll=false}={}){
     const count=scenes.length;
     activeIndex=(index+count)%count;
     scenes.forEach((scene,i)=>{const active=i===activeIndex;scene.classList.toggle('is-active',active);scene.setAttribute('aria-hidden',String(!active));});
     tabs.forEach((tab,i)=>{const active=i===activeIndex;tab.classList.toggle('is-active',active);tab.setAttribute('aria-current',active?'true':'false');});
     if(currentLabel)currentLabel.textContent=String(activeIndex+1).padStart(2,'0');
+    syncViewportHeight();
     if(scroll&&!isMobile()&&triggers[activeIndex])triggers[activeIndex].scrollIntoView({behavior:reducedMotion?'auto':'smooth',block:'center'});
   }
   tabs.forEach((tab,i)=>tab.addEventListener('click',()=>setScene(i,{scroll:true})));
@@ -34,8 +50,10 @@ if(serviceScenario){
     triggers.forEach((trigger)=>observer.observe(trigger));
   }
   let startX=0;
-  const viewport=serviceScenario.querySelector('.scenario-services__viewport');
   viewport?.addEventListener('touchstart',(event)=>{startX=event.changedTouches[0].clientX;},{passive:true});
   viewport?.addEventListener('touchend',(event)=>{const delta=event.changedTouches[0].clientX-startX;if(Math.abs(delta)>45)setScene(activeIndex+(delta<0?1:-1));},{passive:true});
+  window.addEventListener('resize',syncViewportHeight,{passive:true});
+  window.addEventListener('orientationchange',syncViewportHeight,{passive:true});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(syncViewportHeight).catch(()=>{});
   setScene(0);
 }
