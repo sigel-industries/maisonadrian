@@ -2146,6 +2146,21 @@ content:
       rename: false
       delete: false
     fields:
+    - name: contact
+      label: Kontakt a formulár
+      type: object
+      description: Kontaktné údaje platné pre všetky tri jazykové verzie.
+      fields:
+      - name: email
+        label: Kontaktný e-mail
+        type: string
+        description: Na tento e-mail smerujú správy z formulára.
+        required: true
+      - name: phone
+        label: Telefónne číslo
+        type: string
+        description: Zobrazí sa decentne v hlavičke, mobilnom menu a kontaktnom okne. Kým je pole prázdne, číslo sa na webe nezobrazí.
+        required: false
     - name: images
       label: Hlavné fotografie a logo
       type: object
