@@ -1,108 +1,105 @@
 contact:
   email: info@maisonadriano.com
-  phone: ''
+  phone: +420 064
 images:
   brand_logo: /assets/brand-logo.webp
   hero: /assets/hero-original.webp
   about: /assets/about-portrait.jpg
   vip: /assets/vip-clients.webp
 service_backgrounds:
-- key: strategy
-  image: /assets/service-backgrounds/strategy.png
-- key: social
-  image: /assets/service-backgrounds/social.png
-- key: production
-  image: /assets/service-backgrounds/production.png
-- key: pr
-  image: /assets/service-backgrounds/pr.png
-- key: web
-  image: /assets/service-backgrounds/web.png
-- key: audit
-  image: /assets/service-backgrounds/audit.png
+  - key: strategy
+    image: /assets/service-backgrounds/strategy.png
+  - key: social
+    image: /assets/service-backgrounds/social.png
+  - key: production
+    image: /assets/service-backgrounds/production.png
+  - key: pr
+    image: /assets/service-backgrounds/pr.png
+  - key: web
+    image: /assets/service-backgrounds/web.png
+  - key: audit
+    image: /assets/service-backgrounds/audit.png
 exclusive_links:
   sigel: https://sigel-industries.com/
   tank: https://sigel-industries.github.io/partytankprague/
 client_logos:
   row_1:
-  - name: Jazierce
-    image: /assets/client-logos/01_jazierce.png
-    url: https://jazierce.sk/
-  - name: Alfonz – Kaštieľ v Trstíne
-    image: /assets/client-logos/02_alfonz-kastiel-v-trstine.png
-    url: https://www.kastielalfonz.sk/
-  - name: Synagóga café
-    image: /assets/client-logos/03_synagoga-cafe.jpeg
-    url: https://www.instagram.com/synagoga_cafe/
-  - name: QUIR
-    image: /assets/client-logos/04_quir.png
-    url: https://www.quir.sk/
-  - name: Rezidencia Hviezdoslavova
-    image: /assets/client-logos/05_rezidencia-hviezdoslavova.png
-    url: https://hviezdoslavova.sk/
-  - name: Synagóga bakery
-    image: /assets/client-logos/06_synagoga-bakery.png
-    url: https://www.instagram.com/synagoga_cafe/
-  - name: Public Interest
-    image: /assets/client-logos/07_public-interest.png
-    url: ''
-  - name: Naše peniaze
-    image: /assets/client-logos/08_nase-peniaze.jpeg
-    url: https://www.nasepeniaze.eu/
-  - name: Divadlo Café
-    image: /assets/client-logos/09_divadlo-cafe.png
-    url: https://www.instagram.com/divadlocafe/
-  - name: VAHO REAL
-    image: /assets/client-logos/10_vaho-real.png
-    url: https://www.vahoreal.sk/
-  - name: Požičaj si ma!
-    image: /assets/client-logos/11_pozicaj-si-ma.png
-    url: https://pozicajsidodavku.sk/
-  - name: MÁRIA – Penzión & Restaurant
-    image: /assets/client-logos/12_maria-penzion-restaurant.png
-    url: https://www.mariapenzion.sk/
-  - name: Brunchcafé
-    image: /assets/client-logos/13_brunchcafe.jpeg
-    url: ''
-  - name: Záhrada za Mlynom
-    image: /assets/client-logos/14_zahrada-za-mlynom.png
-    url: https://zahradazamlynom.sk/
+    - name: Jazierce
+      image: /assets/client-logos/01_jazierce.png
+      url: https://jazierce.sk/
+    - name: Alfonz – Kaštieľ v Trstíne
+      image: /assets/client-logos/02_alfonz-kastiel-v-trstine.png
+      url: https://www.kastielalfonz.sk/
+    - name: Synagóga café
+      image: /assets/client-logos/03_synagoga-cafe.jpeg
+      url: https://www.instagram.com/synagoga_cafe/
+    - name: QUIR
+      image: /assets/client-logos/04_quir.png
+      url: https://www.quir.sk/
+    - name: Rezidencia Hviezdoslavova
+      image: /assets/client-logos/05_rezidencia-hviezdoslavova.png
+      url: https://hviezdoslavova.sk/
+    - name: Synagóga bakery
+      image: /assets/client-logos/06_synagoga-bakery.png
+      url: https://www.instagram.com/synagoga_cafe/
+    - name: Public Interest
+      image: /assets/client-logos/07_public-interest.png
+    - name: Naše peniaze
+      image: /assets/client-logos/08_nase-peniaze.jpeg
+      url: https://www.nasepeniaze.eu/
+    - name: Divadlo Café
+      image: /assets/client-logos/09_divadlo-cafe.png
+      url: https://www.instagram.com/divadlocafe/
+    - name: VAHO REAL
+      image: /assets/client-logos/10_vaho-real.png
+      url: https://www.vahoreal.sk/
+    - name: Požičaj si ma!
+      image: /assets/client-logos/11_pozicaj-si-ma.png
+      url: https://pozicajsidodavku.sk/
+    - name: MÁRIA – Penzión & Restaurant
+      image: /assets/client-logos/12_maria-penzion-restaurant.png
+      url: https://www.mariapenzion.sk/
+    - name: Brunchcafé
+      image: /assets/client-logos/13_brunchcafe.jpeg
+    - name: Záhrada za Mlynom
+      image: /assets/client-logos/14_zahrada-za-mlynom.png
+      url: https://zahradazamlynom.sk/
   row_2:
-  - name: Odťahová služba Blaško
-    image: /assets/client-logos/15_odtahova-sluzba-blasko.jpeg
-    url: https://www.odtahovasluzbablasko.sk/
-  - name: Les Républicains
-    image: /assets/client-logos/16_les-republicains.jpeg
-    url: https://republicains.fr/
-  - name: B Accounting Services
-    image: /assets/client-logos/17_b-accounting-services.png
-    url: https://www.bjaccounting.sk/
-  - name: VOLIS International
-    image: /assets/client-logos/18_volis-international.png
-    url: https://www.volis-international.com/en/
-  - name: ALMITO CARP
-    image: /assets/client-logos/19_almito-carp.png
-    url: https://www.facebook.com/100091824447564/
-  - name: Harmony
-    image: /assets/client-logos/20_harmony.png
-    url: ''
-  - name: REDNOD.sk
-    image: /assets/client-logos/21_rednod-sk.png
-    url: https://rednod.sk/
-  - name: AlmaCare
-    image: /assets/client-logos/22_almacare.png
-    url: https://www.almacare.sk/
-  - name: ONLINE TORO
-    image: /assets/client-logos/23_online-toro.png
-    url: https://www.onlinetoro.sk/
-  - name: Nitrianska realitná kancelária
-    image: /assets/client-logos/24_nitrianska-realitna-kancelaria.png
-    url: https://nitrianskereality.com/
-  - name: ProfiBroker
-    image: /assets/client-logos/25_profibroker.png
-    url: https://profibroker.sk/
-  - name: EKVOIA Capital
-    image: /assets/client-logos/26_ekvoia-capital.png
-    url: https://ekvoia.sk/
-  - name: UCM – Univerzita sv. Cyrila a Metoda v Trnave
-    image: /assets/client-logos/27_ucm-univerzita-sv-cyrila-a-metoda-v-trnave.png
-    url: https://www.ucm.sk/
+    - name: Odťahová služba Blaško
+      image: /assets/client-logos/15_odtahova-sluzba-blasko.jpeg
+      url: https://www.odtahovasluzbablasko.sk/
+    - name: Les Républicains
+      image: /assets/client-logos/16_les-republicains.jpeg
+      url: https://republicains.fr/
+    - name: B Accounting Services
+      image: /assets/client-logos/17_b-accounting-services.png
+      url: https://www.bjaccounting.sk/
+    - name: VOLIS International
+      image: /assets/client-logos/18_volis-international.png
+      url: https://www.volis-international.com/en/
+    - name: ALMITO CARP
+      image: /assets/client-logos/19_almito-carp.png
+      url: https://www.facebook.com/100091824447564/
+    - name: Harmony
+      image: /assets/client-logos/20_harmony.png
+    - name: REDNOD.sk
+      image: /assets/client-logos/21_rednod-sk.png
+      url: https://rednod.sk/
+    - name: AlmaCare
+      image: /assets/client-logos/22_almacare.png
+      url: https://www.almacare.sk/
+    - name: ONLINE TORO
+      image: /assets/client-logos/23_online-toro.png
+      url: https://www.onlinetoro.sk/
+    - name: Nitrianska realitná kancelária
+      image: /assets/client-logos/24_nitrianska-realitna-kancelaria.png
+      url: https://nitrianskereality.com/
+    - name: ProfiBroker
+      image: /assets/client-logos/25_profibroker.png
+      url: https://profibroker.sk/
+    - name: EKVOIA Capital
+      image: /assets/client-logos/26_ekvoia-capital.png
+      url: https://ekvoia.sk/
+    - name: UCM – Univerzita sv. Cyrila a Metoda v Trnave
+      image: /assets/client-logos/27_ucm-univerzita-sv-cyrila-a-metoda-v-trnave.png
+      url: https://www.ucm.sk/
