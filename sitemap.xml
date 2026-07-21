@@ -1,25 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://maisonadriano.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/" />
   </url>
   <url>
     <loc>https://maisonadriano.com/sk/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/" />
   </url>
   <url>
     <loc>https://maisonadriano.com/cs/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/"/>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/" />
+  </url>
+  <url>
+    <loc>https://maisonadriano.com/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/ochrana-sukromia/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/ochrana-soukromi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/privacy/" />
+  </url>
+  <url>
+    <loc>https://maisonadriano.com/sk/ochrana-sukromia/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/ochrana-sukromia/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/ochrana-soukromi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/privacy/" />
+  </url>
+  <url>
+    <loc>https://maisonadriano.com/cs/ochrana-soukromi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonadriano.com/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://maisonadriano.com/sk/ochrana-sukromia/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://maisonadriano.com/cs/ochrana-soukromi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonadriano.com/en/privacy/" />
   </url>
 </urlset>
