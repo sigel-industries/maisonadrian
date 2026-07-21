@@ -3,6 +3,7 @@ layout: null
 ---
 {% assign c = site.data.content.en %}
 {% assign sitecms = site.data.site %}
+{% assign contact_phone_href = sitecms.contact.phone | remove: ' ' | remove: '-' | remove: '(' | remove: ')' | remove: '/' %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -80,6 +81,12 @@ layout: null
 <a data-menu-link="" data-nav-link="" href="#work"><span>04</span>Work</a>
 <a aria-controls="contact-modal" data-contact-open="" data-menu-link="" href="#contact-modal"><span>05</span>Contact</a>
 </nav>
+{% if sitecms.contact.phone != blank or sitecms.contact.email != blank %}
+<div class="ma-mobile-menu__direct">
+{% if sitecms.contact.phone != blank %}<a href="tel:{{ contact_phone_href | escape }}">{{ sitecms.contact.phone | escape }}</a>{% endif %}
+{% if sitecms.contact.email != blank %}<a href="mailto:{{ sitecms.contact.email | escape }}">{{ sitecms.contact.email | escape }}</a>{% endif %}
+</div>
+{% endif %}
 </div>
 <div class="ma-mobile-menu__bottom">
 <div aria-label="Language selection" class="ma-mobile-menu__languages">
@@ -109,6 +116,7 @@ layout: null
 <a data-nav-link="" href="#work">Work</a>
 <a aria-controls="contact-modal" data-contact-open="" href="#contact">Contact</a>
 </nav>
+{% if sitecms.contact.phone != blank %}<a class="ma-header-phone" href="tel:{{ contact_phone_href | escape }}">{{ sitecms.contact.phone | escape }}</a>{% endif %}
 <div aria-label="Language selection" class="ma-language-switcher"><a data-language="cs" href="../cs/">CZ</a><a data-language="sk" href="../sk/">SK</a><a aria-current="page" class="active" data-language="en" href="../en/">EN</a></div>
 <button aria-controls="ma-mobile-menu" aria-expanded="false" class="ma-menu-toggle" type="button">
 <span class="sr-only">Menu</span>
@@ -310,10 +318,17 @@ layout: null
 <p class="section-kicker">{{ c.contact_modal.kicker | escape }}</p>
 <h2 id="contact-modal-title">{{ c.contact_modal.title | escape }}</h2>
 <p>{{ c.contact_modal.intro | escape }}</p>
+<div class="ma-contact-modal__channels">
+{% if sitecms.contact.phone != blank %}<a href="tel:{{ contact_phone_href | escape }}"><span>Phone</span><strong>{{ sitecms.contact.phone | escape }}</strong></a>{% endif %}
+<a href="mailto:{{ sitecms.contact.email | escape }}"><span>Email</span><strong>{{ sitecms.contact.email | escape }}</strong></a>
 </div>
-<form action="https://formspree.io/f/your-form-id" class="modal-contact-form" method="POST">
+</div>
+<form action="https://formsubmit.co/ajax/{{ sitecms.contact.email | escape }}" class="modal-contact-form" data-error="The inquiry could not be sent. Please try again or email info@maisonadriano.com." data-sending="Sending…" data-success="Thank you. Your inquiry has been sent successfully." method="POST">
 <input name="language" type="hidden" value="en"/>
 <input name="_subject" type="hidden" value="Maison Adriano Agency — new inquiry (EN)"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input aria-hidden="true" autocomplete="off" class="form-honeypot" name="_honey" tabindex="-1" type="text"/>
 <div class="modal-contact-form__grid">
 <label>Name<input autocomplete="name" name="name" placeholder="Your name" required="" type="text"/></label>
 <label>Email<input autocomplete="email" name="email" placeholder="you@email.com" required="" type="email"/></label>
@@ -325,8 +340,9 @@ layout: null
 <label>About the project<textarea name="message" placeholder="What do you do, what do you want to achieve and where do you need help?" required="" rows="6"></textarea></label>
 <div class="modal-contact-form__footer">
 <p>{{ c.contact_modal.privacy_note | escape }}</p>
-<button type="submit"><span>{{ c.contact_modal.submit | escape }}</span><i aria-hidden="true">→</i></button>
+<button data-submit-button="" type="submit"><span>{{ c.contact_modal.submit | escape }}</span><i aria-hidden="true">→</i></button>
 </div>
+<p aria-live="polite" class="modal-contact-form__feedback" data-form-feedback="" role="status"></p>
 </form>
 </div>
 </div>

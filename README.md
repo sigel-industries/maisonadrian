@@ -51,10 +51,6 @@ Rozbaľ root ZIP a nahraj jeho obsah priamo do rootu repozitára. GitHub Pages p
 
 ## Kontaktný formulár
 
-Formulár stále obsahuje Formspree placeholder:
+Formulár odosiela dopyty cez FormSubmit na globálny e-mail nastavený v `_data/site.yml` (`contact.email`). Rovnaký e-mail a telefón sa dajú upraviť cez Pages CMS v sekcii **Fotografie, logá a odkazy → Globálne obrázky a logá → Kontakt a formulár**.
 
-```html
-https://formspree.io/f/your-form-id
-```
-
-Endpoint treba neskôr nahradiť v `cs/index.html`, `sk/index.html` a `en/index.html`.
+Pri úplne prvom testovacom odoslaní príde na cieľový e-mail aktivačná správa od FormSubmit. Odkaz v nej treba potvrdiť iba raz; ďalšie dopyty už chodia priamo.

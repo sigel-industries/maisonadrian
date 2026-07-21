@@ -57,3 +57,62 @@ if(serviceScenario){
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(syncViewportHeight).catch(()=>{});
   setScene(0);
 }
+
+// Contact form delivery and feedback. Kept isolated so the existing modal/navigation code stays untouched.
+(()=>{
+  const forms=[...document.querySelectorAll('.modal-contact-form')];
+  forms.forEach((form)=>{
+    const button=form.querySelector('[data-submit-button]');
+    const buttonLabel=button?.querySelector('span');
+    const feedback=form.querySelector('[data-form-feedback]');
+    const idleLabel=buttonLabel?.textContent||'';
+
+    const setFeedback=(message,state='')=>{
+      if(!feedback)return;
+      feedback.textContent=message||'';
+      feedback.dataset.state=state;
+    };
+
+    form.addEventListener('submit',async(event)=>{
+      event.preventDefault();
+      if(!form.checkValidity()){
+        form.reportValidity();
+        return;
+      }
+      if(form.classList.contains('is-submitting'))return;
+
+      const endpoint=form.getAttribute('action')||'';
+      if(!endpoint||endpoint.includes('your-form-id')){
+        setFeedback(form.dataset.error||'The form is not configured.','error');
+        return;
+      }
+
+      form.classList.add('is-submitting');
+      if(button)button.disabled=true;
+      if(buttonLabel)buttonLabel.textContent=form.dataset.sending||idleLabel;
+      setFeedback('', '');
+
+      try{
+        const payload=Object.fromEntries(new FormData(form).entries());
+        const response=await fetch(endpoint,{
+          method:'POST',
+          headers:{
+            'Content-Type':'application/json',
+            Accept:'application/json'
+          },
+          body:JSON.stringify(payload)
+        });
+        if(!response.ok)throw new Error(`Form request failed: ${response.status}`);
+        form.reset();
+        setFeedback(form.dataset.success||'Thank you. Your inquiry has been sent.','success');
+      }catch(error){
+        console.error(error);
+        setFeedback(form.dataset.error||'The inquiry could not be sent. Please try again.','error');
+      }finally{
+        form.classList.remove('is-submitting');
+        if(button)button.disabled=false;
+        if(buttonLabel)buttonLabel.textContent=idleLabel;
+      }
+    });
+  });
+})();
