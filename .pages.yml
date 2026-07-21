@@ -1,0 +1,2348 @@
+media:
+- name: site_images
+  label: Obrázky webu
+  input: assets
+  output: /assets
+  extensions:
+  - png
+  - jpg
+  - jpeg
+  - webp
+  rename: safe
+  commit:
+    templates:
+      create: 'cms(media): pridať {filename}'
+      update: 'cms(media): upraviť {filename}'
+      delete: 'cms(media): odstrániť {filename}'
+      rename: 'cms(media): premenovať {oldFilename} na {newFilename}'
+content:
+- name: language_content
+  label: Texty podľa jazyka
+  type: group
+  items:
+  - name: language_sk
+    label: Slovenčina
+    type: group
+    items:
+    - name: sk_intro
+      label: 00 · Úvodná animácia
+      type: file
+      path: _data/content/sk/intro.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: caption
+        label: Text pri úvodnom logu
+        type: string
+        description: Krátky text pod logom počas úvodnej animácie. Zobrazuje sa aj v mobilnom menu.
+        required: true
+    - name: sk_hero
+      label: 01 · Hero a prvá obrazovka
+      type: file
+      path: _data/content/sk/hero.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: eyebrow
+        label: Malý nadpis nad hlavným sloganom
+        type: string
+        description: Krátky riadok úplne hore v hero sekcii.
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Riadok 1
+          type: string
+          required: true
+        - name: line_2
+          label: Riadok 2
+          type: string
+          required: true
+        - name: line_3_prefix
+          label: Riadok 3, bežný text
+          type: string
+          description: Text pred kurzívnym slovom.
+          required: true
+        - name: emphasis
+          label: Riadok 3, zvýraznené slovo
+          type: string
+          description: Kurzívna zlatá časť nadpisu.
+          required: true
+        - name: line_4
+          label: Riadok 4
+          type: string
+          required: true
+        description: Nadpis je rozdelený na pevné riadky, aby sa nerozbil prémiový layout.
+      - name: subtitle
+        label: Úvodný opis
+        type: text
+        description: Odsek pod hlavným nadpisom.
+        required: true
+        options:
+          maxlength: 420
+      - name: primary_cta
+        label: Hlavné tlačidlo
+        type: string
+        description: Text zlatého tlačidla otvárajúceho kontakt.
+        required: true
+      - name: secondary_cta
+        label: Druhý odkaz
+        type: string
+        description: Text odkazu smerujúceho na služby.
+        required: true
+      - name: values
+        label: Štyri hodnoty pod hero sekciou
+        type: string
+        description: Každá položka patrí k jednej ikone. Poradie ani počet nemeníš.
+        required: true
+        list:
+          min: 4
+          max: 4
+    - name: sk_manifest
+      label: 02 · Brand code
+      type: file
+      path: _data/content/sk/manifest.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: line_2_prefix
+          label: Druhý riadok, bežný text
+          type: string
+          required: true
+        - name: emphasis
+          label: Druhý riadok, zvýraznené slovo
+          type: string
+          required: true
+        description: Zvýraznená časť sa zobrazí kurzívou.
+      - name: lead
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: quote
+        label: Veľká citácia
+        type: text
+        description: Krátky výrazný text v pravej časti.
+        required: true
+        options:
+          maxlength: 240
+      - name: body
+        label: Doplňujúci odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+    - name: sk_services
+      label: 03 · Služby
+      type: file
+      path: _data/content/sk/services.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: topbar
+        label: Text v hornej lište služieb
+        type: string
+        required: true
+      - name: detail_cta
+        label: Text tlačidla pri každej službe
+        type: string
+        required: true
+      - name: hint
+        label: Pomocný text pod službami
+        type: string
+        required: true
+      - name: items
+        label: Šesť služieb
+        description: Každú službu otvoríš kliknutím na jej názov. Počet služieb je zámerne zamknutý na šesť.
+        required: true
+        type: object
+        list:
+          min: 6
+          max: 6
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: key
+          label: Interný identifikátor
+          type: string
+          required: true
+          hidden: true
+          readonly: true
+        - name: number
+          label: Číslo služby
+          type: string
+          required: true
+          readonly: true
+        - name: word
+          label: Veľké dekoratívne slovo
+          type: string
+          description: Krátke slovo v obrazovej časti, napr. BRAND alebo WEB.
+          required: true
+        - name: vertical
+          label: Zvislý popis
+          type: string
+          required: true
+        - name: chip
+          label: Malý štítok v obraze
+          type: string
+          required: true
+        - name: panel_kicker
+          label: Malý text v obrazovom paneli
+          type: string
+          required: true
+        - name: panel_title
+          label: Hlavný text v obrazovom paneli
+          type: string
+          required: true
+        - name: panel_meta
+          label: Kľúčové slová v obrazovom paneli
+          type: string
+          required: true
+        - name: category
+          label: Kategória služby
+          type: string
+          required: true
+        - name: title
+          label: Názov služby
+          type: string
+          required: true
+        - name: summary
+          label: Krátky opis služby
+          type: text
+          required: true
+          options:
+            maxlength: 420
+        - name: bullets
+          label: Tri krátke body
+          type: string
+          description: Počet ani poradie nemeníš.
+          required: true
+          list:
+            min: 3
+            max: 3
+        - name: modal
+          label: Detail po otvorení služby
+          type: object
+          fields:
+          - name: kicker
+            label: Malý nadpis detailu
+            type: string
+            required: true
+          - name: title
+            label: Názov v detaile
+            type: string
+            required: true
+          - name: intro
+            label: Úvod detailu
+            type: text
+            required: true
+            options:
+              maxlength: 420
+          - name: includes_title
+            label: Nadpis stĺpca 1
+            type: string
+            required: true
+          - name: includes
+            label: Položky stĺpca 1
+            type: string
+            required: true
+            list:
+              min: 3
+              max: 3
+          - name: best_for_title
+            label: Nadpis stĺpca 2
+            type: string
+            required: true
+          - name: best_for
+            label: Položky stĺpca 2
+            type: string
+            required: true
+            list:
+              min: 2
+              max: 2
+          - name: outputs_title
+            label: Nadpis stĺpca 3
+            type: string
+            required: true
+          - name: outputs
+            label: Položky stĺpca 3
+            type: string
+            required: true
+            list:
+              min: 3
+              max: 3
+          - name: cta
+            label: Tlačidlo v detaile
+            type: string
+            required: true
+          description: Obsah modálneho okna, ktoré sa otvorí po kliknutí na službu.
+    - name: sk_about
+      label: 04 · O agentúre
+      type: file
+      path: _data/content/sk/about.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: floating_label
+        label: Text na fotografii
+        type: string
+        required: true
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: body
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 700
+      - name: note
+        label: Doplňujúca poznámka
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: image_alt
+        label: Popis fotografie pre prístupnosť
+        type: string
+        description: Krátko opíš, čo je na fotografii. Na stránke sa bežne nezobrazuje.
+        required: true
+      - name: principles
+        label: Tri princípy agentúry
+        required: true
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: number
+          label: Číslo
+          type: string
+          required: true
+          readonly: true
+        - name: title
+          label: Názov
+          type: string
+          required: true
+        - name: text
+          label: Opis
+          type: text
+          required: true
+          options:
+            maxlength: 360
+    - name: sk_collaboration
+      label: 05 · Proces a exkluzívne spolupráce
+      type: file
+      path: _data/content/sk/collaboration.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: steps
+        label: Štyri kroky spolupráce
+        required: true
+        type: object
+        list:
+          min: 4
+          max: 4
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: number
+          label: Číslo
+          type: string
+          required: true
+          readonly: true
+        - name: title
+          label: Názov kroku
+          type: string
+          required: true
+        - name: text
+          label: Opis kroku
+          type: text
+          required: true
+          options:
+            maxlength: 360
+      - name: exclusive
+        label: Exkluzívne spolupráce
+        type: object
+        fields:
+        - name: kicker
+          label: Malý nadpis
+          type: string
+          required: true
+        - name: title
+          label: Hlavný nadpis
+          type: string
+          required: true
+        - name: intro
+          label: Úvodný opis
+          type: text
+          required: true
+          options:
+            maxlength: 500
+        - name: projects
+          label: Dva projekty
+          required: true
+          type: object
+          list:
+            min: 2
+            max: 2
+            collapsible:
+              collapsed: true
+              summary: '{number} · {title_line_1} {title_line_2}'
+          fields:
+          - name: key
+            label: Interný identifikátor
+            type: string
+            required: true
+            hidden: true
+            readonly: true
+          - name: number
+            label: Číslo
+            type: string
+            required: true
+            readonly: true
+          - name: meta
+            label: Malý popis nad názvom
+            type: string
+            required: true
+          - name: title_line_1
+            label: Názov, prvý riadok
+            type: string
+            required: true
+          - name: title_line_2
+            label: Názov, druhý riadok
+            type: string
+            required: true
+          - name: summary
+            label: Opis na karte
+            type: text
+            required: true
+            options:
+              maxlength: 420
+          - name: button
+            label: Text tlačidla
+            type: string
+            required: true
+          - name: modal
+            label: Detail spolupráce
+            type: object
+            fields:
+            - name: kicker
+              label: Malý nadpis detailu
+              type: string
+              required: true
+            - name: title
+              label: Názov v detaile
+              type: string
+              required: true
+            - name: intro
+              label: Úvod detailu
+              type: text
+              required: true
+              options:
+                maxlength: 420
+            - name: scope_title
+              label: Nadpis rozsahu
+              type: string
+              required: true
+            - name: scope
+              label: Tri oblasti spolupráce
+              type: string
+              required: true
+              list:
+                min: 3
+                max: 3
+            - name: direction_title
+              label: Nadpis smerovania
+              type: string
+              required: true
+            - name: direction
+              label: Smerovanie projektu
+              type: text
+              required: true
+              options:
+                maxlength: 280
+            - name: link_text
+              label: Text odkazu na web
+              type: string
+              required: true
+    - name: sk_clients
+      label: 06 · Klienti, nadpis sekcie
+      type: file
+      path: _data/content/sk/clients.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+    - name: sk_vip
+      label: 07 · VIP klienti
+      type: file
+      path: _data/content/sk/vip.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: lead
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 550
+      - name: quote_line_1
+        label: Citácia, prvý riadok
+        type: string
+        required: true
+      - name: quote_line_2
+        label: Citácia, druhý riadok
+        type: string
+        required: true
+      - name: image_alt
+        label: Popis fotografie pre prístupnosť
+        type: string
+        required: true
+    - name: sk_closing
+      label: 08 · Záverečná výzva
+      type: file
+      path: _data/content/sk/closing.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: intro
+        label: Úvodný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: button
+        label: Text tlačidla
+        type: string
+        required: true
+      - name: note
+        label: Malá poznámka pod tlačidlom
+        type: string
+        required: true
+    - name: sk_footer
+      label: 09 · Pätička
+      type: file
+      path: _data/content/sk/footer.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: tagline
+        label: Krátky text v pätičke
+        type: string
+        required: true
+    - name: sk_contact_modal
+      label: 10 · Kontaktné okno
+      type: file
+      path: _data/content/sk/contact_modal.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: aside_kicker
+        label: Ľavý panel, malý nadpis
+        type: string
+        required: true
+      - name: aside_title
+        label: Ľavý panel, hlavný nadpis
+        type: string
+        required: true
+      - name: aside_text
+        label: Ľavý panel, opis
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: kicker
+        label: Formulár, malý nadpis
+        type: string
+        required: true
+      - name: title
+        label: Formulár, hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Formulár, úvodný text
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: privacy_note
+        label: Poznámka o spracovaní údajov
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: submit
+        label: Text odosielacieho tlačidla
+        type: string
+        required: true
+  - name: language_cs
+    label: Čeština
+    type: group
+    items:
+    - name: cs_intro
+      label: 00 · Úvodná animácia
+      type: file
+      path: _data/content/cs/intro.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: caption
+        label: Text pri úvodnom logu
+        type: string
+        description: Krátky text pod logom počas úvodnej animácie. Zobrazuje sa aj v mobilnom menu.
+        required: true
+    - name: cs_hero
+      label: 01 · Hero a prvá obrazovka
+      type: file
+      path: _data/content/cs/hero.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: eyebrow
+        label: Malý nadpis nad hlavným sloganom
+        type: string
+        description: Krátky riadok úplne hore v hero sekcii.
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Riadok 1
+          type: string
+          required: true
+        - name: line_2
+          label: Riadok 2
+          type: string
+          required: true
+        - name: line_3_prefix
+          label: Riadok 3, bežný text
+          type: string
+          description: Text pred kurzívnym slovom.
+          required: true
+        - name: emphasis
+          label: Riadok 3, zvýraznené slovo
+          type: string
+          description: Kurzívna zlatá časť nadpisu.
+          required: true
+        - name: line_4
+          label: Riadok 4
+          type: string
+          required: true
+        description: Nadpis je rozdelený na pevné riadky, aby sa nerozbil prémiový layout.
+      - name: subtitle
+        label: Úvodný opis
+        type: text
+        description: Odsek pod hlavným nadpisom.
+        required: true
+        options:
+          maxlength: 420
+      - name: primary_cta
+        label: Hlavné tlačidlo
+        type: string
+        description: Text zlatého tlačidla otvárajúceho kontakt.
+        required: true
+      - name: secondary_cta
+        label: Druhý odkaz
+        type: string
+        description: Text odkazu smerujúceho na služby.
+        required: true
+      - name: values
+        label: Štyri hodnoty pod hero sekciou
+        type: string
+        description: Každá položka patrí k jednej ikone. Poradie ani počet nemeníš.
+        required: true
+        list:
+          min: 4
+          max: 4
+    - name: cs_manifest
+      label: 02 · Brand code
+      type: file
+      path: _data/content/cs/manifest.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: line_2_prefix
+          label: Druhý riadok, bežný text
+          type: string
+          required: true
+        - name: emphasis
+          label: Druhý riadok, zvýraznené slovo
+          type: string
+          required: true
+        description: Zvýraznená časť sa zobrazí kurzívou.
+      - name: lead
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: quote
+        label: Veľká citácia
+        type: text
+        description: Krátky výrazný text v pravej časti.
+        required: true
+        options:
+          maxlength: 240
+      - name: body
+        label: Doplňujúci odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+    - name: cs_services
+      label: 03 · Služby
+      type: file
+      path: _data/content/cs/services.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: topbar
+        label: Text v hornej lište služieb
+        type: string
+        required: true
+      - name: detail_cta
+        label: Text tlačidla pri každej službe
+        type: string
+        required: true
+      - name: hint
+        label: Pomocný text pod službami
+        type: string
+        required: true
+      - name: items
+        label: Šesť služieb
+        description: Každú službu otvoríš kliknutím na jej názov. Počet služieb je zámerne zamknutý na šesť.
+        required: true
+        type: object
+        list:
+          min: 6
+          max: 6
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: key
+          label: Interný identifikátor
+          type: string
+          required: true
+          hidden: true
+          readonly: true
+        - name: number
+          label: Číslo služby
+          type: string
+          required: true
+          readonly: true
+        - name: word
+          label: Veľké dekoratívne slovo
+          type: string
+          description: Krátke slovo v obrazovej časti, napr. BRAND alebo WEB.
+          required: true
+        - name: vertical
+          label: Zvislý popis
+          type: string
+          required: true
+        - name: chip
+          label: Malý štítok v obraze
+          type: string
+          required: true
+        - name: panel_kicker
+          label: Malý text v obrazovom paneli
+          type: string
+          required: true
+        - name: panel_title
+          label: Hlavný text v obrazovom paneli
+          type: string
+          required: true
+        - name: panel_meta
+          label: Kľúčové slová v obrazovom paneli
+          type: string
+          required: true
+        - name: category
+          label: Kategória služby
+          type: string
+          required: true
+        - name: title
+          label: Názov služby
+          type: string
+          required: true
+        - name: summary
+          label: Krátky opis služby
+          type: text
+          required: true
+          options:
+            maxlength: 420
+        - name: bullets
+          label: Tri krátke body
+          type: string
+          description: Počet ani poradie nemeníš.
+          required: true
+          list:
+            min: 3
+            max: 3
+        - name: modal
+          label: Detail po otvorení služby
+          type: object
+          fields:
+          - name: kicker
+            label: Malý nadpis detailu
+            type: string
+            required: true
+          - name: title
+            label: Názov v detaile
+            type: string
+            required: true
+          - name: intro
+            label: Úvod detailu
+            type: text
+            required: true
+            options:
+              maxlength: 420
+          - name: includes_title
+            label: Nadpis stĺpca 1
+            type: string
+            required: true
+          - name: includes
+            label: Položky stĺpca 1
+            type: string
+            required: true
+            list:
+              min: 3
+              max: 3
+          - name: best_for_title
+            label: Nadpis stĺpca 2
+            type: string
+            required: true
+          - name: best_for
+            label: Položky stĺpca 2
+            type: string
+            required: true
+            list:
+              min: 2
+              max: 2
+          - name: outputs_title
+            label: Nadpis stĺpca 3
+            type: string
+            required: true
+          - name: outputs
+            label: Položky stĺpca 3
+            type: string
+            required: true
+            list:
+              min: 3
+              max: 3
+          - name: cta
+            label: Tlačidlo v detaile
+            type: string
+            required: true
+          description: Obsah modálneho okna, ktoré sa otvorí po kliknutí na službu.
+    - name: cs_about
+      label: 04 · O agentúre
+      type: file
+      path: _data/content/cs/about.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: floating_label
+        label: Text na fotografii
+        type: string
+        required: true
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: body
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 700
+      - name: note
+        label: Doplňujúca poznámka
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: image_alt
+        label: Popis fotografie pre prístupnosť
+        type: string
+        description: Krátko opíš, čo je na fotografii. Na stránke sa bežne nezobrazuje.
+        required: true
+      - name: principles
+        label: Tri princípy agentúry
+        required: true
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: number
+          label: Číslo
+          type: string
+          required: true
+          readonly: true
+        - name: title
+          label: Názov
+          type: string
+          required: true
+        - name: text
+          label: Opis
+          type: text
+          required: true
+          options:
+            maxlength: 360
+    - name: cs_collaboration
+      label: 05 · Proces a exkluzívne spolupráce
+      type: file
+      path: _data/content/cs/collaboration.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: steps
+        label: Štyri kroky spolupráce
+        required: true
+        type: object
+        list:
+          min: 4
+          max: 4
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: number
+          label: Číslo
+          type: string
+          required: true
+          readonly: true
+        - name: title
+          label: Názov kroku
+          type: string
+          required: true
+        - name: text
+          label: Opis kroku
+          type: text
+          required: true
+          options:
+            maxlength: 360
+      - name: exclusive
+        label: Exkluzívne spolupráce
+        type: object
+        fields:
+        - name: kicker
+          label: Malý nadpis
+          type: string
+          required: true
+        - name: title
+          label: Hlavný nadpis
+          type: string
+          required: true
+        - name: intro
+          label: Úvodný opis
+          type: text
+          required: true
+          options:
+            maxlength: 500
+        - name: projects
+          label: Dva projekty
+          required: true
+          type: object
+          list:
+            min: 2
+            max: 2
+            collapsible:
+              collapsed: true
+              summary: '{number} · {title_line_1} {title_line_2}'
+          fields:
+          - name: key
+            label: Interný identifikátor
+            type: string
+            required: true
+            hidden: true
+            readonly: true
+          - name: number
+            label: Číslo
+            type: string
+            required: true
+            readonly: true
+          - name: meta
+            label: Malý popis nad názvom
+            type: string
+            required: true
+          - name: title_line_1
+            label: Názov, prvý riadok
+            type: string
+            required: true
+          - name: title_line_2
+            label: Názov, druhý riadok
+            type: string
+            required: true
+          - name: summary
+            label: Opis na karte
+            type: text
+            required: true
+            options:
+              maxlength: 420
+          - name: button
+            label: Text tlačidla
+            type: string
+            required: true
+          - name: modal
+            label: Detail spolupráce
+            type: object
+            fields:
+            - name: kicker
+              label: Malý nadpis detailu
+              type: string
+              required: true
+            - name: title
+              label: Názov v detaile
+              type: string
+              required: true
+            - name: intro
+              label: Úvod detailu
+              type: text
+              required: true
+              options:
+                maxlength: 420
+            - name: scope_title
+              label: Nadpis rozsahu
+              type: string
+              required: true
+            - name: scope
+              label: Tri oblasti spolupráce
+              type: string
+              required: true
+              list:
+                min: 3
+                max: 3
+            - name: direction_title
+              label: Nadpis smerovania
+              type: string
+              required: true
+            - name: direction
+              label: Smerovanie projektu
+              type: text
+              required: true
+              options:
+                maxlength: 280
+            - name: link_text
+              label: Text odkazu na web
+              type: string
+              required: true
+    - name: cs_clients
+      label: 06 · Klienti, nadpis sekcie
+      type: file
+      path: _data/content/cs/clients.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+    - name: cs_vip
+      label: 07 · VIP klienti
+      type: file
+      path: _data/content/cs/vip.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: lead
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 550
+      - name: quote_line_1
+        label: Citácia, prvý riadok
+        type: string
+        required: true
+      - name: quote_line_2
+        label: Citácia, druhý riadok
+        type: string
+        required: true
+      - name: image_alt
+        label: Popis fotografie pre prístupnosť
+        type: string
+        required: true
+    - name: cs_closing
+      label: 08 · Záverečná výzva
+      type: file
+      path: _data/content/cs/closing.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: intro
+        label: Úvodný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: button
+        label: Text tlačidla
+        type: string
+        required: true
+      - name: note
+        label: Malá poznámka pod tlačidlom
+        type: string
+        required: true
+    - name: cs_footer
+      label: 09 · Pätička
+      type: file
+      path: _data/content/cs/footer.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: tagline
+        label: Krátky text v pätičke
+        type: string
+        required: true
+    - name: cs_contact_modal
+      label: 10 · Kontaktné okno
+      type: file
+      path: _data/content/cs/contact_modal.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: aside_kicker
+        label: Ľavý panel, malý nadpis
+        type: string
+        required: true
+      - name: aside_title
+        label: Ľavý panel, hlavný nadpis
+        type: string
+        required: true
+      - name: aside_text
+        label: Ľavý panel, opis
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: kicker
+        label: Formulár, malý nadpis
+        type: string
+        required: true
+      - name: title
+        label: Formulár, hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Formulár, úvodný text
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: privacy_note
+        label: Poznámka o spracovaní údajov
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: submit
+        label: Text odosielacieho tlačidla
+        type: string
+        required: true
+  - name: language_en
+    label: English
+    type: group
+    items:
+    - name: en_intro
+      label: 00 · Úvodná animácia
+      type: file
+      path: _data/content/en/intro.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: caption
+        label: Text pri úvodnom logu
+        type: string
+        description: Krátky text pod logom počas úvodnej animácie. Zobrazuje sa aj v mobilnom menu.
+        required: true
+    - name: en_hero
+      label: 01 · Hero a prvá obrazovka
+      type: file
+      path: _data/content/en/hero.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: eyebrow
+        label: Malý nadpis nad hlavným sloganom
+        type: string
+        description: Krátky riadok úplne hore v hero sekcii.
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Riadok 1
+          type: string
+          required: true
+        - name: line_2
+          label: Riadok 2
+          type: string
+          required: true
+        - name: line_3_prefix
+          label: Riadok 3, bežný text
+          type: string
+          description: Text pred kurzívnym slovom.
+          required: true
+        - name: emphasis
+          label: Riadok 3, zvýraznené slovo
+          type: string
+          description: Kurzívna zlatá časť nadpisu.
+          required: true
+        - name: line_4
+          label: Riadok 4
+          type: string
+          required: true
+        description: Nadpis je rozdelený na pevné riadky, aby sa nerozbil prémiový layout.
+      - name: subtitle
+        label: Úvodný opis
+        type: text
+        description: Odsek pod hlavným nadpisom.
+        required: true
+        options:
+          maxlength: 420
+      - name: primary_cta
+        label: Hlavné tlačidlo
+        type: string
+        description: Text zlatého tlačidla otvárajúceho kontakt.
+        required: true
+      - name: secondary_cta
+        label: Druhý odkaz
+        type: string
+        description: Text odkazu smerujúceho na služby.
+        required: true
+      - name: values
+        label: Štyri hodnoty pod hero sekciou
+        type: string
+        description: Každá položka patrí k jednej ikone. Poradie ani počet nemeníš.
+        required: true
+        list:
+          min: 4
+          max: 4
+    - name: en_manifest
+      label: 02 · Brand code
+      type: file
+      path: _data/content/en/manifest.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: line_2_prefix
+          label: Druhý riadok, bežný text
+          type: string
+          required: true
+        - name: emphasis
+          label: Druhý riadok, zvýraznené slovo
+          type: string
+          required: true
+        description: Zvýraznená časť sa zobrazí kurzívou.
+      - name: lead
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: quote
+        label: Veľká citácia
+        type: text
+        description: Krátky výrazný text v pravej časti.
+        required: true
+        options:
+          maxlength: 240
+      - name: body
+        label: Doplňujúci odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+    - name: en_services
+      label: 03 · Služby
+      type: file
+      path: _data/content/en/services.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: topbar
+        label: Text v hornej lište služieb
+        type: string
+        required: true
+      - name: detail_cta
+        label: Text tlačidla pri každej službe
+        type: string
+        required: true
+      - name: hint
+        label: Pomocný text pod službami
+        type: string
+        required: true
+      - name: items
+        label: Šesť služieb
+        description: Každú službu otvoríš kliknutím na jej názov. Počet služieb je zámerne zamknutý na šesť.
+        required: true
+        type: object
+        list:
+          min: 6
+          max: 6
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: key
+          label: Interný identifikátor
+          type: string
+          required: true
+          hidden: true
+          readonly: true
+        - name: number
+          label: Číslo služby
+          type: string
+          required: true
+          readonly: true
+        - name: word
+          label: Veľké dekoratívne slovo
+          type: string
+          description: Krátke slovo v obrazovej časti, napr. BRAND alebo WEB.
+          required: true
+        - name: vertical
+          label: Zvislý popis
+          type: string
+          required: true
+        - name: chip
+          label: Malý štítok v obraze
+          type: string
+          required: true
+        - name: panel_kicker
+          label: Malý text v obrazovom paneli
+          type: string
+          required: true
+        - name: panel_title
+          label: Hlavný text v obrazovom paneli
+          type: string
+          required: true
+        - name: panel_meta
+          label: Kľúčové slová v obrazovom paneli
+          type: string
+          required: true
+        - name: category
+          label: Kategória služby
+          type: string
+          required: true
+        - name: title
+          label: Názov služby
+          type: string
+          required: true
+        - name: summary
+          label: Krátky opis služby
+          type: text
+          required: true
+          options:
+            maxlength: 420
+        - name: bullets
+          label: Tri krátke body
+          type: string
+          description: Počet ani poradie nemeníš.
+          required: true
+          list:
+            min: 3
+            max: 3
+        - name: modal
+          label: Detail po otvorení služby
+          type: object
+          fields:
+          - name: kicker
+            label: Malý nadpis detailu
+            type: string
+            required: true
+          - name: title
+            label: Názov v detaile
+            type: string
+            required: true
+          - name: intro
+            label: Úvod detailu
+            type: text
+            required: true
+            options:
+              maxlength: 420
+          - name: includes_title
+            label: Nadpis stĺpca 1
+            type: string
+            required: true
+          - name: includes
+            label: Položky stĺpca 1
+            type: string
+            required: true
+            list:
+              min: 3
+              max: 3
+          - name: best_for_title
+            label: Nadpis stĺpca 2
+            type: string
+            required: true
+          - name: best_for
+            label: Položky stĺpca 2
+            type: string
+            required: true
+            list:
+              min: 2
+              max: 2
+          - name: outputs_title
+            label: Nadpis stĺpca 3
+            type: string
+            required: true
+          - name: outputs
+            label: Položky stĺpca 3
+            type: string
+            required: true
+            list:
+              min: 3
+              max: 3
+          - name: cta
+            label: Tlačidlo v detaile
+            type: string
+            required: true
+          description: Obsah modálneho okna, ktoré sa otvorí po kliknutí na službu.
+    - name: en_about
+      label: 04 · O agentúre
+      type: file
+      path: _data/content/en/about.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: floating_label
+        label: Text na fotografii
+        type: string
+        required: true
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: body
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 700
+      - name: note
+        label: Doplňujúca poznámka
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: image_alt
+        label: Popis fotografie pre prístupnosť
+        type: string
+        description: Krátko opíš, čo je na fotografii. Na stránke sa bežne nezobrazuje.
+        required: true
+      - name: principles
+        label: Tri princípy agentúry
+        required: true
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: number
+          label: Číslo
+          type: string
+          required: true
+          readonly: true
+        - name: title
+          label: Názov
+          type: string
+          required: true
+        - name: text
+          label: Opis
+          type: text
+          required: true
+          options:
+            maxlength: 360
+    - name: en_collaboration
+      label: 05 · Proces a exkluzívne spolupráce
+      type: file
+      path: _data/content/en/collaboration.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: steps
+        label: Štyri kroky spolupráce
+        required: true
+        type: object
+        list:
+          min: 4
+          max: 4
+          collapsible:
+            collapsed: true
+            summary: '{number} · {title}'
+        fields:
+        - name: number
+          label: Číslo
+          type: string
+          required: true
+          readonly: true
+        - name: title
+          label: Názov kroku
+          type: string
+          required: true
+        - name: text
+          label: Opis kroku
+          type: text
+          required: true
+          options:
+            maxlength: 360
+      - name: exclusive
+        label: Exkluzívne spolupráce
+        type: object
+        fields:
+        - name: kicker
+          label: Malý nadpis
+          type: string
+          required: true
+        - name: title
+          label: Hlavný nadpis
+          type: string
+          required: true
+        - name: intro
+          label: Úvodný opis
+          type: text
+          required: true
+          options:
+            maxlength: 500
+        - name: projects
+          label: Dva projekty
+          required: true
+          type: object
+          list:
+            min: 2
+            max: 2
+            collapsible:
+              collapsed: true
+              summary: '{number} · {title_line_1} {title_line_2}'
+          fields:
+          - name: key
+            label: Interný identifikátor
+            type: string
+            required: true
+            hidden: true
+            readonly: true
+          - name: number
+            label: Číslo
+            type: string
+            required: true
+            readonly: true
+          - name: meta
+            label: Malý popis nad názvom
+            type: string
+            required: true
+          - name: title_line_1
+            label: Názov, prvý riadok
+            type: string
+            required: true
+          - name: title_line_2
+            label: Názov, druhý riadok
+            type: string
+            required: true
+          - name: summary
+            label: Opis na karte
+            type: text
+            required: true
+            options:
+              maxlength: 420
+          - name: button
+            label: Text tlačidla
+            type: string
+            required: true
+          - name: modal
+            label: Detail spolupráce
+            type: object
+            fields:
+            - name: kicker
+              label: Malý nadpis detailu
+              type: string
+              required: true
+            - name: title
+              label: Názov v detaile
+              type: string
+              required: true
+            - name: intro
+              label: Úvod detailu
+              type: text
+              required: true
+              options:
+                maxlength: 420
+            - name: scope_title
+              label: Nadpis rozsahu
+              type: string
+              required: true
+            - name: scope
+              label: Tri oblasti spolupráce
+              type: string
+              required: true
+              list:
+                min: 3
+                max: 3
+            - name: direction_title
+              label: Nadpis smerovania
+              type: string
+              required: true
+            - name: direction
+              label: Smerovanie projektu
+              type: text
+              required: true
+              options:
+                maxlength: 280
+            - name: link_text
+              label: Text odkazu na web
+              type: string
+              required: true
+    - name: en_clients
+      label: 06 · Klienti, nadpis sekcie
+      type: file
+      path: _data/content/en/clients.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Úvodný opis
+        type: text
+        required: true
+        options:
+          maxlength: 500
+    - name: en_vip
+      label: 07 · VIP klienti
+      type: file
+      path: _data/content/en/vip.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: lead
+        label: Hlavný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 550
+      - name: quote_line_1
+        label: Citácia, prvý riadok
+        type: string
+        required: true
+      - name: quote_line_2
+        label: Citácia, druhý riadok
+        type: string
+        required: true
+      - name: image_alt
+        label: Popis fotografie pre prístupnosť
+        type: string
+        required: true
+    - name: en_closing
+      label: 08 · Záverečná výzva
+      type: file
+      path: _data/content/en/closing.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: kicker
+        label: Malý nadpis sekcie
+        type: string
+        required: true
+      - name: title
+        label: Veľký nadpis
+        type: object
+        fields:
+        - name: line_1
+          label: Prvý riadok
+          type: string
+          required: true
+        - name: emphasis
+          label: Zvýraznený druhý riadok
+          type: string
+          required: true
+      - name: intro
+        label: Úvodný odsek
+        type: text
+        required: true
+        options:
+          maxlength: 500
+      - name: button
+        label: Text tlačidla
+        type: string
+        required: true
+      - name: note
+        label: Malá poznámka pod tlačidlom
+        type: string
+        required: true
+    - name: en_footer
+      label: 09 · Pätička
+      type: file
+      path: _data/content/en/footer.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: tagline
+        label: Krátky text v pätičke
+        type: string
+        required: true
+    - name: en_contact_modal
+      label: 10 · Kontaktné okno
+      type: file
+      path: _data/content/en/contact_modal.yml
+      format: yaml
+      operations:
+        create: false
+        rename: false
+        delete: false
+      fields:
+      - name: aside_kicker
+        label: Ľavý panel, malý nadpis
+        type: string
+        required: true
+      - name: aside_title
+        label: Ľavý panel, hlavný nadpis
+        type: string
+        required: true
+      - name: aside_text
+        label: Ľavý panel, opis
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: kicker
+        label: Formulár, malý nadpis
+        type: string
+        required: true
+      - name: title
+        label: Formulár, hlavný nadpis
+        type: string
+        required: true
+      - name: intro
+        label: Formulár, úvodný text
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: privacy_note
+        label: Poznámka o spracovaní údajov
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: submit
+        label: Text odosielacieho tlačidla
+        type: string
+        required: true
+- name: visual_content
+  label: Fotografie, logá a odkazy
+  type: group
+  items:
+  - name: site_content
+    label: Globálne obrázky a logá
+    type: file
+    path: _data/site.yml
+    format: yaml
+    operations:
+      create: false
+      rename: false
+      delete: false
+    fields:
+    - name: images
+      label: Hlavné fotografie a logo
+      type: object
+      fields:
+      - name: brand_logo
+        label: Logo agentúry
+        type: image
+        description: Používa sa v intre, hero karte, formulári a na presmerovacej stránke.
+        required: true
+        options:
+          media: site_images
+          path: uploads
+          extensions:
+          - png
+          - jpg
+          - jpeg
+          - webp
+          rename: safe
+      - name: hero
+        label: Hlavná hero fotografia
+        type: image
+        description: Veľký obrázok na úvodnej obrazovke. Ideálne WebP alebo JPG na šírku.
+        required: true
+        options:
+          media: site_images
+          path: uploads
+          extensions:
+          - png
+          - jpg
+          - jpeg
+          - webp
+          rename: safe
+      - name: about
+        label: Fotografia v sekcii O agentúre
+        type: image
+        required: true
+        options:
+          media: site_images
+          path: uploads
+          extensions:
+          - png
+          - jpg
+          - jpeg
+          - webp
+          rename: safe
+      - name: vip
+        label: Fotografia v sekcii VIP klienti
+        type: image
+        required: true
+        options:
+          media: site_images
+          path: uploads
+          extensions:
+          - png
+          - jpg
+          - jpeg
+          - webp
+          rename: safe
+      description: Výmena obrázka automaticky platí vo všetkých troch jazykových verziách.
+    - name: service_backgrounds
+      label: Pozadia šiestich služieb
+      description: Každá položka patrí presne jednej službe. Kľúč nemeníš.
+      required: true
+      type: object
+      list:
+        min: 6
+        max: 6
+        collapsible:
+          collapsed: true
+          summary: '{key}'
+      fields:
+      - name: key
+        label: Interný názov služby
+        type: string
+        required: true
+        hidden: true
+        readonly: true
+      - name: image
+        label: Obrázok pozadia
+        type: image
+        required: true
+        options:
+          media: site_images
+          path: service-backgrounds
+          extensions:
+          - png
+          - jpg
+          - jpeg
+          - webp
+          rename: safe
+    - name: exclusive_links
+      label: Odkazy exkluzívnych projektov
+      type: object
+      fields:
+      - name: sigel
+        label: SIGEL Industries
+        type: string
+        required: true
+        pattern:
+          regex: ^https?://.+$
+          message: Použi celú adresu začínajúcu http:// alebo https://.
+      - name: tank
+        label: Party Tank Prague
+        type: string
+        required: true
+        pattern:
+          regex: ^https?://.+$
+          message: Použi celú adresu začínajúcu http:// alebo https://.
+    - name: client_logos
+      label: Logá klientov
+      type: object
+      fields:
+      - name: row_1
+        label: Prvý rad logotypov
+        description: 14 log. Poradie zodpovedá poradiu na webe.
+        required: true
+        type: object
+        fields:
+        - name: name
+          label: Názov klienta
+          type: string
+          description: Zobrazí sa aj ako prístupný popis loga.
+          required: true
+        - name: image
+          label: Logo
+          type: image
+          required: true
+          options:
+            media: site_images
+            path: client-logos
+            extensions:
+            - png
+            - jpg
+            - jpeg
+            - webp
+            rename: safe
+        - name: url
+          label: Odkaz na web alebo profil
+          type: string
+          description: Môže zostať prázdny, ak logo nemá byť klikateľné.
+          required: false
+          pattern:
+            regex: ^(|https?://.+)$
+            message: Použi celú adresu začínajúcu http:// alebo https://, prípadne nechaj pole prázdne.
+        list:
+          min: 14
+          max: 14
+          collapsible:
+            collapsed: true
+            summary: '{name}'
+      - name: row_2
+        label: Druhý rad logotypov
+        description: 13 log. Poradie zodpovedá poradiu na webe.
+        required: true
+        type: object
+        fields:
+        - name: name
+          label: Názov klienta
+          type: string
+          description: Zobrazí sa aj ako prístupný popis loga.
+          required: true
+        - name: image
+          label: Logo
+          type: image
+          required: true
+          options:
+            media: site_images
+            path: client-logos
+            extensions:
+            - png
+            - jpg
+            - jpeg
+            - webp
+            rename: safe
+        - name: url
+          label: Odkaz na web alebo profil
+          type: string
+          description: Môže zostať prázdny, ak logo nemá byť klikateľné.
+          required: false
+          pattern:
+            regex: ^(|https?://.+)$
+            message: Použi celú adresu začínajúcu http:// alebo https://, prípadne nechaj pole prázdne.
+        list:
+          min: 13
+          max: 13
+          collapsible:
+            collapsed: true
+            summary: '{name}'
+      description: Logo môžeš vymeniť, premenovať a upraviť jeho odkaz. Počet položiek je zamknutý, aby sa nerozbila animácia.
+settings:
+  hide: true
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: 'cms: vytvoriť {path}'
+      update: 'cms: upraviť {path}'
+      delete: 'cms: odstrániť {path}'
+      rename: 'cms: premenovať {oldPath} na {newPath}'
