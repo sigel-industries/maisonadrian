@@ -1,0 +1,6 @@
+# GitHub Pages / Jekyll configuration used by the Pages CMS integration.
+# No theme or plugins are required. The current HTML/CSS/JS design stays untouched.
+
+exclude:
+  - README.md
+  - CMS-NAVOD.md

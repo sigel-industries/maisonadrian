@@ -1,0 +1,61 @@
+kicker: Spolupráca
+title:
+  line_1: Jasný proces.
+  emphasis: Žiadna agentúrna hmla.
+intro: Každý krok má svoj dôvod, konkrétny výstup a rozhodnutie. Bez nekonečných callov a prezentácií, ktoré nič neposunú.
+steps:
+- number: '01'
+  title: Diagnóza
+  text: Pozrieme sa na aktuálnu značku, publikum, komunikáciu a miesta, kde sa stráca hodnota.
+- number: '02'
+  title: Smer
+  text: Jasný koncept určí positioning, tón, kanály a priority.
+- number: '03'
+  title: Exekúcia
+  text: Obsah, PR, spolupráce, web a spúšťacie výstupy sa dodajú v jednom systéme.
+- number: '04'
+  title: Ladenie
+  text: Posilníme, čo funguje, odstránime slabé miesta a udržíme značku konzistentnú.
+exclusive:
+  kicker: Exkluzívne spolupráce
+  title: Exkluzívne spolupráce.
+  intro: Hlbšie prepojené projekty, kde nevznikol len výstup, ale celý digitálny smer.
+  projects:
+  - key: sigel
+    number: '01'
+    meta: Digitálny partner · Web · Intelligence
+    title_line_1: SIGEL
+    title_line_2: INDUSTRIES
+    summary: Strategické a technické prepojenie brand komunikácie, prémiovej tvorby webov a web intelligence.
+    button: Pozrieť spoluprácu
+    modal:
+      kicker: Detail spolupráce
+      title: SIGEL Industries
+      intro: Strategické a technické prepojenie brand komunikácie, prémiovej tvorby webov a web intelligence.
+      scope_title: Rozsah
+      scope:
+      - Brand and communication systems
+      - Premium website creation
+      - Website audit and intelligence
+      direction_title: Smer
+      direction: Digitálny partner · Web · Intelligence
+      link_text: Otvoriť web
+  - key: tank
+    number: '02'
+    meta: Brand experience · Web · Rezervácie
+    title_line_1: PARTY TANK
+    title_line_2: PRAGUE
+    summary: Kompletný prémiový digitálny zážitok pre Party Tank Prague — od positioningu a storytellingu po rezervačný flow.
+    button: Pozrieť spoluprácu
+    modal:
+      kicker: Detail spolupráce
+      title: Party Tank Prague
+      intro: Kompletný prémiový digitálny zážitok pre Party Tank Prague — od positioningu a storytellingu po rezervačný flow.
+      scope_title: Rozsah
+      scope:
+      - Positioning and storytelling
+      - Editorial web experience
+      - Booking journey and conversion structure
+      direction_title: Smer
+      direction: Brand experience · Web · Rezervácie
+      link_text: Otvoriť web

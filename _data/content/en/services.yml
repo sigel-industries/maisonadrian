@@ -1,0 +1,212 @@
+kicker: Services
+title: Six disciplines. One coherent brand world.
+intro: Move through the services as one connected system. Open any scene for the practical scope, outputs and the kind of
+  project it fits.
+topbar: Maison Adriano · Services
+detail_cta: Explore this service
+hint: Scroll to change the service
+items:
+- key: strategy
+  number: '01'
+  word: BRAND
+  vertical: Offer architecture and strategic direction
+  chip: Brand foundation
+  panel_kicker: Positioning system
+  panel_title: Offer architecture and strategic direction
+  panel_meta: message · offer · campaigns
+  category: Strategy
+  title: Marketing strategy
+  summary: Positioning, offer architecture and communication direction aligned with real business goals.
+  bullets:
+  - Positioning
+  - Messaging
+  - Campaign logic
+  modal:
+    kicker: Service detail
+    title: Marketing strategy
+    intro: A strategic foundation for brands that need a clearer point of view and stronger market perception.
+    includes_title: What it includes
+    includes:
+    - Brand and offer diagnosis
+    - Audience and positioning framework
+    - Messaging hierarchy and campaign themes
+    best_for_title: Best for
+    best_for:
+    - New brands, repositioning, premium services
+    - Founder-led brands that need clarity
+    outputs_title: Typical outputs
+    outputs:
+    - Strategy deck
+    - Core messages
+    - Campaign direction
+    cta: Discuss this service
+- key: social
+  number: '02'
+  word: SOCIAL
+  vertical: A system that keeps content coherent
+  chip: Content engine
+  panel_kicker: Content rhythm
+  panel_title: A system that keeps content coherent
+  panel_meta: planning · content · management
+  category: Social
+  title: Social media management
+  summary: Content systems, planning, creative direction and day-to-day management that keep the brand coherent.
+  bullets:
+  - Content system
+  - Planning
+  - Channel management
+  modal:
+    kicker: Service detail
+    title: Social media management
+    intro: Ongoing social care designed as part of the brand world, not as random publishing.
+    includes_title: What it includes
+    includes:
+    - Monthly content structure
+    - Editorial planning and channel rhythm
+    - Daily management and oversight
+    best_for_title: Best for
+    best_for:
+    - Brands that need consistency
+    - Businesses where social presence influences trust
+    outputs_title: Typical outputs
+    outputs:
+    - Content pillars
+    - Monthly plan
+    - Publishing oversight
+    cta: Discuss this service
+- key: production
+  number: '03'
+  word: VISUAL
+  vertical: Photo, video and assets with one visual logic
+  chip: Production suite
+  panel_kicker: Creative production
+  panel_title: Photo, video and assets with one visual logic
+  panel_meta: art direction · assets · shoots
+  category: Production
+  title: Production
+  summary: Photo, video and creative assets shaped to match the brand language, not fight it.
+  bullets:
+  - Photo
+  - Video
+  - Creative direction
+  modal:
+    kicker: Service detail
+    title: Production
+    intro: Visual production built to support campaigns, launches and continuous brand presence.
+    includes_title: What it includes
+    includes:
+    - Creative concepts and art direction
+    - Production briefs and shoot planning
+    - Visual asset selection and refinement
+    best_for_title: Best for
+    best_for:
+    - Campaign launches
+    - Service businesses with image-driven sales
+    outputs_title: Typical outputs
+    outputs:
+    - Shoot concept
+    - Asset direction
+    - Production structure
+    cta: Discuss this service
+- key: pr
+  number: '04'
+  word: REACH
+  vertical: Visibility without losing control of tone
+  chip: Visibility layer
+  panel_kicker: Influence & PR
+  panel_title: Visibility without losing control of tone
+  panel_meta: partnerships · media · trust
+  category: Influence & PR
+  title: Influencer collaborations and PR
+  summary: Partner selection, relationship framing and media-facing communication that build trust around the brand.
+  bullets:
+  - Creators
+  - PR
+  - Visibility
+  modal:
+    kicker: Service detail
+    title: Influencer collaborations and PR
+    intro: Visibility work for brands that want more reach without losing control of tone or quality.
+    includes_title: What it includes
+    includes:
+    - Influencer matching and collaboration framing
+    - PR angle and communication support
+    - Partnership and launch visibility ideas
+    best_for_title: Best for
+    best_for:
+    - Lifestyle, beauty, hospitality and founder brands
+    - Brands seeking stronger social proof
+    outputs_title: Typical outputs
+    outputs:
+    - Collaboration shortlist
+    - PR direction
+    - Launch support
+    cta: Discuss this service
+- key: web
+  number: '05'
+  word: WEB
+  vertical: A premium website as part of the brand
+  chip: Digital platform
+  panel_kicker: Digital presence
+  panel_title: A premium website as part of the brand
+  panel_meta: ux · structure · launch
+  category: Digital
+  title: Website creation
+  summary: Premium websites developed with SIGEL Industries — from communication structure to polished execution.
+  bullets:
+  - Web structure
+  - UX
+  - Launch
+  modal:
+    kicker: Service detail
+    title: Website creation
+    intro: Websites that look premium, communicate clearly and support conversion without clutter.
+    includes_title: What it includes
+    includes:
+    - Site structure and messaging
+    - Wireframe direction and premium UI input
+    - Build coordination with technical partner
+    best_for_title: Best for
+    best_for:
+    - Premium services, hospitality, personal brands
+    - Brands that outgrew a weak website
+    outputs_title: Typical outputs
+    outputs:
+    - Page structure
+    - Web copy direction
+    - Launch-ready site scope
+    cta: Discuss this service
+- key: audit
+  number: '06'
+  word: AUDIT
+  vertical: Diagnosis of what works and what leaks value
+  chip: Decision layer
+  panel_kicker: Web intelligence
+  panel_title: Diagnosis of what works and what leaks value
+  panel_meta: ux · tech · positioning
+  category: Intelligence
+  title: Website audit
+  summary: An in-depth diagnostic of messaging, UX, technical quality and commercial potential, delivered with SIGEL Industries.
+  bullets:
+  - Audit
+  - UX
+  - Insight
+  modal:
+    kicker: Service detail
+    title: Website audit
+    intro: A clear outside view of what the current website communicates well — and where it leaks value.
+    includes_title: What it includes
+    includes:
+    - Messaging and offer clarity review
+    - UX and conversion friction mapping
+    - Technical and positioning notes
+    best_for_title: Best for
+    best_for:
+    - Existing brands with a live website
+    - Founders who want a sharp external review
+    outputs_title: Typical outputs
+    outputs:
+    - Audit summary
+    - Priority list
+    - Improvement direction
+    cta: Discuss this service

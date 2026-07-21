@@ -1,3 +1,8 @@
+---
+layout: null
+---
+{% assign c = site.data.content.en %}
+{% assign sitecms = site.data.site %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -42,7 +47,12 @@
       }
     } catch (_) {}
   </script>
-<link href="../styles.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/><style id="cms-service-backgrounds">
+.scenario-services{--service-bg:url('{{ sitecms.service_backgrounds[0].image | escape }}')}
+{% for background in sitecms.service_backgrounds %}
+.scenario-services:has(.scenario-service[data-scene-key="{{ background.key | escape }}"].is-active){--service-bg:url('{{ background.image | escape }}')}
+{% endfor %}
+</style>
 <link href="../consent.css" rel="stylesheet"/>
 </head>
 <body class="intro-active" data-locale="en">
@@ -53,8 +63,8 @@
 <div class="brand-intro__glow"></div>
 <div class="brand-intro__shine"></div>
 <div class="brand-intro__inner">
-<img alt="" class="brand-intro__logo" src="../assets/brand-logo.webp"/>
-<p class="brand-intro__caption">Boutique Social Marketing Agency</p>
+<img alt="" class="brand-intro__logo" src="{{ sitecms.images.brand_logo | escape }}"/>
+<p class="brand-intro__caption">{{ c.intro.caption | escape }}</p>
 </div>
 </div><div aria-hidden="true" class="ma-mobile-menu" id="ma-mobile-menu">
 <div class="ma-mobile-menu__top">
@@ -62,7 +72,7 @@
 <button aria-label="Close menu" class="ma-mobile-menu__close" data-menu-close="" type="button"><span></span><span></span></button>
 </div>
 <div class="ma-mobile-menu__body">
-<p class="ma-mobile-menu__eyebrow">Boutique Social Marketing Agency</p>
+<p class="ma-mobile-menu__eyebrow">{{ c.intro.caption | escape }}</p>
 <nav aria-label="Menu" class="ma-mobile-menu__nav">
 <a data-menu-link="" data-nav-link="" href="#top"><span>01</span>Home</a>
 <a data-menu-link="" data-nav-link="" href="#about"><span>02</span>About</a>
@@ -84,8 +94,8 @@
 <section aria-labelledby="hero-title" class="ma-hero" id="top">
 <div class="ma-hero-visual">
 <picture aria-hidden="true" class="ma-hero-picture">
-<source srcset="../assets/hero-original.webp" type="image/webp"/>
-<img alt="" fetchpriority="high" loading="eager" src="../assets/hero-original.jpg"/>
+
+<img alt="" fetchpriority="high" loading="eager" src="{{ sitecms.images.hero | escape }}"/>
 </picture>
 <div aria-hidden="true" class="ma-hero-wash"></div>
 <div aria-hidden="true" class="ma-hero-light ma-hero-light--one"></div>
@@ -108,171 +118,176 @@
 <div class="ma-hero-grid">
 <div aria-hidden="true" class="ma-hero-spacer"></div>
 <div class="ma-hero-copy">
-<p class="ma-eyebrow">Luxury-led social marketing</p>
-<h1 id="hero-title">We don’t do<br/>
-ordinary.<br/>
-We build <em>iconic</em><br/>
-brands.</h1>
+<p class="ma-eyebrow">{{ c.hero.eyebrow | escape }}</p>
+<h1 id="hero-title">{{ c.hero.title.line_1 | escape }}<br/>{{ c.hero.title.line_2 | escape }}<br/>{{ c.hero.title.line_3_prefix | escape }} <em>{{ c.hero.title.emphasis | escape }}</em><br/>{{ c.hero.title.line_4 | escape }}</h1>
 <span aria-hidden="true" class="ma-hero-rule"></span>
-<p class="ma-hero-subtitle">A boutique agency for brands that want a polished presence, stronger positioning and social marketing that actually moves the business.</p>
+<p class="ma-hero-subtitle">{{ c.hero.subtitle | escape }}</p>
 <div class="ma-hero-actions">
-<a aria-controls="contact-modal" class="ma-hero-cta" data-contact-open="" href="#contact-modal"><span>Work with us</span><span aria-hidden="true">→</span></a>
-<a class="ma-hero-link" href="#services">Explore services</a>
+<a aria-controls="contact-modal" class="ma-hero-cta" data-contact-open="" href="#contact-modal"><span>{{ c.hero.primary_cta | escape }}</span><span aria-hidden="true">→</span></a>
+<a class="ma-hero-link" href="#services">{{ c.hero.secondary_cta | escape }}</a>
 </div>
 </div>
 <aside aria-label="Maison Adriano Agency logo" class="ma-hero-brand">
-<div class="ma-logo-card"><img alt="Maison Adriano Agency" class="ma-logo-card__image" src="../assets/brand-logo.webp"/></div>
+<div class="ma-logo-card"><img alt="Maison Adriano Agency" class="ma-logo-card__image" src="{{ sitecms.images.brand_logo | escape }}"/></div>
 </aside>
 </div>
 </div>
-<div aria-label="Agency values" class="ma-trust-bar"><div class="ma-trust-inner"><div class="ma-trust-item"><svg aria-hidden="true" viewbox="0 0 48 48"><path d="M8 17h32L24 40 8 17Zm0 0 8-9h16l8 9M16 8l8 32M32 8l-8 32M8 17h32"></path></svg><span>Strategy that sells</span></div>
-<div class="ma-trust-item"><svg aria-hidden="true" viewbox="0 0 48 48"><path d="m8 36 3-22 10 9 4-15 5 15 9-9 2 22H8Zm2-6h30"></path></svg><span>Exclusive approach</span></div>
-<div class="ma-trust-item"><svg aria-hidden="true" viewbox="0 0 48 48"><path d="M24 4v40M4 24h40M10 10l28 28M38 10 10 38M24 12l4 8 8 4-8 4-4 8-4-8-8-4 8-4 4-8Z"></path></svg><span>Results that last</span></div>
-<div class="ma-trust-item"><svg aria-hidden="true" viewbox="0 0 48 48"><circle cx="24" cy="24" r="17"></circle><path d="M7 24h34M24 7c6 5 9 10 9 17s-3 12-9 17c-6-5-9-10-9-17s3-12 9-17Z"></path></svg><span>Global perspective</span></div></div></div>
+<div aria-label="Agency values" class="ma-trust-bar"><div class="ma-trust-inner"><div class="ma-trust-item"><svg aria-hidden="true" viewbox="0 0 48 48"><path d="M8 17h32L24 40 8 17Zm0 0 8-9h16l8 9M16 8l8 32M32 8l-8 32M8 17h32"></path></svg><span>{{ c.hero["values"][0] | escape }}</span></div>
+<div class="ma-trust-item"><svg aria-hidden="true" viewbox="0 0 48 48"><path d="m8 36 3-22 10 9 4-15 5 15 9-9 2 22H8Zm2-6h30"></path></svg><span>{{ c.hero["values"][1] | escape }}</span></div>
+<div class="ma-trust-item"><svg aria-hidden="true" viewbox="0 0 48 48"><path d="M24 4v40M4 24h40M10 10l28 28M38 10 10 38M24 12l4 8 8 4-8 4-4 8-4-8-8-4 8-4 4-8Z"></path></svg><span>{{ c.hero["values"][2] | escape }}</span></div>
+<div class="ma-trust-item"><svg aria-hidden="true" viewbox="0 0 48 48"><circle cx="24" cy="24" r="17"></circle><path d="M7 24h34M24 7c6 5 9 10 9 17s-3 12-9 17c-6-5-9-10-9-17s3-12 9-17Z"></path></svg><span>{{ c.hero["values"][3] | escape }}</span></div></div></div>
 </section>
-<section class="vip-section vip-manifest" data-chapter="01"><div class="vip-manifest__inner"><div class="vip-manifest__headline reveal"><p class="section-kicker">The brand code</p><h2>Taste alone is not enough.<br/>A brand needs <em>gravity.</em></h2><p>Maison Adriano connects positioning, image and commercial intent into one coherent presence. Less noise. More recognition.</p></div><div class="vip-manifest__aside reveal"><div class="vip-manifest__quote">A refined brand should feel deliberate in every public detail.</div><p>From first impression to daily communication, the goal is not only to look premium. The goal is to feel unmistakably considered.</p></div></div></section>
+<section class="vip-section vip-manifest" data-chapter="01"><div class="vip-manifest__inner"><div class="vip-manifest__headline reveal"><p class="section-kicker">{{ c.manifest.kicker | escape }}</p><h2>{{ c.manifest.title.line_1 | escape }}<br/>{{ c.manifest.title.line_2_prefix | escape }} <em>{{ c.manifest.title.emphasis | escape }}</em></h2><p>{{ c.manifest.lead | escape }}</p></div><div class="vip-manifest__aside reveal"><div class="vip-manifest__quote">{{ c.manifest.quote | escape }}</div><p>{{ c.manifest.body | escape }}</p></div></div></section>
 <section class="vip-section scenario-services" data-chapter="02" data-service-scenario="" id="services">
 <header class="scenario-services__header reveal">
-<div><p class="section-kicker">Services</p><h2>Six disciplines. One coherent brand world.</h2></div>
-<p>Move through the services as one connected system. Open any scene for the practical scope, outputs and the kind of project it fits.</p>
+<div><p class="section-kicker">{{ c.services.kicker | escape }}</p><h2>{{ c.services.title | escape }}</h2></div>
+<p>{{ c.services.intro | escape }}</p>
 </header>
 <div class="scenario-services__deck">
 <div class="scenario-services__sticky">
-<div class="scenario-services__topbar"><span>Maison Adriano · Services</span><span><b data-service-current="">01</b> / 06</span></div>
+<div class="scenario-services__topbar"><span>{{ c.services.topbar | escape }}</span><span><b data-service-current="">01</b> / 06</span></div>
 <div class="scenario-services__viewport"><article aria-hidden="false" class="scenario-service is-active" data-scene-key="strategy" data-service-scene="0">
 <div aria-hidden="true" class="scenario-service__visual">
-<span class="scenario-service__index">01</span>
-<span class="scenario-service__word">BRAND</span>
-<span class="scenario-service__vertical">Offer architecture and strategic direction</span>
+<span class="scenario-service__index">{{ c.services["items"][0].number | escape }}</span>
+<span class="scenario-service__word">{{ c.services["items"][0].word | escape }}</span>
+<span class="scenario-service__vertical">{{ c.services["items"][0].vertical | escape }}</span>
 <i></i><i></i><i></i>
-<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">Brand foundation</div><div class="scenario-service__visual-panel"><small>Positioning system</small><strong>Offer architecture and strategic direction</strong><p>message · offer · campaigns</p></div></div>
+<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">{{ c.services["items"][0].chip | escape }}</div><div class="scenario-service__visual-panel"><small>{{ c.services["items"][0].panel_kicker | escape }}</small><strong>{{ c.services["items"][0].panel_title | escape }}</strong><p>{{ c.services["items"][0].panel_meta | escape }}</p></div></div>
 <div class="scenario-service__copy">
-<p class="scenario-service__category">Strategy</p>
-<h3>Marketing strategy</h3>
-<p>Positioning, offer architecture and communication direction aligned with real business goals.</p>
-<ul><li>Positioning</li><li>Messaging</li><li>Campaign logic</li></ul>
-<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-strategy" type="button"><span>Explore this service</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
+<p class="scenario-service__category">{{ c.services["items"][0].category | escape }}</p>
+<h3>{{ c.services["items"][0].title | escape }}</h3>
+<p>{{ c.services["items"][0].summary | escape }}</p>
+<ul><li>{{ c.services["items"][0].bullets[0] | escape }}</li><li>{{ c.services["items"][0].bullets[1] | escape }}</li><li>{{ c.services["items"][0].bullets[2] | escape }}</li></ul>
+<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-strategy" type="button"><span>{{ c.services.detail_cta | escape }}</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
 </div>
 </article><article aria-hidden="true" class="scenario-service" data-scene-key="social" data-service-scene="1">
 <div aria-hidden="true" class="scenario-service__visual">
-<span class="scenario-service__index">02</span>
-<span class="scenario-service__word">SOCIAL</span>
-<span class="scenario-service__vertical">A system that keeps content coherent</span>
+<span class="scenario-service__index">{{ c.services["items"][1].number | escape }}</span>
+<span class="scenario-service__word">{{ c.services["items"][1].word | escape }}</span>
+<span class="scenario-service__vertical">{{ c.services["items"][1].vertical | escape }}</span>
 <i></i><i></i><i></i>
-<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">Content engine</div><div class="scenario-service__visual-panel"><small>Content rhythm</small><strong>A system that keeps content coherent</strong><p>planning · content · management</p></div></div>
+<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">{{ c.services["items"][1].chip | escape }}</div><div class="scenario-service__visual-panel"><small>{{ c.services["items"][1].panel_kicker | escape }}</small><strong>{{ c.services["items"][1].panel_title | escape }}</strong><p>{{ c.services["items"][1].panel_meta | escape }}</p></div></div>
 <div class="scenario-service__copy">
-<p class="scenario-service__category">Social</p>
-<h3>Social media management</h3>
-<p>Content systems, planning, creative direction and day-to-day management that keep the brand coherent.</p>
-<ul><li>Content system</li><li>Planning</li><li>Channel management</li></ul>
-<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-social" type="button"><span>Explore this service</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
+<p class="scenario-service__category">{{ c.services["items"][1].category | escape }}</p>
+<h3>{{ c.services["items"][1].title | escape }}</h3>
+<p>{{ c.services["items"][1].summary | escape }}</p>
+<ul><li>{{ c.services["items"][1].bullets[0] | escape }}</li><li>{{ c.services["items"][1].bullets[1] | escape }}</li><li>{{ c.services["items"][1].bullets[2] | escape }}</li></ul>
+<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-social" type="button"><span>{{ c.services.detail_cta | escape }}</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
 </div>
 </article><article aria-hidden="true" class="scenario-service" data-scene-key="production" data-service-scene="2">
 <div aria-hidden="true" class="scenario-service__visual">
-<span class="scenario-service__index">03</span>
-<span class="scenario-service__word">VISUAL</span>
-<span class="scenario-service__vertical">Photo, video and assets with one visual logic</span>
+<span class="scenario-service__index">{{ c.services["items"][2].number | escape }}</span>
+<span class="scenario-service__word">{{ c.services["items"][2].word | escape }}</span>
+<span class="scenario-service__vertical">{{ c.services["items"][2].vertical | escape }}</span>
 <i></i><i></i><i></i>
-<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">Production suite</div><div class="scenario-service__visual-panel"><small>Creative production</small><strong>Photo, video and assets with one visual logic</strong><p>art direction · assets · shoots</p></div></div>
+<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">{{ c.services["items"][2].chip | escape }}</div><div class="scenario-service__visual-panel"><small>{{ c.services["items"][2].panel_kicker | escape }}</small><strong>{{ c.services["items"][2].panel_title | escape }}</strong><p>{{ c.services["items"][2].panel_meta | escape }}</p></div></div>
 <div class="scenario-service__copy">
-<p class="scenario-service__category">Production</p>
-<h3>Production</h3>
-<p>Photo, video and creative assets shaped to match the brand language, not fight it.</p>
-<ul><li>Photo</li><li>Video</li><li>Creative direction</li></ul>
-<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-production" type="button"><span>Explore this service</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
+<p class="scenario-service__category">{{ c.services["items"][2].category | escape }}</p>
+<h3>{{ c.services["items"][2].title | escape }}</h3>
+<p>{{ c.services["items"][2].summary | escape }}</p>
+<ul><li>{{ c.services["items"][2].bullets[0] | escape }}</li><li>{{ c.services["items"][2].bullets[1] | escape }}</li><li>{{ c.services["items"][2].bullets[2] | escape }}</li></ul>
+<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-production" type="button"><span>{{ c.services.detail_cta | escape }}</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
 </div>
 </article><article aria-hidden="true" class="scenario-service" data-scene-key="pr" data-service-scene="3">
 <div aria-hidden="true" class="scenario-service__visual">
-<span class="scenario-service__index">04</span>
-<span class="scenario-service__word">REACH</span>
-<span class="scenario-service__vertical">Visibility without losing control of tone</span>
+<span class="scenario-service__index">{{ c.services["items"][3].number | escape }}</span>
+<span class="scenario-service__word">{{ c.services["items"][3].word | escape }}</span>
+<span class="scenario-service__vertical">{{ c.services["items"][3].vertical | escape }}</span>
 <i></i><i></i><i></i>
-<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">Visibility layer</div><div class="scenario-service__visual-panel"><small>Influence &amp; PR</small><strong>Visibility without losing control of tone</strong><p>partnerships · media · trust</p></div></div>
+<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">{{ c.services["items"][3].chip | escape }}</div><div class="scenario-service__visual-panel"><small>{{ c.services["items"][3].panel_kicker | escape }}</small><strong>{{ c.services["items"][3].panel_title | escape }}</strong><p>{{ c.services["items"][3].panel_meta | escape }}</p></div></div>
 <div class="scenario-service__copy">
-<p class="scenario-service__category">Influence &amp; PR</p>
-<h3>Influencer collaborations and PR</h3>
-<p>Partner selection, relationship framing and media-facing communication that build trust around the brand.</p>
-<ul><li>Creators</li><li>PR</li><li>Visibility</li></ul>
-<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-pr" type="button"><span>Explore this service</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
+<p class="scenario-service__category">{{ c.services["items"][3].category | escape }}</p>
+<h3>{{ c.services["items"][3].title | escape }}</h3>
+<p>{{ c.services["items"][3].summary | escape }}</p>
+<ul><li>{{ c.services["items"][3].bullets[0] | escape }}</li><li>{{ c.services["items"][3].bullets[1] | escape }}</li><li>{{ c.services["items"][3].bullets[2] | escape }}</li></ul>
+<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-pr" type="button"><span>{{ c.services.detail_cta | escape }}</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
 </div>
 </article><article aria-hidden="true" class="scenario-service" data-scene-key="web" data-service-scene="4">
 <div aria-hidden="true" class="scenario-service__visual">
-<span class="scenario-service__index">05</span>
-<span class="scenario-service__word">WEB</span>
-<span class="scenario-service__vertical">A premium website as part of the brand</span>
+<span class="scenario-service__index">{{ c.services["items"][4].number | escape }}</span>
+<span class="scenario-service__word">{{ c.services["items"][4].word | escape }}</span>
+<span class="scenario-service__vertical">{{ c.services["items"][4].vertical | escape }}</span>
 <i></i><i></i><i></i>
-<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">Digital platform</div><div class="scenario-service__visual-panel"><small>Digital presence</small><strong>A premium website as part of the brand</strong><p>ux · structure · launch</p></div></div>
+<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">{{ c.services["items"][4].chip | escape }}</div><div class="scenario-service__visual-panel"><small>{{ c.services["items"][4].panel_kicker | escape }}</small><strong>{{ c.services["items"][4].panel_title | escape }}</strong><p>{{ c.services["items"][4].panel_meta | escape }}</p></div></div>
 <div class="scenario-service__copy">
-<p class="scenario-service__category">Digital</p>
-<h3>Website creation</h3>
-<p>Premium websites developed with SIGEL Industries — from communication structure to polished execution.</p>
-<ul><li>Web structure</li><li>UX</li><li>Launch</li></ul>
-<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-web" type="button"><span>Explore this service</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
+<p class="scenario-service__category">{{ c.services["items"][4].category | escape }}</p>
+<h3>{{ c.services["items"][4].title | escape }}</h3>
+<p>{{ c.services["items"][4].summary | escape }}</p>
+<ul><li>{{ c.services["items"][4].bullets[0] | escape }}</li><li>{{ c.services["items"][4].bullets[1] | escape }}</li><li>{{ c.services["items"][4].bullets[2] | escape }}</li></ul>
+<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-web" type="button"><span>{{ c.services.detail_cta | escape }}</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
 </div>
 </article><article aria-hidden="true" class="scenario-service" data-scene-key="audit" data-service-scene="5">
 <div aria-hidden="true" class="scenario-service__visual">
-<span class="scenario-service__index">06</span>
-<span class="scenario-service__word">AUDIT</span>
-<span class="scenario-service__vertical">Diagnosis of what works and what leaks value</span>
+<span class="scenario-service__index">{{ c.services["items"][5].number | escape }}</span>
+<span class="scenario-service__word">{{ c.services["items"][5].word | escape }}</span>
+<span class="scenario-service__vertical">{{ c.services["items"][5].vertical | escape }}</span>
 <i></i><i></i><i></i>
-<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">Decision layer</div><div class="scenario-service__visual-panel"><small>Web intelligence</small><strong>Diagnosis of what works and what leaks value</strong><p>ux · tech · positioning</p></div></div>
+<div class="scenario-service__visual-orb"></div><div class="scenario-service__visual-grid"></div><div class="scenario-service__visual-chip">{{ c.services["items"][5].chip | escape }}</div><div class="scenario-service__visual-panel"><small>{{ c.services["items"][5].panel_kicker | escape }}</small><strong>{{ c.services["items"][5].panel_title | escape }}</strong><p>{{ c.services["items"][5].panel_meta | escape }}</p></div></div>
 <div class="scenario-service__copy">
-<p class="scenario-service__category">Intelligence</p>
-<h3>Website audit</h3>
-<p>An in-depth diagnostic of messaging, UX, technical quality and commercial potential, delivered with SIGEL Industries.</p>
-<ul><li>Audit</li><li>UX</li><li>Insight</li></ul>
-<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-audit" type="button"><span>Explore this service</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
+<p class="scenario-service__category">{{ c.services["items"][5].category | escape }}</p>
+<h3>{{ c.services["items"][5].title | escape }}</h3>
+<p>{{ c.services["items"][5].summary | escape }}</p>
+<ul><li>{{ c.services["items"][5].bullets[0] | escape }}</li><li>{{ c.services["items"][5].bullets[1] | escape }}</li><li>{{ c.services["items"][5].bullets[2] | escape }}</li></ul>
+<button class="scenario-service__detail" data-info-open="" data-info-template="service-template-audit" type="button"><span>{{ c.services.detail_cta | escape }}</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
 </div>
 </article></div>
 <div class="scenario-services__controls">
 <button class="scenario-nav scenario-nav--prev" data-service-prev="" type="button"><svg aria-hidden="true" transform="rotate(180 12 12)" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg><span>Previous</span></button>
-<nav aria-label="Services" class="scenario-tabs"><button aria-label="01 Marketing strategy" class="scenario-tab is-active" data-service-tab="0" type="button">01</button><button aria-label="02 Social media management" class="scenario-tab" data-service-tab="1" type="button">02</button><button aria-label="03 Production" class="scenario-tab" data-service-tab="2" type="button">03</button><button aria-label="04 Influencer collaborations and PR" class="scenario-tab" data-service-tab="3" type="button">04</button><button aria-label="05 Website creation" class="scenario-tab" data-service-tab="4" type="button">05</button><button aria-label="06 Website audit" class="scenario-tab" data-service-tab="5" type="button">06</button></nav>
+<nav aria-label="Services" class="scenario-tabs"><button aria-label="{{ c.services["items"][0].number | escape }} {{ c.services["items"][0].title | escape }}" class="scenario-tab is-active" data-service-tab="0" type="button">{{ c.services["items"][0].number | escape }}</button><button aria-label="{{ c.services["items"][1].number | escape }} {{ c.services["items"][1].title | escape }}" class="scenario-tab" data-service-tab="1" type="button">{{ c.services["items"][1].number | escape }}</button><button aria-label="{{ c.services["items"][2].number | escape }} {{ c.services["items"][2].title | escape }}" class="scenario-tab" data-service-tab="2" type="button">{{ c.services["items"][2].number | escape }}</button><button aria-label="{{ c.services["items"][3].number | escape }} {{ c.services["items"][3].title | escape }}" class="scenario-tab" data-service-tab="3" type="button">{{ c.services["items"][3].number | escape }}</button><button aria-label="{{ c.services["items"][4].number | escape }} {{ c.services["items"][4].title | escape }}" class="scenario-tab" data-service-tab="4" type="button">{{ c.services["items"][4].number | escape }}</button><button aria-label="{{ c.services["items"][5].number | escape }} {{ c.services["items"][5].title | escape }}" class="scenario-tab" data-service-tab="5" type="button">{{ c.services["items"][5].number | escape }}</button></nav>
 <button class="scenario-nav scenario-nav--next" data-service-next="" type="button"><span>Next</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M5 12h13M14 7l5 5-5 5"></path></svg></button>
 </div>
-<p class="scenario-services__hint">Scroll to change the service</p>
+<p class="scenario-services__hint">{{ c.services.hint | escape }}</p>
 </div>
 <div aria-hidden="true" class="scenario-services__triggers"><div class="scenario-trigger" data-service-trigger="0"></div><div class="scenario-trigger" data-service-trigger="1"></div><div class="scenario-trigger" data-service-trigger="2"></div><div class="scenario-trigger" data-service-trigger="3"></div><div class="scenario-trigger" data-service-trigger="4"></div><div class="scenario-trigger" data-service-trigger="5"></div></div>
 </div>
 </section>
-<section class="vip-section vip-about" data-chapter="03" id="about"><div class="vip-about__inner"><div class="vip-about__media reveal"><div class="vip-about__photo-wrap"><img alt="Portrait of the agency founder" class="vip-about__photo" src="../assets/about-portrait.jpg"/><div class="vip-about__floating-card"><strong>Maison Adriano</strong><span>Boutique Social Marketing</span></div></div></div><div class="vip-about__content reveal"><p class="section-kicker">About the agency</p><h2>A boutique agency.<br/><em>More attention.</em></h2><p>Maison Adriano Agency works with brands and personalities that need a stronger public image, sharper communication and a more elevated digital presence. The boutique model means fewer projects, closer collaboration and more precise decisions.</p><p class="vip-about__note">Built for premium services, personal brands, hospitality, lifestyle and businesses where image is part of the product.</p><div class="vip-about__principles"><article><span>01</span><div><h3>Selectivity</h3><p>Not every project belongs together. Fit matters in values, aesthetics and ambition.</p></div></article><article><span>02</span><div><h3>Consistency</h3><p>Every touchpoint should feel like part of the same brand world, not a random output.</p></div></article><article><span>03</span><div><h3>Commercial sense</h3><p>Elegant presentation is useful only when it supports trust, positioning and demand.</p></div></article></div></div></div></section>
-<section class="vip-section vip-collaboration" data-chapter="04" id="work"><div class="vip-collaboration__inner"><header class="vip-collaboration__header reveal"><p class="section-kicker">Collaboration</p><h2>A clear process.<br/><em>No agency fog.</em></h2><p>Every step has a reason, a concrete output and a decision. No endless calls or presentations that move nothing forward.</p></header><div class="vip-collaboration__process"><article class="vip-process-card reveal"><span>01</span><h3>Diagnosis</h3><p>We review the current brand, audience, communication and hidden friction points.</p></article><article class="vip-process-card reveal"><span>02</span><h3>Direction</h3><p>A clear concept defines positioning, tone, channels and priorities.</p></article><article class="vip-process-card reveal"><span>03</span><h3>Execution</h3><p>Content, PR, collaborations, website work and launch assets are delivered in one system.</p></article><article class="vip-process-card reveal"><span>04</span><h3>Refinement</h3><p>We sharpen what works, remove weak points and keep the brand coherent.</p></article></div><div class="vip-exclusives reveal">
-<header class="vip-exclusives__header"><p class="section-kicker">Exclusive collaborations</p><h3>Exclusive collaborations.</h3><p>More deeply integrated projects where the result was not just a deliverable, but a complete digital direction.</p></header>
+<section class="vip-section vip-about" data-chapter="03" id="about"><div class="vip-about__inner"><div class="vip-about__media reveal"><div class="vip-about__photo-wrap"><img alt="{{ c.about.image_alt | escape }}" class="vip-about__photo" src="{{ sitecms.images.about | escape }}"/><div class="vip-about__floating-card"><strong>Maison Adriano</strong><span>{{ c.about.floating_label | escape }}</span></div></div></div><div class="vip-about__content reveal"><p class="section-kicker">{{ c.about.kicker | escape }}</p><h2>{{ c.about.title.line_1 | escape }}<br/><em>{{ c.about.title.emphasis | escape }}</em></h2><p>{{ c.about.body | escape }}</p><p class="vip-about__note">{{ c.about.note | escape }}</p><div class="vip-about__principles"><article><span>{{ c.about.principles[0].number | escape }}</span><div><h3>{{ c.about.principles[0].title | escape }}</h3><p>{{ c.about.principles[0].text | escape }}</p></div></article><article><span>{{ c.about.principles[1].number | escape }}</span><div><h3>{{ c.about.principles[1].title | escape }}</h3><p>{{ c.about.principles[1].text | escape }}</p></div></article><article><span>{{ c.about.principles[2].number | escape }}</span><div><h3>{{ c.about.principles[2].title | escape }}</h3><p>{{ c.about.principles[2].text | escape }}</p></div></article></div></div></div></section>
+<section class="vip-section vip-collaboration" data-chapter="04" id="work"><div class="vip-collaboration__inner"><header class="vip-collaboration__header reveal"><p class="section-kicker">{{ c.collaboration.kicker | escape }}</p><h2>{{ c.collaboration.title.line_1 | escape }}<br/><em>{{ c.collaboration.title.emphasis | escape }}</em></h2><p>{{ c.collaboration.intro | escape }}</p></header><div class="vip-collaboration__process"><article class="vip-process-card reveal"><span>{{ c.collaboration.steps[0].number | escape }}</span><h3>{{ c.collaboration.steps[0].title | escape }}</h3><p>{{ c.collaboration.steps[0].text | escape }}</p></article><article class="vip-process-card reveal"><span>{{ c.collaboration.steps[1].number | escape }}</span><h3>{{ c.collaboration.steps[1].title | escape }}</h3><p>{{ c.collaboration.steps[1].text | escape }}</p></article><article class="vip-process-card reveal"><span>{{ c.collaboration.steps[2].number | escape }}</span><h3>{{ c.collaboration.steps[2].title | escape }}</h3><p>{{ c.collaboration.steps[2].text | escape }}</p></article><article class="vip-process-card reveal"><span>{{ c.collaboration.steps[3].number | escape }}</span><h3>{{ c.collaboration.steps[3].title | escape }}</h3><p>{{ c.collaboration.steps[3].text | escape }}</p></article></div><div class="vip-exclusives reveal">
+<header class="vip-exclusives__header"><p class="section-kicker">{{ c.collaboration.exclusive.kicker | escape }}</p><h3>{{ c.collaboration.exclusive.title | escape }}</h3><p>{{ c.collaboration.exclusive.intro | escape }}</p></header>
 <div class="vip-exclusives__grid">
-<button class="vip-exclusive-card vip-exclusive-card--sigel" data-info-open="" data-info-template="exclusive-template-sigel" type="button"><span>01</span><small>Digital partner · Web · Intelligence</small><h4>SIGEL<br/>INDUSTRIES</h4><p>Strategic and technical collaboration connecting brand communication, premium web creation and website intelligence.</p><b>View collaboration</b></button>
-<button class="vip-exclusive-card vip-exclusive-card--tank" data-info-open="" data-info-template="exclusive-template-tank" type="button"><span>02</span><small>Brand experience · Web · Booking</small><h4>PARTY TANK<br/>PRAGUE</h4><p>A complete premium digital experience for Party Tank Prague, from positioning and storytelling to booking flow.</p><b>View collaboration</b></button>
+<button class="vip-exclusive-card vip-exclusive-card--sigel" data-info-open="" data-info-template="exclusive-template-sigel" type="button"><span>{{ c.collaboration.exclusive.projects[0].number | escape }}</span><small>{{ c.collaboration.exclusive.projects[0].meta | escape }}</small><h4>{{ c.collaboration.exclusive.projects[0].title_line_1 | escape }}<br/>{{ c.collaboration.exclusive.projects[0].title_line_2 | escape }}</h4><p>{{ c.collaboration.exclusive.projects[0].summary | escape }}</p><b>{{ c.collaboration.exclusive.projects[0].button | escape }}</b></button>
+<button class="vip-exclusive-card vip-exclusive-card--tank" data-info-open="" data-info-template="exclusive-template-tank" type="button"><span>{{ c.collaboration.exclusive.projects[1].number | escape }}</span><small>{{ c.collaboration.exclusive.projects[1].meta | escape }}</small><h4>{{ c.collaboration.exclusive.projects[1].title_line_1 | escape }}<br/>{{ c.collaboration.exclusive.projects[1].title_line_2 | escape }}</h4><p>{{ c.collaboration.exclusive.projects[1].summary | escape }}</p><b>{{ c.collaboration.exclusive.projects[1].button | escape }}</b></button>
 </div>
 </div></div></section>
-<section aria-labelledby="logo-flow-title-en" class="vip-section vip-logo-flow"><header class="vip-logo-flow__header reveal"><p class="section-kicker">Clients</p><h2 id="logo-flow-title-en">Brands we have worked with.</h2><p>A selection of brands and clients for whom communication, websites, strategy or content were delivered.</p></header><div aria-label="Client logos marquee" class="vip-logo-flow__rows reveal"><div class="logo-flow"><div class="logo-flow__track"><a class="logo-flow__item logo-flow__item--image" href="https://jazierce.sk/" rel="noopener" target="_blank"><img alt="Jazierce" loading="lazy" src="../assets/client-logos/01_jazierce.png"/><span class="sr-only">Jazierce</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.kastielalfonz.sk/" rel="noopener" target="_blank"><img alt="Alfonz – Kaštieľ v Trstíne" loading="lazy" src="../assets/client-logos/02_alfonz-kastiel-v-trstine.png"/><span class="sr-only">Alfonz – Kaštieľ v Trstíne</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.instagram.com/synagoga_cafe/" rel="noopener" target="_blank"><img alt="Synagóga café" loading="lazy" src="../assets/client-logos/03_synagoga-cafe.jpeg"/><span class="sr-only">Synagóga café</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.quir.sk/" rel="noopener" target="_blank"><img alt="QUIR" loading="lazy" src="../assets/client-logos/04_quir.png"/><span class="sr-only">QUIR</span></a><a class="logo-flow__item logo-flow__item--image" href="https://hviezdoslavova.sk/" rel="noopener" target="_blank"><img alt="Rezidencia Hviezdoslavova" loading="lazy" src="../assets/client-logos/05_rezidencia-hviezdoslavova.png"/><span class="sr-only">Rezidencia Hviezdoslavova</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.instagram.com/synagoga_cafe/" rel="noopener" target="_blank"><img alt="Synagóga bakery" loading="lazy" src="../assets/client-logos/06_synagoga-bakery.png"/><span class="sr-only">Synagóga bakery</span></a><div class="logo-flow__item logo-flow__item--image is-static"><img alt="Public Interest" loading="lazy" src="../assets/client-logos/07_public-interest.png"/><span class="sr-only">Public Interest</span></div><a class="logo-flow__item logo-flow__item--image" href="https://www.nasepeniaze.eu/" rel="noopener" target="_blank"><img alt="Naše peniaze" loading="lazy" src="../assets/client-logos/08_nase-peniaze.jpeg"/><span class="sr-only">Naše peniaze</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.instagram.com/divadlocafe/" rel="noopener" target="_blank"><img alt="Divadlo Café" loading="lazy" src="../assets/client-logos/09_divadlo-cafe.png"/><span class="sr-only">Divadlo Café</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.vahoreal.sk/" rel="noopener" target="_blank"><img alt="VAHO REAL" loading="lazy" src="../assets/client-logos/10_vaho-real.png"/><span class="sr-only">VAHO REAL</span></a><a class="logo-flow__item logo-flow__item--image" href="https://pozicajsidodavku.sk/" rel="noopener" target="_blank"><img alt="Požičaj si ma!" loading="lazy" src="../assets/client-logos/11_pozicaj-si-ma.png"/><span class="sr-only">Požičaj si ma!</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.mariapenzion.sk/" rel="noopener" target="_blank"><img alt="MÁRIA – Penzión &amp; Restaurant" loading="lazy" src="../assets/client-logos/12_maria-penzion-restaurant.png"/><span class="sr-only">MÁRIA – Penzión &amp; Restaurant</span></a><div class="logo-flow__item logo-flow__item--image is-static"><img alt="Brunchcafé" loading="lazy" src="../assets/client-logos/13_brunchcafe.jpeg"/><span class="sr-only">Brunchcafé</span></div><a class="logo-flow__item logo-flow__item--image" href="https://zahradazamlynom.sk/" rel="noopener" target="_blank"><img alt="Záhrada za Mlynom" loading="lazy" src="../assets/client-logos/14_zahrada-za-mlynom.png"/><span class="sr-only">Záhrada za Mlynom</span></a><a class="logo-flow__item logo-flow__item--image" href="https://jazierce.sk/" rel="noopener" target="_blank"><img alt="Jazierce" loading="lazy" src="../assets/client-logos/01_jazierce.png"/><span class="sr-only">Jazierce</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.kastielalfonz.sk/" rel="noopener" target="_blank"><img alt="Alfonz – Kaštieľ v Trstíne" loading="lazy" src="../assets/client-logos/02_alfonz-kastiel-v-trstine.png"/><span class="sr-only">Alfonz – Kaštieľ v Trstíne</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.instagram.com/synagoga_cafe/" rel="noopener" target="_blank"><img alt="Synagóga café" loading="lazy" src="../assets/client-logos/03_synagoga-cafe.jpeg"/><span class="sr-only">Synagóga café</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.quir.sk/" rel="noopener" target="_blank"><img alt="QUIR" loading="lazy" src="../assets/client-logos/04_quir.png"/><span class="sr-only">QUIR</span></a><a class="logo-flow__item logo-flow__item--image" href="https://hviezdoslavova.sk/" rel="noopener" target="_blank"><img alt="Rezidencia Hviezdoslavova" loading="lazy" src="../assets/client-logos/05_rezidencia-hviezdoslavova.png"/><span class="sr-only">Rezidencia Hviezdoslavova</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.instagram.com/synagoga_cafe/" rel="noopener" target="_blank"><img alt="Synagóga bakery" loading="lazy" src="../assets/client-logos/06_synagoga-bakery.png"/><span class="sr-only">Synagóga bakery</span></a><div class="logo-flow__item logo-flow__item--image is-static"><img alt="Public Interest" loading="lazy" src="../assets/client-logos/07_public-interest.png"/><span class="sr-only">Public Interest</span></div><a class="logo-flow__item logo-flow__item--image" href="https://www.nasepeniaze.eu/" rel="noopener" target="_blank"><img alt="Naše peniaze" loading="lazy" src="../assets/client-logos/08_nase-peniaze.jpeg"/><span class="sr-only">Naše peniaze</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.instagram.com/divadlocafe/" rel="noopener" target="_blank"><img alt="Divadlo Café" loading="lazy" src="../assets/client-logos/09_divadlo-cafe.png"/><span class="sr-only">Divadlo Café</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.vahoreal.sk/" rel="noopener" target="_blank"><img alt="VAHO REAL" loading="lazy" src="../assets/client-logos/10_vaho-real.png"/><span class="sr-only">VAHO REAL</span></a><a class="logo-flow__item logo-flow__item--image" href="https://pozicajsidodavku.sk/" rel="noopener" target="_blank"><img alt="Požičaj si ma!" loading="lazy" src="../assets/client-logos/11_pozicaj-si-ma.png"/><span class="sr-only">Požičaj si ma!</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.mariapenzion.sk/" rel="noopener" target="_blank"><img alt="MÁRIA – Penzión &amp; Restaurant" loading="lazy" src="../assets/client-logos/12_maria-penzion-restaurant.png"/><span class="sr-only">MÁRIA – Penzión &amp; Restaurant</span></a><div class="logo-flow__item logo-flow__item--image is-static"><img alt="Brunchcafé" loading="lazy" src="../assets/client-logos/13_brunchcafe.jpeg"/><span class="sr-only">Brunchcafé</span></div><a class="logo-flow__item logo-flow__item--image" href="https://zahradazamlynom.sk/" rel="noopener" target="_blank"><img alt="Záhrada za Mlynom" loading="lazy" src="../assets/client-logos/14_zahrada-za-mlynom.png"/><span class="sr-only">Záhrada za Mlynom</span></a></div></div><div class="logo-flow"><div class="logo-flow__track logo-flow__track--reverse"><a class="logo-flow__item logo-flow__item--image" href="https://www.odtahovasluzbablasko.sk/" rel="noopener" target="_blank"><img alt="Odťahová služba Blaško" loading="lazy" src="../assets/client-logos/15_odtahova-sluzba-blasko.jpeg"/><span class="sr-only">Odťahová služba Blaško</span></a><a class="logo-flow__item logo-flow__item--image" href="https://republicains.fr/" rel="noopener" target="_blank"><img alt="Les Républicains" loading="lazy" src="../assets/client-logos/16_les-republicains.jpeg"/><span class="sr-only">Les Républicains</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.bjaccounting.sk/" rel="noopener" target="_blank"><img alt="B Accounting Services" loading="lazy" src="../assets/client-logos/17_b-accounting-services.png"/><span class="sr-only">B Accounting Services</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.volis-international.com/en/" rel="noopener" target="_blank"><img alt="VOLIS International" loading="lazy" src="../assets/client-logos/18_volis-international.png"/><span class="sr-only">VOLIS International</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.facebook.com/100091824447564/" rel="noopener" target="_blank"><img alt="ALMITO CARP" loading="lazy" src="../assets/client-logos/19_almito-carp.png"/><span class="sr-only">ALMITO CARP</span></a><div class="logo-flow__item logo-flow__item--image is-static"><img alt="Harmony" loading="lazy" src="../assets/client-logos/20_harmony.png"/><span class="sr-only">Harmony</span></div><a class="logo-flow__item logo-flow__item--image" href="https://rednod.sk/" rel="noopener" target="_blank"><img alt="REDNOD.sk" loading="lazy" src="../assets/client-logos/21_rednod-sk.png"/><span class="sr-only">REDNOD.sk</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.almacare.sk/" rel="noopener" target="_blank"><img alt="AlmaCare" loading="lazy" src="../assets/client-logos/22_almacare.png"/><span class="sr-only">AlmaCare</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.onlinetoro.sk/" rel="noopener" target="_blank"><img alt="ONLINE TORO" loading="lazy" src="../assets/client-logos/23_online-toro.png"/><span class="sr-only">ONLINE TORO</span></a><a class="logo-flow__item logo-flow__item--image" href="https://nitrianskereality.com/" rel="noopener" target="_blank"><img alt="Nitrianska realitná kancelária" loading="lazy" src="../assets/client-logos/24_nitrianska-realitna-kancelaria.png"/><span class="sr-only">Nitrianska realitná kancelária</span></a><a class="logo-flow__item logo-flow__item--image" href="https://profibroker.sk/" rel="noopener" target="_blank"><img alt="ProfiBroker" loading="lazy" src="../assets/client-logos/25_profibroker.png"/><span class="sr-only">ProfiBroker</span></a><a class="logo-flow__item logo-flow__item--image" href="https://ekvoia.sk/" rel="noopener" target="_blank"><img alt="EKVOIA Capital" loading="lazy" src="../assets/client-logos/26_ekvoia-capital.png"/><span class="sr-only">EKVOIA Capital</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.ucm.sk/" rel="noopener" target="_blank"><img alt="UCM – Univerzita sv. Cyrila a Metoda v Trnave" loading="lazy" src="../assets/client-logos/27_ucm-univerzita-sv-cyrila-a-metoda-v-trnave.png"/><span class="sr-only">UCM – Univerzita sv. Cyrila a Metoda v Trnave</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.odtahovasluzbablasko.sk/" rel="noopener" target="_blank"><img alt="Odťahová služba Blaško" loading="lazy" src="../assets/client-logos/15_odtahova-sluzba-blasko.jpeg"/><span class="sr-only">Odťahová služba Blaško</span></a><a class="logo-flow__item logo-flow__item--image" href="https://republicains.fr/" rel="noopener" target="_blank"><img alt="Les Républicains" loading="lazy" src="../assets/client-logos/16_les-republicains.jpeg"/><span class="sr-only">Les Républicains</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.bjaccounting.sk/" rel="noopener" target="_blank"><img alt="B Accounting Services" loading="lazy" src="../assets/client-logos/17_b-accounting-services.png"/><span class="sr-only">B Accounting Services</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.volis-international.com/en/" rel="noopener" target="_blank"><img alt="VOLIS International" loading="lazy" src="../assets/client-logos/18_volis-international.png"/><span class="sr-only">VOLIS International</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.facebook.com/100091824447564/" rel="noopener" target="_blank"><img alt="ALMITO CARP" loading="lazy" src="../assets/client-logos/19_almito-carp.png"/><span class="sr-only">ALMITO CARP</span></a><div class="logo-flow__item logo-flow__item--image is-static"><img alt="Harmony" loading="lazy" src="../assets/client-logos/20_harmony.png"/><span class="sr-only">Harmony</span></div><a class="logo-flow__item logo-flow__item--image" href="https://rednod.sk/" rel="noopener" target="_blank"><img alt="REDNOD.sk" loading="lazy" src="../assets/client-logos/21_rednod-sk.png"/><span class="sr-only">REDNOD.sk</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.almacare.sk/" rel="noopener" target="_blank"><img alt="AlmaCare" loading="lazy" src="../assets/client-logos/22_almacare.png"/><span class="sr-only">AlmaCare</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.onlinetoro.sk/" rel="noopener" target="_blank"><img alt="ONLINE TORO" loading="lazy" src="../assets/client-logos/23_online-toro.png"/><span class="sr-only">ONLINE TORO</span></a><a class="logo-flow__item logo-flow__item--image" href="https://nitrianskereality.com/" rel="noopener" target="_blank"><img alt="Nitrianska realitná kancelária" loading="lazy" src="../assets/client-logos/24_nitrianska-realitna-kancelaria.png"/><span class="sr-only">Nitrianska realitná kancelária</span></a><a class="logo-flow__item logo-flow__item--image" href="https://profibroker.sk/" rel="noopener" target="_blank"><img alt="ProfiBroker" loading="lazy" src="../assets/client-logos/25_profibroker.png"/><span class="sr-only">ProfiBroker</span></a><a class="logo-flow__item logo-flow__item--image" href="https://ekvoia.sk/" rel="noopener" target="_blank"><img alt="EKVOIA Capital" loading="lazy" src="../assets/client-logos/26_ekvoia-capital.png"/><span class="sr-only">EKVOIA Capital</span></a><a class="logo-flow__item logo-flow__item--image" href="https://www.ucm.sk/" rel="noopener" target="_blank"><img alt="UCM – Univerzita sv. Cyrila a Metoda v Trnave" loading="lazy" src="../assets/client-logos/27_ucm-univerzita-sv-cyrila-a-metoda-v-trnave.png"/><span class="sr-only">UCM – Univerzita sv. Cyrila a Metoda v Trnave</span></a></div></div></div></section>
+<section aria-labelledby="logo-flow-title-en" class="vip-section vip-logo-flow"><header class="vip-logo-flow__header reveal"><p class="section-kicker">{{ c.clients.kicker | escape }}</p><h2 id="logo-flow-title-en">{{ c.clients.title | escape }}</h2><p>{{ c.clients.intro | escape }}</p></header><div aria-label="Client logos marquee" class="vip-logo-flow__rows reveal"><div class="logo-flow"><div class="logo-flow__track">{% for duplicate in (1..2) %}
+{% for client in sitecms.client_logos.row_1 %}
+{% if client.url and client.url != "" %}<a class="logo-flow__item logo-flow__item--image" href="{{ client.url | escape }}" rel="noopener" target="_blank"><img alt="{{ client.name | escape }}" loading="lazy" src="{{ client.image | escape }}"/><span class="sr-only">{{ client.name | escape }}</span></a>{% else %}<div class="logo-flow__item logo-flow__item--image is-static"><img alt="{{ client.name | escape }}" loading="lazy" src="{{ client.image | escape }}"/><span class="sr-only">{{ client.name | escape }}</span></div>{% endif %}
+{% endfor %}
+{% endfor %}</div></div><div class="logo-flow"><div class="logo-flow__track logo-flow__track--reverse">{% for duplicate in (1..2) %}
+{% for client in sitecms.client_logos.row_2 %}
+{% if client.url and client.url != "" %}<a class="logo-flow__item logo-flow__item--image" href="{{ client.url | escape }}" rel="noopener" target="_blank"><img alt="{{ client.name | escape }}" loading="lazy" src="{{ client.image | escape }}"/><span class="sr-only">{{ client.name | escape }}</span></a>{% else %}<div class="logo-flow__item logo-flow__item--image is-static"><img alt="{{ client.name | escape }}" loading="lazy" src="{{ client.image | escape }}"/><span class="sr-only">{{ client.name | escape }}</span></div>{% endif %}
+{% endfor %}
+{% endfor %}</div></div></div></section>
 <section class="vip-section vip-private" data-chapter="05" id="vip-clients">
 <div class="vip-private__inner">
 <div class="vip-private__media reveal">
 <figure class="vip-private__frame">
-<img alt="Three guests at a private reception" class="vip-private__photo" decoding="async" height="2048" loading="lazy" src="../assets/vip-clients.webp" width="1630"/>
+<img alt="{{ c.vip.image_alt | escape }}" class="vip-private__photo" decoding="async" height="2048" loading="lazy" src="{{ sitecms.images.vip | escape }}" width="1630"/>
 </figure>
 </div>
 <div class="vip-private__content reveal">
-<p class="section-kicker">VIP clients</p>
-<h2>Trusted by<br/><em>remarkable people.</em></h2>
+<p class="section-kicker">{{ c.vip.kicker | escape }}</p>
+<h2>{{ c.vip.title.line_1 | escape }}<br/><em>{{ c.vip.title.emphasis | escape }}</em></h2>
 <div aria-hidden="true" class="vip-private__ornament"><span></span><i></i><span></span></div>
-<p class="vip-private__lead">We work with a select circle of personalities and private clients who value discretion, precision and an exceptional standard of presentation.</p>
-<blockquote>“Discretion in every detail.<br/>Excellence without noise.”</blockquote>
+<p class="vip-private__lead">{{ c.vip.lead | escape }}</p>
+<blockquote>{{ c.vip.quote_line_1 | escape }}<br/>{{ c.vip.quote_line_2 | escape }}</blockquote>
 </div>
 </div>
 </section>
 <section class="vip-section vip-closing" data-chapter="06" id="contact">
 <div aria-hidden="true" class="vip-closing__ambient"></div>
 <div class="vip-closing__inner reveal">
-<p class="section-kicker">A private beginning</p>
-<h2>Every collaboration starts with<br/><em>a conversation.</em></h2>
-<p>Tell us where the brand is now and where it should go next. We will return with a clear first direction.</p>
+<p class="section-kicker">{{ c.closing.kicker | escape }}</p>
+<h2>{{ c.closing.title.line_1 | escape }}<br/><em>{{ c.closing.title.emphasis | escape }}</em></h2>
+<p>{{ c.closing.intro | escape }}</p>
 <div class="vip-closing__action">
-<button aria-controls="contact-modal" data-contact-open="" type="button"><span>Start the conversation</span><i aria-hidden="true">→</i></button>
-<small>Private introductory consultation · no obligation</small>
+<button aria-controls="contact-modal" data-contact-open="" type="button"><span>{{ c.closing.button | escape }}</span><i aria-hidden="true">→</i></button>
+<small>{{ c.closing.note | escape }}</small>
 </div>
 </div>
 </section>
 </main>
-<footer class="site-footer"><div class="container footer-inner"><div><strong>Maison Adriano Agency</strong><p>Boutique social marketing for premium brands.</p></div><div class="footer-links"><a class="active" href="#top">Home</a>
+<footer class="site-footer"><div class="container footer-inner"><div><strong>Maison Adriano Agency</strong><p>{{ c.footer.tagline | escape }}</p></div><div class="footer-links"><a class="active" href="#top">Home</a>
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#work">Work</a>
@@ -283,18 +298,18 @@ brands.</h1>
 <div class="ma-contact-modal__shell">
 <button aria-label="Close form" class="ma-contact-modal__close" data-contact-close="" type="button"><span></span><span></span></button>
 <aside class="ma-contact-modal__aside">
-<img alt="" class="ma-contact-modal__logo" src="../assets/brand-logo.webp"/>
+<img alt="" class="ma-contact-modal__logo" src="{{ sitecms.images.brand_logo | escape }}"/>
 <div>
-<p>Start a collaboration</p>
-<h2>Premium presence starts with clarity.</h2>
-<span>Strategy, social media, PR, influencers, web and audit aligned in one direction.</span>
+<p>{{ c.contact_modal.aside_kicker | escape }}</p>
+<h2>{{ c.contact_modal.aside_title | escape }}</h2>
+<span>{{ c.contact_modal.aside_text | escape }}</span>
 </div>
 </aside>
 <div class="ma-contact-modal__form-panel">
 <div class="ma-contact-modal__heading">
-<p class="section-kicker">Start a collaboration</p>
-<h2 id="contact-modal-title">What do you want to elevate?</h2>
-<p>Briefly describe the brand, the goal and the scope. We will respond with the next steps.</p>
+<p class="section-kicker">{{ c.contact_modal.kicker | escape }}</p>
+<h2 id="contact-modal-title">{{ c.contact_modal.title | escape }}</h2>
+<p>{{ c.contact_modal.intro | escape }}</p>
 </div>
 <form action="https://formspree.io/f/your-form-id" class="modal-contact-form" method="POST">
 <input name="language" type="hidden" value="en"/>
@@ -309,19 +324,19 @@ brands.</h1>
 </div>
 <label>About the project<textarea name="message" placeholder="What do you do, what do you want to achieve and where do you need help?" required="" rows="6"></textarea></label>
 <div class="modal-contact-form__footer">
-<p>By submitting the form, you consent to the processing of your details for the purpose of handling the inquiry.</p>
-<button type="submit"><span>Send inquiry</span><i aria-hidden="true">→</i></button>
+<p>{{ c.contact_modal.privacy_note | escape }}</p>
+<button type="submit"><span>{{ c.contact_modal.submit | escape }}</span><i aria-hidden="true">→</i></button>
 </div>
 </form>
 </div>
 </div>
-</div><div aria-hidden="true" aria-labelledby="info-modal-title" aria-modal="true" class="vip-info-modal" id="info-modal" role="dialog"><div class="vip-info-modal__backdrop" data-info-close=""></div><div class="vip-info-modal__shell"><button aria-label="Close detail" class="vip-info-modal__close" data-info-close="" type="button"><span></span><span></span></button><div class="vip-info-modal__content" data-info-body=""></div></div></div><template id="service-template-strategy"><article class="vip-info-card"><p class="vip-info-kicker">Service detail</p><h3>Marketing strategy</h3><p class="vip-info-intro">A strategic foundation for brands that need a clearer point of view and stronger market perception.</p><div class="vip-info-grid"><div><h4>What it includes</h4><ul><li>Brand and offer diagnosis</li><li>Audience and positioning framework</li><li>Messaging hierarchy and campaign themes</li></ul></div><div><h4>Best for</h4><ul><li>New brands, repositioning, premium services</li><li>Founder-led brands that need clarity</li></ul></div><div><h4>Typical outputs</h4><ul><li>Strategy deck</li><li>Core messages</li><li>Campaign direction</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Marketing strategy" type="button">Discuss this service</button></div></article></template>
-<template id="service-template-social"><article class="vip-info-card"><p class="vip-info-kicker">Service detail</p><h3>Social media management</h3><p class="vip-info-intro">Ongoing social care designed as part of the brand world, not as random publishing.</p><div class="vip-info-grid"><div><h4>What it includes</h4><ul><li>Monthly content structure</li><li>Editorial planning and channel rhythm</li><li>Daily management and oversight</li></ul></div><div><h4>Best for</h4><ul><li>Brands that need consistency</li><li>Businesses where social presence influences trust</li></ul></div><div><h4>Typical outputs</h4><ul><li>Content pillars</li><li>Monthly plan</li><li>Publishing oversight</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Social media management &amp; production" type="button">Discuss this service</button></div></article></template>
-<template id="service-template-production"><article class="vip-info-card"><p class="vip-info-kicker">Service detail</p><h3>Production</h3><p class="vip-info-intro">Visual production built to support campaigns, launches and continuous brand presence.</p><div class="vip-info-grid"><div><h4>What it includes</h4><ul><li>Creative concepts and art direction</li><li>Production briefs and shoot planning</li><li>Visual asset selection and refinement</li></ul></div><div><h4>Best for</h4><ul><li>Campaign launches</li><li>Service businesses with image-driven sales</li></ul></div><div><h4>Typical outputs</h4><ul><li>Shoot concept</li><li>Asset direction</li><li>Production structure</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Social media management &amp; production" type="button">Discuss this service</button></div></article></template>
-<template id="service-template-pr"><article class="vip-info-card"><p class="vip-info-kicker">Service detail</p><h3>Influencer collaborations and PR</h3><p class="vip-info-intro">Visibility work for brands that want more reach without losing control of tone or quality.</p><div class="vip-info-grid"><div><h4>What it includes</h4><ul><li>Influencer matching and collaboration framing</li><li>PR angle and communication support</li><li>Partnership and launch visibility ideas</li></ul></div><div><h4>Best for</h4><ul><li>Lifestyle, beauty, hospitality and founder brands</li><li>Brands seeking stronger social proof</li></ul></div><div><h4>Typical outputs</h4><ul><li>Collaboration shortlist</li><li>PR direction</li><li>Launch support</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Public Relations" type="button">Discuss this service</button></div></article></template>
-<template id="service-template-web"><article class="vip-info-card"><p class="vip-info-kicker">Service detail</p><h3>Website creation</h3><p class="vip-info-intro">Websites that look premium, communicate clearly and support conversion without clutter.</p><div class="vip-info-grid"><div><h4>What it includes</h4><ul><li>Site structure and messaging</li><li>Wireframe direction and premium UI input</li><li>Build coordination with technical partner</li></ul></div><div><h4>Best for</h4><ul><li>Premium services, hospitality, personal brands</li><li>Brands that outgrew a weak website</li></ul></div><div><h4>Typical outputs</h4><ul><li>Page structure</li><li>Web copy direction</li><li>Launch-ready site scope</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Web design" type="button">Discuss this service</button></div></article></template>
-<template id="service-template-audit"><article class="vip-info-card"><p class="vip-info-kicker">Service detail</p><h3>Website audit</h3><p class="vip-info-intro">A clear outside view of what the current website communicates well — and where it leaks value.</p><div class="vip-info-grid"><div><h4>What it includes</h4><ul><li>Messaging and offer clarity review</li><li>UX and conversion friction mapping</li><li>Technical and positioning notes</li></ul></div><div><h4>Best for</h4><ul><li>Existing brands with a live website</li><li>Founders who want a sharp external review</li></ul></div><div><h4>Typical outputs</h4><ul><li>Audit summary</li><li>Priority list</li><li>Improvement direction</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Web audit" type="button">Discuss this service</button></div></article></template>
-<template id="exclusive-template-sigel"><article class="vip-info-card vip-info-card--client"><p class="vip-info-kicker">Collaboration detail</p><h3>SIGEL Industries</h3><p class="vip-info-intro">Strategic and technical collaboration connecting brand communication, premium web creation and website intelligence.</p><div class="vip-info-grid vip-info-grid--client"><div><h4>Scope</h4><ul><li>Brand and communication systems</li><li>Premium website creation</li><li>Website audit and intelligence</li></ul></div><div><h4>Direction</h4><p>Digital partner · Web · Intelligence</p></div></div><div class="vip-info-actions"><a class="vip-primary-link" href="https://sigel-industries.com/" rel="noopener" target="_blank">Open website</a></div></article></template>
-<template id="exclusive-template-tank"><article class="vip-info-card vip-info-card--client"><p class="vip-info-kicker">Collaboration detail</p><h3>Party Tank Prague</h3><p class="vip-info-intro">A complete premium digital experience for Party Tank Prague, from positioning and storytelling to booking flow.</p><div class="vip-info-grid vip-info-grid--client"><div><h4>Scope</h4><ul><li>Positioning and storytelling</li><li>Editorial web experience</li><li>Booking journey and conversion structure</li></ul></div><div><h4>Direction</h4><p>Brand experience · Web · Booking</p></div></div><div class="vip-info-actions"><a class="vip-primary-link" href="https://sigel-industries.github.io/partytankprague/" rel="noopener" target="_blank">Open website</a></div></article></template><script src="../script.js"></script><script src="../consent.js"></script>
+</div><div aria-hidden="true" aria-labelledby="info-modal-title" aria-modal="true" class="vip-info-modal" id="info-modal" role="dialog"><div class="vip-info-modal__backdrop" data-info-close=""></div><div class="vip-info-modal__shell"><button aria-label="Close detail" class="vip-info-modal__close" data-info-close="" type="button"><span></span><span></span></button><div class="vip-info-modal__content" data-info-body=""></div></div></div><template id="service-template-strategy"><article class="vip-info-card"><p class="vip-info-kicker">{{ c.services["items"][0].modal.kicker | escape }}</p><h3>{{ c.services["items"][0].modal.title | escape }}</h3><p class="vip-info-intro">{{ c.services["items"][0].modal.intro | escape }}</p><div class="vip-info-grid"><div><h4>{{ c.services["items"][0].modal.includes_title | escape }}</h4><ul><li>{{ c.services["items"][0].modal.includes[0] | escape }}</li><li>{{ c.services["items"][0].modal.includes[1] | escape }}</li><li>{{ c.services["items"][0].modal.includes[2] | escape }}</li></ul></div><div><h4>{{ c.services["items"][0].modal.best_for_title | escape }}</h4><ul><li>{{ c.services["items"][0].modal.best_for[0] | escape }}</li><li>{{ c.services["items"][0].modal.best_for[1] | escape }}</li></ul></div><div><h4>{{ c.services["items"][0].modal.outputs_title | escape }}</h4><ul><li>{{ c.services["items"][0].modal.outputs[0] | escape }}</li><li>{{ c.services["items"][0].modal.outputs[1] | escape }}</li><li>{{ c.services["items"][0].modal.outputs[2] | escape }}</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Marketing strategy" type="button">{{ c.services["items"][0].modal.cta | escape }}</button></div></article></template>
+<template id="service-template-social"><article class="vip-info-card"><p class="vip-info-kicker">{{ c.services["items"][1].modal.kicker | escape }}</p><h3>{{ c.services["items"][1].modal.title | escape }}</h3><p class="vip-info-intro">{{ c.services["items"][1].modal.intro | escape }}</p><div class="vip-info-grid"><div><h4>{{ c.services["items"][1].modal.includes_title | escape }}</h4><ul><li>{{ c.services["items"][1].modal.includes[0] | escape }}</li><li>{{ c.services["items"][1].modal.includes[1] | escape }}</li><li>{{ c.services["items"][1].modal.includes[2] | escape }}</li></ul></div><div><h4>{{ c.services["items"][1].modal.best_for_title | escape }}</h4><ul><li>{{ c.services["items"][1].modal.best_for[0] | escape }}</li><li>{{ c.services["items"][1].modal.best_for[1] | escape }}</li></ul></div><div><h4>{{ c.services["items"][1].modal.outputs_title | escape }}</h4><ul><li>{{ c.services["items"][1].modal.outputs[0] | escape }}</li><li>{{ c.services["items"][1].modal.outputs[1] | escape }}</li><li>{{ c.services["items"][1].modal.outputs[2] | escape }}</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Social media management &amp; production" type="button">{{ c.services["items"][1].modal.cta | escape }}</button></div></article></template>
+<template id="service-template-production"><article class="vip-info-card"><p class="vip-info-kicker">{{ c.services["items"][2].modal.kicker | escape }}</p><h3>{{ c.services["items"][2].modal.title | escape }}</h3><p class="vip-info-intro">{{ c.services["items"][2].modal.intro | escape }}</p><div class="vip-info-grid"><div><h4>{{ c.services["items"][2].modal.includes_title | escape }}</h4><ul><li>{{ c.services["items"][2].modal.includes[0] | escape }}</li><li>{{ c.services["items"][2].modal.includes[1] | escape }}</li><li>{{ c.services["items"][2].modal.includes[2] | escape }}</li></ul></div><div><h4>{{ c.services["items"][2].modal.best_for_title | escape }}</h4><ul><li>{{ c.services["items"][2].modal.best_for[0] | escape }}</li><li>{{ c.services["items"][2].modal.best_for[1] | escape }}</li></ul></div><div><h4>{{ c.services["items"][2].modal.outputs_title | escape }}</h4><ul><li>{{ c.services["items"][2].modal.outputs[0] | escape }}</li><li>{{ c.services["items"][2].modal.outputs[1] | escape }}</li><li>{{ c.services["items"][2].modal.outputs[2] | escape }}</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Social media management &amp; production" type="button">{{ c.services["items"][2].modal.cta | escape }}</button></div></article></template>
+<template id="service-template-pr"><article class="vip-info-card"><p class="vip-info-kicker">{{ c.services["items"][3].modal.kicker | escape }}</p><h3>{{ c.services["items"][3].modal.title | escape }}</h3><p class="vip-info-intro">{{ c.services["items"][3].modal.intro | escape }}</p><div class="vip-info-grid"><div><h4>{{ c.services["items"][3].modal.includes_title | escape }}</h4><ul><li>{{ c.services["items"][3].modal.includes[0] | escape }}</li><li>{{ c.services["items"][3].modal.includes[1] | escape }}</li><li>{{ c.services["items"][3].modal.includes[2] | escape }}</li></ul></div><div><h4>{{ c.services["items"][3].modal.best_for_title | escape }}</h4><ul><li>{{ c.services["items"][3].modal.best_for[0] | escape }}</li><li>{{ c.services["items"][3].modal.best_for[1] | escape }}</li></ul></div><div><h4>{{ c.services["items"][3].modal.outputs_title | escape }}</h4><ul><li>{{ c.services["items"][3].modal.outputs[0] | escape }}</li><li>{{ c.services["items"][3].modal.outputs[1] | escape }}</li><li>{{ c.services["items"][3].modal.outputs[2] | escape }}</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Public Relations" type="button">{{ c.services["items"][3].modal.cta | escape }}</button></div></article></template>
+<template id="service-template-web"><article class="vip-info-card"><p class="vip-info-kicker">{{ c.services["items"][4].modal.kicker | escape }}</p><h3>{{ c.services["items"][4].modal.title | escape }}</h3><p class="vip-info-intro">{{ c.services["items"][4].modal.intro | escape }}</p><div class="vip-info-grid"><div><h4>{{ c.services["items"][4].modal.includes_title | escape }}</h4><ul><li>{{ c.services["items"][4].modal.includes[0] | escape }}</li><li>{{ c.services["items"][4].modal.includes[1] | escape }}</li><li>{{ c.services["items"][4].modal.includes[2] | escape }}</li></ul></div><div><h4>{{ c.services["items"][4].modal.best_for_title | escape }}</h4><ul><li>{{ c.services["items"][4].modal.best_for[0] | escape }}</li><li>{{ c.services["items"][4].modal.best_for[1] | escape }}</li></ul></div><div><h4>{{ c.services["items"][4].modal.outputs_title | escape }}</h4><ul><li>{{ c.services["items"][4].modal.outputs[0] | escape }}</li><li>{{ c.services["items"][4].modal.outputs[1] | escape }}</li><li>{{ c.services["items"][4].modal.outputs[2] | escape }}</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Web design" type="button">{{ c.services["items"][4].modal.cta | escape }}</button></div></article></template>
+<template id="service-template-audit"><article class="vip-info-card"><p class="vip-info-kicker">{{ c.services["items"][5].modal.kicker | escape }}</p><h3>{{ c.services["items"][5].modal.title | escape }}</h3><p class="vip-info-intro">{{ c.services["items"][5].modal.intro | escape }}</p><div class="vip-info-grid"><div><h4>{{ c.services["items"][5].modal.includes_title | escape }}</h4><ul><li>{{ c.services["items"][5].modal.includes[0] | escape }}</li><li>{{ c.services["items"][5].modal.includes[1] | escape }}</li><li>{{ c.services["items"][5].modal.includes[2] | escape }}</li></ul></div><div><h4>{{ c.services["items"][5].modal.best_for_title | escape }}</h4><ul><li>{{ c.services["items"][5].modal.best_for[0] | escape }}</li><li>{{ c.services["items"][5].modal.best_for[1] | escape }}</li></ul></div><div><h4>{{ c.services["items"][5].modal.outputs_title | escape }}</h4><ul><li>{{ c.services["items"][5].modal.outputs[0] | escape }}</li><li>{{ c.services["items"][5].modal.outputs[1] | escape }}</li><li>{{ c.services["items"][5].modal.outputs[2] | escape }}</li></ul></div></div><div class="vip-info-actions"><button class="vip-primary-button" data-info-contact="Web audit" type="button">{{ c.services["items"][5].modal.cta | escape }}</button></div></article></template>
+<template id="exclusive-template-sigel"><article class="vip-info-card vip-info-card--client"><p class="vip-info-kicker">{{ c.collaboration.exclusive.projects[0].modal.kicker | escape }}</p><h3>{{ c.collaboration.exclusive.projects[0].modal.title | escape }}</h3><p class="vip-info-intro">{{ c.collaboration.exclusive.projects[0].modal.intro | escape }}</p><div class="vip-info-grid vip-info-grid--client"><div><h4>{{ c.collaboration.exclusive.projects[0].modal.scope_title | escape }}</h4><ul><li>{{ c.collaboration.exclusive.projects[0].modal.scope[0] | escape }}</li><li>{{ c.collaboration.exclusive.projects[0].modal.scope[1] | escape }}</li><li>{{ c.collaboration.exclusive.projects[0].modal.scope[2] | escape }}</li></ul></div><div><h4>{{ c.collaboration.exclusive.projects[0].modal.direction_title | escape }}</h4><p>{{ c.collaboration.exclusive.projects[0].modal.direction | escape }}</p></div></div><div class="vip-info-actions"><a class="vip-primary-link" href="{{ sitecms.exclusive_links.sigel | escape }}" rel="noopener" target="_blank">{{ c.collaboration.exclusive.projects[0].modal.link_text | escape }}</a></div></article></template>
+<template id="exclusive-template-tank"><article class="vip-info-card vip-info-card--client"><p class="vip-info-kicker">{{ c.collaboration.exclusive.projects[1].modal.kicker | escape }}</p><h3>{{ c.collaboration.exclusive.projects[1].modal.title | escape }}</h3><p class="vip-info-intro">{{ c.collaboration.exclusive.projects[1].modal.intro | escape }}</p><div class="vip-info-grid vip-info-grid--client"><div><h4>{{ c.collaboration.exclusive.projects[1].modal.scope_title | escape }}</h4><ul><li>{{ c.collaboration.exclusive.projects[1].modal.scope[0] | escape }}</li><li>{{ c.collaboration.exclusive.projects[1].modal.scope[1] | escape }}</li><li>{{ c.collaboration.exclusive.projects[1].modal.scope[2] | escape }}</li></ul></div><div><h4>{{ c.collaboration.exclusive.projects[1].modal.direction_title | escape }}</h4><p>{{ c.collaboration.exclusive.projects[1].modal.direction | escape }}</p></div></div><div class="vip-info-actions"><a class="vip-primary-link" href="{{ sitecms.exclusive_links.tank | escape }}" rel="noopener" target="_blank">{{ c.collaboration.exclusive.projects[1].modal.link_text | escape }}</a></div></article></template><script src="../script.js"></script><script src="../consent.js"></script>
 </body>
 </html>

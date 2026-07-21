@@ -1,0 +1,61 @@
+kicker: Spolupráce
+title:
+  line_1: Jasný proces.
+  emphasis: Žádná agenturní mlha.
+intro: Každý krok má svůj důvod, konkrétní výstup a rozhodnutí. Bez nekonečných callů a prezentací, které nic neposunou.
+steps:
+- number: '01'
+  title: Diagnóza
+  text: Podíváme se na aktuální značku, publikum, komunikaci a místa, kde se ztrácí hodnota.
+- number: '02'
+  title: Směr
+  text: Jasný koncept určí positioning, tón, kanály a priority.
+- number: '03'
+  title: Exekuce
+  text: Obsah, PR, spolupráce, web i spouštěcí výstupy dodáme v jednom systému.
+- number: '04'
+  title: Ladění
+  text: Posílíme, co funguje, odstraníme slabá místa a udržíme značku konzistentní.
+exclusive:
+  kicker: Exkluzivní spolupráce
+  title: Exkluzivní spolupráce.
+  intro: Hlouběji propojené projekty, kde nevznikl jen výstup, ale celý digitální směr.
+  projects:
+  - key: sigel
+    number: '01'
+    meta: Digitální partner · Web · Intelligence
+    title_line_1: SIGEL
+    title_line_2: INDUSTRIES
+    summary: Strategické a technické propojení brand komunikace, prémiové tvorby webů a web intelligence.
+    button: Zobrazit spolupráci
+    modal:
+      kicker: Detail spolupráce
+      title: SIGEL Industries
+      intro: Strategické a technické propojení brand komunikace, prémiové tvorby webů a web intelligence.
+      scope_title: Rozsah
+      scope:
+      - Brand and communication systems
+      - Premium website creation
+      - Website audit and intelligence
+      direction_title: Směr
+      direction: Digitální partner · Web · Intelligence
+      link_text: Otevřít web
+  - key: tank
+    number: '02'
+    meta: Brand experience · Web · Rezervace
+    title_line_1: PARTY TANK
+    title_line_2: PRAGUE
+    summary: Kompletní prémiový digitální zážitek pro Party Tank Prague — od positioningu a storytellingu po rezervační flow.
+    button: Zobrazit spolupráci
+    modal:
+      kicker: Detail spolupráce
+      title: Party Tank Prague
+      intro: Kompletní prémiový digitální zážitek pro Party Tank Prague — od positioningu a storytellingu po rezervační flow.
+      scope_title: Rozsah
+      scope:
+      - Positioning and storytelling
+      - Editorial web experience
+      - Booking journey and conversion structure
+      direction_title: Směr
+      direction: Brand experience · Web · Rezervace
+      link_text: Otevřít web
