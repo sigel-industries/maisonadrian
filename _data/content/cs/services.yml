@@ -1,212 +1,227 @@
 kicker: Služby
-title: Šest disciplín. Jeden koherentní svět značky.
-intro: Projděte si služby jako jeden propojený systém. Každou scénu můžete otevřít a podívat se na praktický rozsah, výstupy
-  i typ projektu, pro který je vhodná.
+title: Naše služby. Jeden koherentní svět značky.
+intro: Projděte si služby jako jeden propojený systém. Každou scénu můžete
+  otevřít a podívat se na praktický rozsah, výstupy i typ projektu, pro který je
+  vhodná.
 topbar: Maison Adriano · Služby
 detail_cta: Zobrazit detail služby
 hint: Scrollem měníte službu
 items:
-- key: strategy
-  number: '01'
-  word: BRAND
-  vertical: Architektura nabídky a jasný směr
-  chip: Brand foundation
-  panel_kicker: Positioning systém
-  panel_title: Architektura nabídky a jasný směr
-  panel_meta: message · offer · campaigns
-  category: Strategy
-  title: Marketingová strategie
-  summary: Positioning, architektura nabídky a směr komunikace sladěné s reálnými obchodními cíli.
-  bullets:
-  - Positioning
-  - Messaging
-  - Kampaňová logika
-  modal:
-    kicker: Detail služby
+  - key: strategy
+    number: "01"
+    word: BRAND
+    vertical: Architektura nabídky a jasný směr
+    chip: Brand foundation
+    panel_kicker: Positioning systém
+    panel_title: Architektura nabídky a jasný směr
+    panel_meta: message · offer · campaigns
+    category: Strategy
     title: Marketingová strategie
-    intro: Strategický základ pro značky, které potřebují jasnější názor a silnější tržní vnímání.
-    includes_title: Co zahrnuje
-    includes:
-    - Diagnóza značky a nabídky
-    - Rámec publika a positioningu
-    - Hierarchie message a kampaňová témata
-    best_for_title: Vhodné pro
-    best_for:
-    - Nové značky, repositioning, prémiové služby
-    - Osobní značky, které potřebují větší jasnost
-    outputs_title: Typické výstupy
-    outputs:
-    - Strategický deck
-    - Klíčové zprávy
-    - Kampaňový směr
-    cta: Probrat tuto službu
-- key: social
-  number: '02'
-  word: SOCIAL
-  vertical: Systém, který drží obsah pohromadě
-  chip: Content engine
-  panel_kicker: Content rhythm
-  panel_title: Systém, který drží obsah pohromadě
-  panel_meta: planning · content · management
-  category: Social
-  title: Správa sociálních sítí
-  summary: Obsahový systém, plánování, kreativní vedení a každodenní správa, která drží značku koherentní.
-  bullets:
-  - Obsahový systém
-  - Plánování
-  - Správa kanálů
-  modal:
-    kicker: Detail služby
+    summary: Positioning, architektura nabídky a směr komunikace sladěné s reálnými
+      obchodními cíli.
+    bullets:
+      - Positioning
+      - Messaging
+      - Kampaňová logika
+    modal:
+      kicker: Detail služby
+      title: Marketingová strategie
+      intro: Strategický základ pro značky, které potřebují jasnější názor a silnější
+        tržní vnímání.
+      includes_title: Co zahrnuje
+      includes:
+        - Analýza konkurence — kde jste podobní a kde se je třeba odlišit
+        - Positioning — jedna jasná věc, kterou jste jiní a kterou si zákazník
+          zapamatuje
+        - Plán komunikace — co říkat na webu, sociálních sítích a v PR, aby to
+          sedělo dohromady
+      best_for_title: Vhodné pro
+      best_for:
+        - Nové značky, repositioning, prémiové služby
+        - Osobní značky, které potřebují větší jasnost
+      outputs_title: Typické výstupy
+      outputs:
+        - Strategický deck
+        - Klíčové zprávy
+        - Kampaňový směr
+      cta: Probrat tuto službu
+  - key: social
+    number: "02"
+    word: SOCIAL
+    vertical: Systém, který drží obsah pohromadě
+    chip: Content engine
+    panel_kicker: Content rhythm
+    panel_title: Systém, který drží obsah pohromadě
+    panel_meta: planning · content · management
+    category: Social
     title: Správa sociálních sítí
-    intro: Průběžná péče o social navržená jako součást brand světa, ne jako náhodné publikování.
-    includes_title: Co zahrnuje
-    includes:
-    - Měsíční struktura obsahu
-    - Editoriální plánování a rytmus kanálů
-    - Každodenní správa a dohled
-    best_for_title: Vhodné pro
-    best_for:
-    - Značky, které potřebují konzistenci
-    - Firmy, kde social ovlivňuje důvěru
-    outputs_title: Typické výstupy
-    outputs:
-    - Obsahové pilíře
-    - Měsíční plán
-    - Publikační dohled
-    cta: Probrat tuto službu
-- key: production
-  number: '03'
-  word: VISUAL
-  vertical: Foto, video a výstupy s jedním stylem
-  chip: Production suite
-  panel_kicker: Creative production
-  panel_title: Foto, video a výstupy s jedním stylem
-  panel_meta: art direction · assets · shoots
-  category: Production
-  title: Produkce
-  summary: Foto, video a kreativní výstupy formované tak, aby podporovaly jazyk značky, ne s ním bojovaly.
-  bullets:
-  - Foto
-  - Video
-  - Creative direction
-  modal:
-    kicker: Detail služby
+    summary: Obsahový systém, plánování, kreativní vedení a každodenní správa, která
+      drží značku koherentní.
+    bullets:
+      - Obsahový systém
+      - Plánování
+      - Správa kanálů
+    modal:
+      kicker: Detail služby
+      title: Správa sociálních sítí
+      intro: Průběžná péče o social navržená jako součást brand světa, ne jako náhodné
+        publikování.
+      includes_title: Co zahrnuje
+      includes:
+        - Měsíční struktura obsahu
+        - Editoriální plánování a rytmus kanálů
+        - Každodenní správa a dohled
+      best_for_title: Vhodné pro
+      best_for:
+        - Značky, které potřebují konzistenci
+        - Firmy, kde social ovlivňuje důvěru
+      outputs_title: Typické výstupy
+      outputs:
+        - Obsahové pilíře
+        - Měsíční plán
+        - Publikační dohled
+      cta: Probrat tuto službu
+  - key: production
+    number: "03"
+    word: VISUAL
+    vertical: Foto, video a výstupy s jedním stylem
+    chip: Production suite
+    panel_kicker: Creative production
+    panel_title: Foto, video a výstupy s jedním stylem
+    panel_meta: art direction · assets · shoots
+    category: Production
     title: Produkce
-    intro: Vizuální produkce vytvořená pro kampaně, launch a dlouhodobou přítomnost značky.
-    includes_title: Co zahrnuje
-    includes:
-    - Kreativní koncept a art direction
-    - Produkční zadání a plánování shootu
-    - Výběr a finální doladění assetů
-    best_for_title: Vhodné pro
-    best_for:
-    - Spouštění kampaní
-    - Služby, kde prodává image
-    outputs_title: Typické výstupy
-    outputs:
-    - Koncept shootu
-    - Směřování assetů
-    - Produkční struktura
-    cta: Probrat tuto službu
-- key: pr
-  number: '04'
-  word: REACH
-  vertical: Viditelnost bez chaosu a bez lacinosti
-  chip: Visibility layer
-  panel_kicker: Influence & PR
-  panel_title: Viditelnost bez chaosu a bez lacinosti
-  panel_meta: partnerships · media · trust
-  category: Influence & PR
-  title: Influencer spolupráce a PR
-  summary: Výběr partnerů, rámování spoluprací a mediální komunikace, které budují důvěru kolem značky.
-  bullets:
-  - Tvůrci
-  - PR
-  - Viditelnost
-  modal:
-    kicker: Detail služby
+    summary: Foto, video a kreativní výstupy formované tak, aby podporovaly jazyk
+      značky, ne s ním bojovaly.
+    bullets:
+      - Foto
+      - Video
+      - Creative direction
+    modal:
+      kicker: Detail služby
+      title: Produkce
+      intro: Vizuální produkce vytvořená pro kampaně, launch a dlouhodobou přítomnost
+        značky.
+      includes_title: Co zahrnuje
+      includes:
+        - Kreativní koncept a art direction
+        - Produkční zadání a plánování shootu
+        - Výběr a finální doladění assetů
+      best_for_title: Vhodné pro
+      best_for:
+        - Spouštění kampaní
+        - Služby, kde prodává image
+      outputs_title: Typické výstupy
+      outputs:
+        - Koncept shootu
+        - Směřování assetů
+        - Produkční struktura
+      cta: Probrat tuto službu
+  - key: pr
+    number: "04"
+    word: REACH
+    vertical: Viditelnost bez chaosu a bez lacinosti
+    chip: Visibility layer
+    panel_kicker: Influence & PR
+    panel_title: Viditelnost bez chaosu a bez lacinosti
+    panel_meta: partnerships · media · trust
+    category: Influence & PR
     title: Influencer spolupráce a PR
-    intro: Viditelnost pro značky, které chtějí větší dosah bez ztráty kontroly nad tónem a kvalitou.
-    includes_title: Co zahrnuje
-    includes:
-    - Matching influencerů a rámec spolupráce
-    - PR angle a komunikační podpora
-    - Návrhy partnerství a launch visibility
-    best_for_title: Vhodné pro
-    best_for:
-    - Lifestyle, beauty, hospitality a osobní značky
-    - Značky, které chtějí silnější social proof
-    outputs_title: Typické výstupy
-    outputs:
-    - Shortlist spoluprací
-    - PR směřování
-    - Launch podpora
-    cta: Probrat tuto službu
-- key: web
-  number: '05'
-  word: WEB
-  vertical: Prémiový web jako součást značky
-  chip: Digital platform
-  panel_kicker: Digital presence
-  panel_title: Prémiový web jako součást značky
-  panel_meta: ux · structure · launch
-  category: Digital
-  title: Tvorba webu
-  summary: Prémiové weby připravované ve spolupráci se SIGEL Industries — od komunikační struktury po čisté technické zpracování.
-  bullets:
-  - Webová struktura
-  - UX
-  - Launch
-  modal:
-    kicker: Detail služby
+    summary: Výběr partnerů, rámování spoluprací a mediální komunikace, které budují
+      důvěru kolem značky.
+    bullets:
+      - Tvůrci
+      - PR
+      - Viditelnost
+    modal:
+      kicker: Detail služby
+      title: Influencer spolupráce a PR
+      intro: Viditelnost pro značky, které chtějí větší dosah bez ztráty kontroly nad
+        tónem a kvalitou.
+      includes_title: Co zahrnuje
+      includes:
+        - Matching influencerů a rámec spolupráce
+        - PR angle a komunikační podpora
+        - Návrhy partnerství a launch visibility
+      best_for_title: Vhodné pro
+      best_for:
+        - Lifestyle, beauty, hospitality a osobní značky
+        - Značky, které chtějí silnější social proof
+      outputs_title: Typické výstupy
+      outputs:
+        - Shortlist spoluprací
+        - PR směřování
+        - Launch podpora
+      cta: Probrat tuto službu
+  - key: web
+    number: "05"
+    word: WEB
+    vertical: Prémiový web jako součást značky
+    chip: Digital platform
+    panel_kicker: Digital presence
+    panel_title: Prémiový web jako součást značky
+    panel_meta: ux · structure · launch
+    category: Digital
     title: Tvorba webu
-    intro: Weby, které vypadají prémiově, komunikují jasně a podporují konverzi bez chaosu.
-    includes_title: Co zahrnuje
-    includes:
-    - Struktura webu a messaging
-    - Wireframe směřování a premium UI input
-    - Koordinace realizace s technickým partnerem
-    best_for_title: Vhodné pro
-    best_for:
-    - Prémiové služby, hospitality, osobní značky
-    - Značky, které už přerostly slabý web
-    outputs_title: Typické výstupy
-    outputs:
-    - Struktura stránek
-    - Směřování web copy
-    - Launch-ready scope
-    cta: Probrat tuto službu
-- key: audit
-  number: '06'
-  word: AUDIT
-  vertical: Diagnostika toho, co funguje a co uniká
-  chip: Decision layer
-  panel_kicker: Web intelligence
-  panel_title: Diagnostika toho, co funguje a co uniká
-  panel_meta: ux · tech · positioning
-  category: Intelligence
-  title: Web audit
-  summary: Hloubková diagnostika komunikace, UX, technické kvality a obchodního potenciálu, dodávaná se SIGEL Industries.
-  bullets:
-  - Audit
-  - UX
-  - Insight
-  modal:
-    kicker: Detail služby
+    summary: Prémiové weby připravované ve spolupráci se SIGEL Industries — od
+      komunikační struktury po čisté technické zpracování.
+    bullets:
+      - Webová struktura
+      - UX
+      - Launch
+    modal:
+      kicker: Detail služby
+      title: Tvorba webu
+      intro: Weby, které vypadají prémiově, komunikují jasně a podporují konverzi bez
+        chaosu.
+      includes_title: Co zahrnuje
+      includes:
+        - Struktura webu a messaging
+        - Wireframe směřování a premium UI input
+        - Koordinace realizace s technickým partnerem
+      best_for_title: Vhodné pro
+      best_for:
+        - Prémiové služby, hospitality, osobní značky
+        - Značky, které už přerostly slabý web
+      outputs_title: Typické výstupy
+      outputs:
+        - Struktura stránek
+        - Směřování web copy
+        - Launch-ready scope
+      cta: Probrat tuto službu
+  - key: audit
+    number: "06"
+    word: AUDIT
+    vertical: Diagnostika toho, co funguje a co uniká
+    chip: Decision layer
+    panel_kicker: Web intelligence
+    panel_title: Diagnostika toho, co funguje a co uniká
+    panel_meta: ux · tech · positioning
+    category: Intelligence
     title: Web audit
-    intro: Jasný externí pohled na to, co současný web komunikuje dobře — a kde ztrácí hodnotu.
-    includes_title: Co zahrnuje
-    includes:
-    - Kontrola clarity nabídky a komunikace
-    - Mapování UX a konverzních frikcí
-    - Technické a positioning poznámky
-    best_for_title: Vhodné pro
-    best_for:
-    - Značky s existujícím webem
-    - Foundeři, kteří chtějí ostrý externí pohled
-    outputs_title: Typické výstupy
-    outputs:
-    - Audit summary
-    - Prioritní seznam
-    - Směr zlepšení
-    cta: Probrat tuto službu
+    summary: Hloubková diagnostika komunikace, UX, technické kvality a obchodního
+      potenciálu, dodávaná se SIGEL Industries.
+    bullets:
+      - Audit
+      - UX
+      - Insight
+    modal:
+      kicker: Detail služby
+      title: Web audit
+      intro: Jasný externí pohled na to, co současný web komunikuje dobře — a kde
+        ztrácí hodnotu.
+      includes_title: Co zahrnuje
+      includes:
+        - Kontrola clarity nabídky a komunikace
+        - Mapování UX a konverzních frikcí
+        - Technické a positioning poznámky
+      best_for_title: Vhodné pro
+      best_for:
+        - Značky s existujícím webem
+        - Foundeři, kteří chtějí ostrý externí pohled
+      outputs_title: Typické výstupy
+      outputs:
+        - Audit summary
+        - Prioritní seznam
+        - Směr zlepšení
+      cta: Probrat tuto službu
