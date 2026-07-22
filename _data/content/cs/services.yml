@@ -155,39 +155,41 @@ items:
       cta: Probrat tuto službu
   - key: web
     number: "05"
-    word: WEB
-    vertical: Prémiový web jako součást značky
+    word: MAILING
+    vertical: Emailovej marketing
     chip: Digital platform
     panel_kicker: Digital presence
-    panel_title: Prémiový web jako součást značky
-    panel_meta: ux · structure · launch
-    category: Digital
-    title: Tvorba webu
-    summary: Prémiové weby připravované ve spolupráci se SIGEL Industries — od
-      komunikační struktury po čisté technické zpracování.
+    panel_title: Newsletter je jediný kanál, který nezávisí na algoritmu — když ho
+      pošlete, dorazí přesně tam, kam má.
+    panel_meta: newsletter · mailing · database
+    category: NEWSLETTER
+    title: Digital
+    summary: Pravidelný mailing, který zákazníci opravdu otevřou — ne jednorázová
+      akce, ale součást dlouhodobé komunikace se značkou.
     bullets:
-      - Webová struktura
-      - UX
-      - Launch
+      - Obsah
+      - Dizajn
+      - Automatizace
     modal:
       kicker: Detail služby
-      title: Tvorba webu
-      intro: Weby, které vypadají prémiově, komunikují jasně a podporují konverzi bez
-        chaosu.
+      title: Tvorba newsletterů
+      intro: Většina firem posílá newsletter jen když si vzpomene — nepravidelně, bez
+        stylu, většinou o slevách. My z něj uděláme pravidelný kanál, který drží
+        zákazníky v kontaktu se značkou i mimo sociálních sítí.
       includes_title: Co zahrnuje
       includes:
-        - Struktura webu a messaging
-        - Wireframe směřování a premium UI input
-        - Koordinace realizace s technickým partnerem
+        - Obsahový plán — o čem a jak často psát, aby to zákazníka nezatěžovalo
+        - Design šablony — vizuál, který sedí s webem i sociálními sítěmi
+        - Nastavení automatizace — uvítací e-mail, připomínky, segmentace
       best_for_title: Vhodné pro
       best_for:
         - Prémiové služby, hospitality, osobní značky
         - Značky, které už přerostly slabý web
       outputs_title: Typické výstupy
       outputs:
-        - Struktura stránek
-        - Směřování web copy
-        - Launch-ready scope
+        - Šablona newslettru + obsahový kalendář na 3 měsíce
+        - Automatizace dle dohody na základě poptávky
+        - Launch kampaň
       cta: Probrat tuto službu
   - key: audit
     number: "06"
