@@ -1,19 +1,25 @@
-floating_label: Boutique Social Marketing
-kicker: O agentúre
+floating_label: "Mgr. Adrián Bak "
+kicker: "Marketingový manažér "
 title:
   line_1: Butiková agentúra.
   emphasis: Viac pozornosti.
-body: Maison Adriano Agency pracuje so značkami a osobnosťami, ktoré potrebujú silnejší imidž, presnejšiu komunikáciu a hodnotnejšiu
-  digitálnu prítomnosť. Butikový model znamená menej projektov, bližšiu spoluprácu a presnejšie rozhodnutia.
-note: Vhodné pre prémiové služby, osobné značky, hospitality, lifestyle a firmy, kde je imidž súčasťou produktu.
+body: Maison Adriano Agency pracuje so značkami a osobnosťami, ktoré potrebujú
+  silnejší imidž, presnejšiu komunikáciu a hodnotnejšiu digitálnu prítomnosť.
+  Butikový model znamená menej projektov, bližšiu spoluprácu a presnejšie
+  rozhodnutia.
+note: Vhodné pre prémiové služby, osobné značky, hospitality, lifestyle a firmy,
+  kde je imidž súčasťou produktu.
 principles:
-- number: '01'
-  title: Selektívnosť
-  text: Nie každý projekt patrí k sebe. Zhodovať sa musia hodnoty, estetika aj ambícia.
-- number: '02'
-  title: Konzistentnosť
-  text: Každý dotyk so značkou má pôsobiť ako súčasť jedného sveta, nie náhodný výstup.
-- number: '03'
-  title: Obchodný zmysel
-  text: Elegantná prezentácia má zmysel len vtedy, keď podporuje dôveru, positioning a dopyt.
+  - number: "01"
+    title: Selektívnosť
+    text: Nie každý projekt patrí k sebe. Zhodovať sa musia hodnoty, estetika aj
+      ambícia.
+  - number: "02"
+    title: Konzistentnosť
+    text: Každý dotyk so značkou má pôsobiť ako súčasť jedného sveta, nie náhodný
+      výstup.
+  - number: "03"
+    title: Obchodný zmysel
+    text: Elegantná prezentácia má zmysel len vtedy, keď podporuje dôveru,
+      positioning a dopyt.
 image_alt: Portrait of the agency founder
