@@ -155,30 +155,34 @@ items:
       cta: Discuss this service
   - key: web
     number: "05"
-    word: WEB
-    vertical: A premium website as part of the brand
+    word: MAILING
+    vertical: Newsletters
     chip: Digital platform
     panel_kicker: Digital presence
-    panel_title: A premium website as part of the brand
-    panel_meta: ux · structure · launch
+    panel_title: A newsletter is the only channel that doesn't depend on an
+      algorithm — when you send it, it arrives exactly where it's supposed to.
+    panel_meta: newsletter · mailing · database
     category: Digital
-    title: Newsletter campaings
-    summary: "Premium websites developed with SIGEL Industries — from communication
-      structure to polished execution. "
+    title: Newsletter campaigns
+    summary: "\"Regular mailing that customers actually open — not a one-off
+      campaign, but part of a brand's long-term communication.\" "
     bullets:
-      - Web structure
-      - UX
-      - Launch
+      - Content
+      - Design
+      - Automatization
     modal:
       kicker: Service detail
-      title: Website creation
-      intro: Websites that look premium, communicate clearly and support conversion
-        without clutter.
+      title: Newsletter creation
+      intro: Most companies only send a newsletter when they happen to remember —
+        irregularly, with no consistent style, mostly about discounts. We turn
+        it into a regular channel that keeps customers connected to the brand
+        beyond social media.
       includes_title: What it includes
       includes:
-        - Site structure and messaging
-        - Wireframe direction and premium UI input
-        - Build coordination with technical partner
+        - Content plan — what to write about and how often, so it doesn't
+          overwhelm the customer
+        - Template design — visuals that align with your website and social media
+        - Automation setup — welcome email, reminders, segmentation
       best_for_title: Best for
       best_for:
         - Premium services, hospitality, personal brands
@@ -187,7 +191,7 @@ items:
       outputs:
         - Page structure
         - Web copy direction
-        - Launch-ready site scope
+        - Launch campaign
       cta: Discuss this service
   - key: audit
     number: "06"
