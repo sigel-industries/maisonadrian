@@ -2,60 +2,68 @@ kicker: Collaboration
 title:
   line_1: A clear process.
   emphasis: No agency fog.
-intro: Every step has a reason, a concrete output and a decision. No endless calls or presentations that move nothing forward.
+intro: Every step has a reason, a concrete output and a decision. No endless
+  calls or presentations that move nothing forward.
 steps:
-- number: '01'
-  title: Diagnosis
-  text: We review the current brand, audience, communication and hidden friction points.
-- number: '02'
-  title: Direction
-  text: A clear concept defines positioning, tone, channels and priorities.
-- number: '03'
-  title: Execution
-  text: Content, PR, collaborations, website work and launch assets are delivered in one system.
-- number: '04'
-  title: Refinement
-  text: We sharpen what works, remove weak points and keep the brand coherent.
+  - number: "01"
+    title: Analysis
+    text: We review the current brand, audience, communication and hidden friction
+      points.
+  - number: "02"
+    title: Direction
+    text: A clear concept defines positioning, tone, channels and priorities.
+  - number: "03"
+    title: Execution
+    text: Content, PR, collaborations, website work and launch assets are delivered
+      in one system.
+  - number: "04"
+    title: Refinement
+    text: We sharpen what works, remove weak points and keep the brand coherent.
 exclusive:
   kicker: Exclusive collaborations
   title: Exclusive collaborations.
-  intro: More deeply integrated projects where the result was not just a deliverable, but a complete digital direction.
+  intro: More deeply integrated projects where the result was not just a
+    deliverable, but a complete digital direction.
   projects:
-  - key: sigel
-    number: '01'
-    meta: Digital partner · Web · Intelligence
-    title_line_1: SIGEL
-    title_line_2: INDUSTRIES
-    summary: Strategic and technical collaboration connecting brand communication, premium web creation and website intelligence.
-    button: View collaboration
-    modal:
-      kicker: Collaboration detail
-      title: SIGEL Industries
-      intro: Strategic and technical collaboration connecting brand communication, premium web creation and website intelligence.
-      scope_title: Scope
-      scope:
-      - Brand and communication systems
-      - Premium website creation
-      - Website audit and intelligence
-      direction_title: Direction
-      direction: Digital partner · Web · Intelligence
-      link_text: Open website
-  - key: tank
-    number: '02'
-    meta: Brand experience · Web · Booking
-    title_line_1: PARTY TANK
-    title_line_2: PRAGUE
-    summary: A complete premium digital experience for Party Tank Prague, from positioning and storytelling to booking flow.
-    button: View collaboration
-    modal:
-      kicker: Collaboration detail
-      title: Party Tank Prague
-      intro: A complete premium digital experience for Party Tank Prague, from positioning and storytelling to booking flow.
-      scope_title: Scope
-      scope:
-      - Positioning and storytelling
-      - Editorial web experience
-      - Booking journey and conversion structure
-      direction_title: Direction
-      direction: Brand experience · Web · Booking
-      link_text: Open website
+    - key: sigel
+      number: "01"
+      meta: Digital partner · Web · Intelligence
+      title_line_1: SIGEL
+      title_line_2: INDUSTRIES
+      summary: Strategic and technical collaboration connecting brand communication,
+        premium web creation and website intelligence.
+      button: View collaboration
+      modal:
+        kicker: Collaboration detail
+        title: SIGEL Industries
+        intro: Strategic and technical collaboration connecting brand communication,
+          premium web creation and website intelligence.
+        scope_title: Scope
+        scope:
+          - Brand and communication systems
+          - Premium website creation
+          - Website audit and intelligence
+        direction_title: Direction
+        direction: Digital partner · Web · Intelligence
+        link_text: Open website
+    - key: tank
+      number: "02"
+      meta: Brand experience · Web · Booking
+      title_line_1: PARTY TANK
+      title_line_2: PRAGUE
+      summary: A complete premium digital experience for Party Tank Prague, from
+        positioning and storytelling to booking flow.
+      button: View collaboration
+      modal:
+        kicker: Collaboration detail
+        title: Party Tank Prague
+        intro: A complete premium digital experience for Party Tank Prague, from
+          positioning and storytelling to booking flow.
+        scope_title: Scope
+        scope:
+          - Positioning and storytelling
+          - Editorial web experience
+          - Booking journey and conversion structure
+        direction_title: Direction
+        direction: Brand experience · Web · Booking
+        link_text: Open website
