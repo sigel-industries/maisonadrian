@@ -162,34 +162,35 @@ items:
     chip: Digital platform
     panel_kicker: Digital presence
     panel_title: Prémiový web ako súčasť značky
-    panel_meta: ux · structure · launch
+    panel_meta: newsletter · mailing · database
     category: Digital
     title: Emailing
-    summary: Prémiové weby pripravované v spolupráci so SIGEL Industries — od
-      komunikačnej štruktúry po čisté technické spracovanie.
+    summary: Pravidelný e-mail, ktorý zákazníci naozaj otvoria — nie jednorazová
+      akcia, ale súčasť dlhodobej komunikácie so značkou.
     bullets:
-      - Webová štruktúra
-      - UX
-      - Launch
+      - Obsah
+      - Dizajn
+      - Automatizácia
     modal:
       kicker: Detail služby
-      title: Tvorba webu
-      intro: Weby, ktoré vyzerajú prémiovo, komunikujú jasne a podporujú konverziu bez
-        chaosu.
+      title: Tvorba newsletterov
+      intro: Väčšina firiem posiela newsletter len keď si spomenie — nepravidelne, bez
+        štýlu, väčšinou o zľavách. My z neho spravíme pravidelný kanál, ktorý
+        drží zákazníkov v kontakte so značkou aj mimo sociálnych sietí
       includes_title: Čo zahŕňa
       includes:
-        - Štruktúra webu a messaging
-        - Wireframe smerovanie a premium UI input
-        - Koordinácia realizácie s technickým partnerom
+        - Obsahový plán — o čom a ako často písať, aby to zákazníka nezaťažovalo
+        - Dizajn šablóny — vizuál, ktorý sedí s webom aj sociálnymi sieťami
+        - Nastavenie automatizácie — uvítací e-mail, pripomienky, segmentácia
       best_for_title: Vhodné pre
       best_for:
-        - Prémiové služby, hospitality, osobné značky
-        - Značky, ktoré už prerástli slabý web
+        - Značky, ktoré chcú komunikáciu nezávislú od algoritmov sociálnych sietí
+        - E-shopy a hospitality biznisy s opakovaným nákupom/rezerváciou
       outputs_title: Typické výstupy
       outputs:
-        - Štruktúra stránok
-        - Smerovanie web copy
-        - Launch-ready scope
+        - Šablóna newslettera + obsahový kalendár na prvé 3 mesiace
+        - Nastavená automatizácia v e-mailovom nástroji podľa dohody
+        - Launch kampane
       cta: Prediskutovať túto službu
   - key: audit
     number: "06"
