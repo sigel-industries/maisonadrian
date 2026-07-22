@@ -1,19 +1,27 @@
-floating_label: Boutique Social Marketing
-kicker: About the agency
+floating_label: Mgr. Adrián Bak
+kicker: About me
 title:
-  line_1: A boutique agency.
-  emphasis: More attention.
-body: Maison Adriano Agency works with brands and personalities that need a stronger public image, sharper communication and
-  a more elevated digital presence. The boutique model means fewer projects, closer collaboration and more precise decisions.
-note: Built for premium services, personal brands, hospitality, lifestyle and businesses where image is part of the product.
+  line_1: Adrián Bak
+  emphasis: Marketing Executive
+body: "Before I started building my own brand, I worked through almost every
+  position on a marketing team — from social media specialist, to influencer
+  coordinator and assistant marketing director, to marketing manager and
+  director. I'm originally from eastern Slovakia; I came to Prague with a clear
+  goal — to build my own client base and do marketing the way I truly believe
+  in: without compromise, with a focus on turning brands into genuine
+  lovebrands."
+note: I don't claim to know everything — but I have a fire in me for the work I love.
 principles:
-- number: '01'
-  title: Selectivity
-  text: Not every project belongs together. Fit matters in values, aesthetics and ambition.
-- number: '02'
-  title: Consistency
-  text: Every touchpoint should feel like part of the same brand world, not a random output.
-- number: '03'
-  title: Commercial sense
-  text: Elegant presentation is useful only when it supports trust, positioning and demand.
+  - number: "01"
+    title: Selectivity
+    text: Not every project belongs together. Fit matters in values, aesthetics and
+      ambition.
+  - number: "02"
+    title: Consistency
+    text: Every touchpoint should feel like part of the same brand world, not a
+      random output.
+  - number: "03"
+    title: Commercial sense
+    text: Elegant presentation is useful only when it supports trust, positioning
+      and demand.
 image_alt: Portrait of the agency founder
