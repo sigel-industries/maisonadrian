@@ -1,19 +1,26 @@
-floating_label: Boutique Social Marketing
-kicker: O agentuře
+floating_label: "Mgr. Adrián Bak "
+kicker: Marketingový manažer
 title:
-  line_1: Butiková agentura.
-  emphasis: Více pozornosti.
-body: Maison Adriano Agency pracuje se značkami a osobnostmi, které potřebují silnější image, přesnější komunikaci a hodnotnější
-  digitální přítomnost. Butikový model znamená méně projektů, bližší spolupráci a přesnější rozhodování.
-note: Vhodné pro prémiové služby, osobní značky, hospitality, lifestyle a firmy, kde je image součástí produktu.
+  line_1: Adrián Bak
+  emphasis: Marketér
+body: "Než jsem začal budovat vlastní značky, prošel jsem téměř každou pozicí v
+  marketingovém týmu — od social media specialisty, přes koordinátora
+  influencerů a asistenta marketingového ředitele, až po marketingového manažera
+  a ředitele. Pocházím z východního Slovenska; do Prahy jsem přišel s jasným
+  cílem — vybudovat si vlastní klientelu a dělat marketing tak, jak tomu sám
+  věřím: bez kompromisů, s důrazem na to, aby ze značek vznikly skutečné
+  lovebrandy."
+note: Netvrdím, že umím všechno - každopádne je ve mne zápal pro práci, kterou miluju
 principles:
-- number: '01'
-  title: Selektivita
-  text: Ne každý projekt patří k sobě. Shodovat se musí hodnoty, estetika i ambice.
-- number: '02'
-  title: Konzistence
-  text: Každý dotek se značkou má působit jako součást jednoho světa, ne náhodný výstup.
-- number: '03'
-  title: Obchodní smysl
-  text: Elegantní prezentace má smysl jen tehdy, když podporuje důvěru, positioning a poptávku.
+  - number: "01"
+    title: Selektivita
+    text: Ne každý projekt patří k sobě. Shodovat se musí hodnoty, estetika i ambice.
+  - number: "02"
+    title: Konzistence
+    text: Každý dotek se značkou má působit jako součást jednoho světa, ne náhodný
+      výstup.
+  - number: "03"
+    title: Obchodní smysl
+    text: Elegantní prezentace má smysl jen tehdy, když podporuje důvěru,
+      positioning a poptávku.
 image_alt: Portrait of the agency founder
