@@ -157,14 +157,14 @@ items:
       cta: Prediskutovať túto službu
   - key: web
     number: "05"
-    word: WEB
-    vertical: Prémiový web ako súčasť značky
+    word: MAILING
+    vertical: Emailový marketing
     chip: Digital platform
     panel_kicker: Digital presence
     panel_title: Prémiový web ako súčasť značky
     panel_meta: ux · structure · launch
     category: Digital
-    title: Tvorba webu
+    title: Emailing
     summary: Prémiové weby pripravované v spolupráci so SIGEL Industries — od
       komunikačnej štruktúry po čisté technické spracovanie.
     bullets:
@@ -200,7 +200,7 @@ items:
     panel_title: Diagnostika toho, čo funguje a čo uniká
     panel_meta: ux · tech · positioning
     category: Intelligence
-    title: Web audit
+    title: Web audit & tvorba webu
     summary: Hĺbková diagnostika komunikácie, UX, technickej kvality a obchodného
       potenciálu, dodávaná so SIGEL Industries.
     bullets:
