@@ -1,5 +1,5 @@
 kicker: Services
-title: Our services. One coherent brand world.
+title: "Our services. One coherent brand world. "
 intro: >-
   Six services we can deliver individually or as a complete package.
 
@@ -198,7 +198,7 @@ items:
     panel_title: Diagnosis of what works and what leaks value
     panel_meta: ux · tech · positioning
     category: Intelligence
-    title: Website audit
+    title: Website audit & creation
     summary: An in-depth diagnostic of messaging, UX, technical quality and
       commercial potential, delivered with SIGEL Industries.
     bullets:
