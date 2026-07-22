@@ -21,7 +21,7 @@ service_backgrounds:
     image: /assets/service-backgrounds/audit.png
 exclusive_links:
   sigel: https://sigel-industries.com/
-  tank: https://sigel-industries.github.io/partytankprague/
+  tank: https://publicinterest.sk/
 client_logos:
   row_1:
     - name: Jazierce
