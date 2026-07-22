@@ -6,7 +6,7 @@ intro: Každý krok má svoj dôvod, konkrétny výstup a rozhodnutie. Bez nekon
   callov a prezentácií, ktoré nič neposunú.
 steps:
   - number: "01"
-    title: Diagnóza
+    title: Analýza
     text: Pozrieme sa na aktuálnu značku, publikum, komunikáciu a miesta, kde sa
       stráca hodnota.
   - number: "02"
@@ -21,7 +21,7 @@ steps:
       konzistentnú.
 exclusive:
   kicker: Spolupracujeme s profíkmi
-  title: Exkluzívne spolupráce.
+  title: Partnerstvá
   intro: Hlbšie prepojené projekty, kde nevznikol len výstup, ale celý digitálny smer.
   projects:
     - key: sigel
@@ -48,21 +48,28 @@ exclusive:
     - key: tank
       number: "02"
       meta: Brand experience · Web · Rezervácie
-      title_line_1: PARTY TANK
-      title_line_2: PRAGUE
-      summary: Kompletný prémiový digitálny zážitok pre Party Tank Prague — od
-        positioningu a storytellingu po rezervačný flow.
+      title_line_1: PUBLIC INTEREST
+      title_line_2: BRATISLAVA / PRAGUE
+      summary: >-
+        :
+
+        Strategické prepojenie so spoločnosťou Public Interest — kým my staráme
+        o obsah, sociálne siete a positioning, Public Interest rieši reputačný
+        manažment, krízovú komunikáciu a media relations. Klientom tak vieme
+        ponúknuť značku pokrytú z oboch strán: čo o vás hovoríte vy, aj čo o vás
+        hovoria médiá.
       button: Pozrieť spoluprácu
       modal:
         kicker: Detail spolupráce
-        title: Party Tank Prague
-        intro: Kompletný prémiový digitálny zážitok pre Party Tank Prague — od
-          positioningu a storytellingu po rezervačný flow.
+        title: Public Interest
+        intro: Obsah a sociálne siete robíme my, reputáciu a krízovú komunikáciu rieši
+          Public Interest. Spolu pokryjeme, ako o vás hovoríte vy aj čo sa o vás
+          píše v médiách.
         scope_title: Rozsah
         scope:
-          - Positioning and storytelling
-          - Editorial web experience
-          - Booking journey and conversion structure
+          - PR partner
+          - Reputačný manažment
+          - Krízová komunikácia
         direction_title: Smer
-        direction: Brand experience · Web · Rezervácie
+        direction: PR manažment
         link_text: Otvoriť web
