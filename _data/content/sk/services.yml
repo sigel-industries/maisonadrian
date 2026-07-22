@@ -18,9 +18,9 @@ items:
     panel_title: Architektúra ponuky a jasný smer
     panel_meta: message · offer · campaigns
     category: Strategy
-    title: Marketing stratégia
-    summary: Positioning, architektúra ponuky a smer komunikácie zosúladené s
-      reálnymi obchodnými cieľmi.
+    title: Marketingová stratégia
+    summary: Zistíme, čím ste iní ako konkurencia, čo o tom hovoriť zákazníkom a v
+      akom poradí robiť ďalšie kroky.
     bullets:
       - Positioning
       - Messaging
@@ -32,13 +32,15 @@ items:
         trhové vnímanie.
       includes_title: Čo zahŕňa
       includes:
-        - Diagnóza značky a ponuky
-        - Rámec publika a positioningu
-        - Hierarchia message a kampaňové témy
+        - Analýza konkurencie — kde ste podobní a kde sa treba odlíšiť
+        - Positioning — jedna jasná vec, ktorou ste iní a ktorú si zákazník
+          zapamätá
+        - Plán komunikácie — čo hovoriť na webe, sociálnych sieťach a v PR, aby
+          to sedelo dokopy
       best_for_title: Vhodné pre
       best_for:
         - Nové značky, repositioning, prémiové služby
-        - Osobné značky, ktoré potrebujú väčšiu jasnosť
+        - Osobné značky, ktoré potrebujú väčšiu rozpoznateľnosť
       outputs_title: Typické výstupy
       outputs:
         - Strategický deck
