@@ -5209,3 +5209,113 @@ body { overflow-x: hidden; }
     gap: 11px;
   }
 }
+
+/* =========================================================
+   FINAL CROSS-LANGUAGE RESPONSIVE SAFETY
+   Prevent long translated content from widening grid tracks,
+   keep the closing CTA inside the viewport and move the
+   desktop header to the mobile layout before it becomes tight.
+   ========================================================= */
+.vip-collaboration__inner > *,
+.vip-collaboration__header > *,
+.vip-collaboration__process > *,
+.vip-exclusives,
+.vip-exclusives__header > *,
+.vip-exclusives__grid > *,
+.vip-exclusive-card,
+.vip-exclusive-card > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.vip-closing h2 {
+  width: 100%;
+  max-width: 1050px;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .ma-hero-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ma-desktop-nav,
+  .ma-header-actions,
+  .ma-language-switcher {
+    display: none !important;
+  }
+
+  .ma-mobile-brand,
+  .ma-menu-toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 560px) {
+  .vip-collaboration__inner,
+  .vip-collaboration__header,
+  .vip-collaboration__process,
+  .vip-exclusives,
+  .vip-exclusives__header,
+  .vip-exclusives__grid {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vip-closing h2 {
+    max-width: 100%;
+  }
+}
+
+/* Final narrow-screen typography safety. */
+@media (min-width: 821px) and (max-width: 960px) {
+  .vip-private__inner {
+    width: min(100vw - 48px, 760px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 62px;
+  }
+
+  .vip-private__media {
+    width: min(100%, 620px);
+    margin: 0 auto;
+  }
+
+  .vip-private__content {
+    min-width: 0;
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 560px) {
+  .vip-closing h2 {
+    font-size: clamp(3rem, 14vw, 4.6rem);
+    line-height: .88;
+  }
+
+  .vip-closing h2 br {
+    display: block;
+  }
+
+  .vip-closing h2 em {
+    display: block;
+    max-width: 100%;
+    margin-top: .04em;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 560px) {
+  .vip-exclusive-card h4 {
+    font-size: clamp(2.35rem, 11.8vw, 3.35rem);
+    line-height: .8;
+    letter-spacing: -.045em;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    text-wrap: balance;
+  }
+}
