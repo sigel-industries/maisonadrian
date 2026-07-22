@@ -3,8 +3,8 @@ contact:
   phone: +420 702 064 151
 images:
   brand_logo: /assets/brand-logo.webp
-  hero: /assets/hero-original.webp
-  about: /assets/about-portrait.jpg
+  hero: /assets/dizajn-bez-nazvu-47.png
+  about: /assets/image0-15.jpeg
   vip: /assets/vip-clients.webp
 service_backgrounds:
   - key: strategy
