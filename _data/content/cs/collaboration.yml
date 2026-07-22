@@ -2,60 +2,71 @@ kicker: Spolupráce
 title:
   line_1: Jasný proces.
   emphasis: Žádná agenturní mlha.
-intro: Každý krok má svůj důvod, konkrétní výstup a rozhodnutí. Bez nekonečných callů a prezentací, které nic neposunou.
+intro: Každý krok má svůj důvod, konkrétní výstup a rozhodnutí. Bez nekonečných
+  callů a prezentací, které nic neposunou.
 steps:
-- number: '01'
-  title: Diagnóza
-  text: Podíváme se na aktuální značku, publikum, komunikaci a místa, kde se ztrácí hodnota.
-- number: '02'
-  title: Směr
-  text: Jasný koncept určí positioning, tón, kanály a priority.
-- number: '03'
-  title: Exekuce
-  text: Obsah, PR, spolupráce, web i spouštěcí výstupy dodáme v jednom systému.
-- number: '04'
-  title: Ladění
-  text: Posílíme, co funguje, odstraníme slabá místa a udržíme značku konzistentní.
+  - number: "01"
+    title: Analýza
+    text: Podíváme se na aktuální značku, publikum, komunikaci a místa, kde se
+      ztrácí hodnota.
+  - number: "02"
+    title: Směr
+    text: Jasný koncept určí positioning, tón, kanály a priority.
+  - number: "03"
+    title: Exekuce
+    text: Obsah, PR, spolupráce, web i spouštěcí výstupy dodáme v jednom systému.
+  - number: "04"
+    title: Ladění
+    text: Posílíme, co funguje, odstraníme slabá místa a udržíme značku konzistentní.
 exclusive:
-  kicker: Exkluzivní spolupráce
-  title: Exkluzivní spolupráce.
-  intro: Hlouběji propojené projekty, kde nevznikl jen výstup, ale celý digitální směr.
+  kicker: Spolupracujeme s profíky
+  title: Dlouhodobá partnerství
+  intro: Hlouběji propojené projekty, kde nevznikl jen výstup, ale celý digitální
+    směr.
   projects:
-  - key: sigel
-    number: '01'
-    meta: Digitální partner · Web · Intelligence
-    title_line_1: SIGEL
-    title_line_2: INDUSTRIES
-    summary: Strategické a technické propojení brand komunikace, prémiové tvorby webů a web intelligence.
-    button: Zobrazit spolupráci
-    modal:
-      kicker: Detail spolupráce
-      title: SIGEL Industries
-      intro: Strategické a technické propojení brand komunikace, prémiové tvorby webů a web intelligence.
-      scope_title: Rozsah
-      scope:
-      - Brand and communication systems
-      - Premium website creation
-      - Website audit and intelligence
-      direction_title: Směr
-      direction: Digitální partner · Web · Intelligence
-      link_text: Otevřít web
-  - key: tank
-    number: '02'
-    meta: Brand experience · Web · Rezervace
-    title_line_1: PARTY TANK
-    title_line_2: PRAGUE
-    summary: Kompletní prémiový digitální zážitek pro Party Tank Prague — od positioningu a storytellingu po rezervační flow.
-    button: Zobrazit spolupráci
-    modal:
-      kicker: Detail spolupráce
-      title: Party Tank Prague
-      intro: Kompletní prémiový digitální zážitek pro Party Tank Prague — od positioningu a storytellingu po rezervační flow.
-      scope_title: Rozsah
-      scope:
-      - Positioning and storytelling
-      - Editorial web experience
-      - Booking journey and conversion structure
-      direction_title: Směr
-      direction: Brand experience · Web · Rezervace
-      link_text: Otevřít web
+    - key: sigel
+      number: "01"
+      meta: Digitální partner · Web · Intelligence
+      title_line_1: SIGEL
+      title_line_2: INDUSTRIES
+      summary: Strategické a technické propojení brand komunikace, prémiové tvorby
+        webů a web intelligence.
+      button: Zobrazit spolupráci
+      modal:
+        kicker: Detail spolupráce
+        title: SIGEL Industries
+        intro: Strategické a technické propojení brand komunikace, prémiové tvorby webů
+          a web intelligence.
+        scope_title: Rozsah
+        scope:
+          - Brand and communication systems
+          - Premium website creation
+          - Website audit and intelligence
+        direction_title: Směr
+        direction: Digitální partner · Web · Intelligence
+        link_text: Otevřít web
+    - key: tank
+      number: "02"
+      meta: PR Partner · Krizový manažment · Reputace
+      title_line_1: PUBLIC INTEREST
+      title_line_2: PR
+      summary: "Strategické propojení se společností Public Interest — zatímco my se
+        staráme o obsah, sociální sítě a positioning, Public Interest řeší
+        reputační management, krizovou komunikaci a media relations. Klientům
+        tak umíme nabídnout značku pokrytou z obou stran: co o sobě říkáte vy, i
+        co o vás říkají média."
+      button: Zobrazit spolupráci
+      modal:
+        kicker: Detail spolupráce
+        title: Public Interest
+        intro: Obsah a sociální sítě děláme my, reputaci a krizovou komunikaci řeší
+          Public Interest. Společně pokryjeme, jak o sobě mluvíte vy i co se o
+          vás píše v médiích.
+        scope_title: Rozsah
+        scope:
+          - PR partner
+          - Reputační manažment
+          - Krizová komunikace
+        direction_title: Směr
+        direction: PR manažment
+        link_text: Otevřít web
