@@ -2193,6 +2193,20 @@ content:
           - jpeg
           - webp
           rename: safe
+      - name: hero_mobile
+        label: Mobilná hero fotografia
+        type: image
+        description: Voliteľný portrétový výrez pre telefóny. Ak zostane prázdny, použije sa hlavná hero fotografia.
+        required: false
+        options:
+          media: site_images
+          path: uploads
+          extensions:
+          - png
+          - jpg
+          - jpeg
+          - webp
+          rename: safe
       - name: about
         label: Fotografia v sekcii O agentúre
         type: image
