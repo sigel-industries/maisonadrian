@@ -5,7 +5,7 @@ images:
   brand_logo: /assets/brand-logo.webp
   hero: /assets/hero-maison-desktop.webp
   hero_mobile: /assets/hero-maison-mobile.webp
-  about: /assets/about-maison.webp
+  about: /assets/image0-17.jpeg
   vip: /assets/vip-clients.webp
 service_backgrounds:
   - key: strategy
