@@ -51,19 +51,23 @@ exclusive:
       meta: Brand experience · Web · Booking
       title_line_1: PUBLIC INTEREST
       title_line_2: PR
-      summary: A complete premium digital experience for Party Tank Prague, from
-        positioning and storytelling to booking flow.
+      summary: "Strategic partnership with Public Interest — while we handle content,
+        social media, and positioning, Public Interest takes care of reputation
+        management, crisis communication, and media relations. Together, we can
+        offer clients coverage on both fronts: what you say about yourself, and
+        what the media says about you."
       button: View collaboration
       modal:
         kicker: Collaboration detail
-        title: Party Tank Prague
-        intro: A complete premium digital experience for Party Tank Prague, from
-          positioning and storytelling to booking flow.
+        title: Public Interest
+        intro: We handle content and social media, Public Interest handles reputation
+          and crisis communication. Together, we cover both how you talk about
+          yourself and what's written about you in the media.
         scope_title: Scope
         scope:
-          - Positioning and storytelling
-          - Editorial web experience
-          - Booking journey and conversion structure
+          - PR reputation
+          - Crisis communication
+          - Reputation management
         direction_title: Direction
-        direction: Brand experience · Web · Booking
+        direction: PR management
         link_text: Open website
