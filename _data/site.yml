@@ -34,17 +34,12 @@ client_logos:
     - name: Synagóga café
       image: /assets/client-logos/03_synagoga-cafe.jpeg
       url: https://www.instagram.com/synagoga_cafe/
-    - name: QUIR
-      image: /assets/client-logos/04_quir.png
-      url: https://www.quir.sk/
     - name: Rezidencia Hviezdoslavova
       image: /assets/client-logos/05_rezidencia-hviezdoslavova.png
       url: https://hviezdoslavova.sk/
     - name: Synagóga bakery
       image: /assets/client-logos/06_synagoga-bakery.png
       url: https://www.instagram.com/synagoga_cafe/
-    - name: Public Interest
-      image: /assets/client-logos/07_public-interest.png
     - name: Naše peniaze
       image: /assets/client-logos/08_nase-peniaze.jpeg
       url: https://www.nasepeniaze.eu/
@@ -54,9 +49,6 @@ client_logos:
     - name: VAHO REAL
       image: /assets/client-logos/10_vaho-real.png
       url: https://www.vahoreal.sk/
-    - name: Požičaj si ma!
-      image: /assets/client-logos/11_pozicaj-si-ma.png
-      url: https://pozicajsidodavku.sk/
     - name: MÁRIA – Penzión & Restaurant
       image: /assets/client-logos/12_maria-penzion-restaurant.png
       url: https://www.mariapenzion.sk/
@@ -66,21 +58,12 @@ client_logos:
       image: /assets/client-logos/14_zahrada-za-mlynom.png
       url: https://zahradazamlynom.sk/
   row_2:
-    - name: Odťahová služba Blaško
-      image: /assets/client-logos/15_odtahova-sluzba-blasko.jpeg
-      url: https://www.odtahovasluzbablasko.sk/
     - name: Les Républicains
       image: /assets/client-logos/16_les-republicains.jpeg
       url: https://republicains.fr/
     - name: B Accounting Services
       image: /assets/client-logos/17_b-accounting-services.png
       url: https://www.bjaccounting.sk/
-    - name: VOLIS International
-      image: /assets/client-logos/18_volis-international.png
-      url: https://www.volis-international.com/en/
-    - name: ALMITO CARP
-      image: /assets/client-logos/19_almito-carp.png
-      url: https://www.facebook.com/100091824447564/
     - name: Harmony
       image: /assets/client-logos/20_harmony.png
     - name: REDNOD.sk
@@ -89,9 +72,6 @@ client_logos:
     - name: AlmaCare
       image: /assets/client-logos/22_almacare.png
       url: https://www.almacare.sk/
-    - name: ONLINE TORO
-      image: /assets/client-logos/23_online-toro.png
-      url: https://www.onlinetoro.sk/
     - name: Nitrianska realitná kancelária
       image: /assets/client-logos/24_nitrianska-realitna-kancelaria.png
       url: https://nitrianskereality.com/
