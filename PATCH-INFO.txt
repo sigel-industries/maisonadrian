@@ -1,0 +1,18 @@
+Maison Adriano — responsive hero + mobile performance patch
+
+Copy the contents of this ZIP into the repository root and allow overwrite.
+Changed code/config:
+- styles.css
+- sk/index.html
+- cs/index.html
+- en/index.html
+- _data/site.yml
+- .pages.yml
+
+New optimized assets:
+- assets/hero-maison-desktop.webp
+- assets/hero-maison-mobile.webp
+- assets/about-maison.webp
+- assets/service-backgrounds/*.webp
+
+The old source images are intentionally not deleted.

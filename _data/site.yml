@@ -3,22 +3,23 @@ contact:
   phone: +420 702 064 151
 images:
   brand_logo: /assets/brand-logo.webp
-  hero: /assets/dizajn-bez-nazvu-51.png
-  about: /assets/image0-17.jpeg
+  hero: /assets/hero-maison-desktop.webp
+  hero_mobile: /assets/hero-maison-mobile.webp
+  about: /assets/about-maison.webp
   vip: /assets/vip-clients.webp
 service_backgrounds:
   - key: strategy
-    image: /assets/service-backgrounds/strategy.png
+    image: /assets/service-backgrounds/strategy.webp
   - key: social
-    image: /assets/service-backgrounds/social.png
+    image: /assets/service-backgrounds/social.webp
   - key: production
-    image: /assets/service-backgrounds/production.png
+    image: /assets/service-backgrounds/production.webp
   - key: pr
-    image: /assets/service-backgrounds/pr.png
+    image: /assets/service-backgrounds/pr.webp
   - key: web
-    image: /assets/service-backgrounds/web.png
+    image: /assets/service-backgrounds/web.webp
   - key: audit
-    image: /assets/service-backgrounds/audit.png
+    image: /assets/service-backgrounds/audit.webp
 exclusive_links:
   sigel: https://sigel-industries.com/
   tank: https://publicinterest.sk/
