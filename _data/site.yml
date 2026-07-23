@@ -90,3 +90,6 @@ client_logos:
     - name: UCM – Univerzita sv. Cyrila a Metoda v Trnave
       image: /assets/client-logos/27_ucm-univerzita-sv-cyrila-a-metoda-v-trnave.png
       url: https://www.ucm.sk/
+    - name: Zeen by Roal
+      image: /assets/zeen-22-300x300.png
+      url: https://zeenworld.cz/
