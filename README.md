@@ -6,7 +6,7 @@ Kompletne prepracovaná viacjazyčná statická verzia pripravená na GitHub Pag
 
 - Netflix-style brand intro
 - pôvodná hero sekcia a hero fotografia
-- logo, farby a základný Gucci-inspired luxury smer
+- logo, farby a základný Gucci-inspired luxury sme
 - automatická detekcia CZ / SK / EN
 - prepínanie jazyka bez opakovania intra
 - mobilné full-screen menu
